@@ -10,12 +10,12 @@ const siteUrl = Astro.site ? new URL("/", Astro.site).toString() : undefined;
 const seo = {
   canonical: siteUrl,
   openGraph: {
-    title: "arc^ definition",
+    title: "arc^ - Plasma Research for Planetary Wide Ecological Restoration",
     description,
     url: siteUrl,
   },
   twitter: {
-    title: "arc^ definition",
+    title: "arc^ - Plasma Research for Planetary Wide Ecological Restoration",
     description,
   },
 };
@@ -31,7 +31,7 @@ if (siteUrl) {
   structuredData.url = siteUrl;
 }
 ---
-<BaseLayout title="arc^ definition" description={description} bodyClass="page-definition" seo={seo}>
+<BaseLayout title="arc^ - Plasma Research for Planetary Wide Ecological Restoration" description={description} bodyClass="page-definition" seo={seo}>
   <ArcCanvas />
   <SiteHeader active="home" />
   <DefinitionContent />

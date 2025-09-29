@@ -158,7 +158,7 @@ button:focus-visible {
   gap: 0.4rem;
   padding: 0.75rem 1.4rem;
   border-radius: var(--radius-sm);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 600;
   border: 1px solid transparent;
   color: #031115;
@@ -222,6 +222,19 @@ button:focus-visible {
   justify-items: center;
 }
 
+.definition-subheading {
+  margin: 0 auto;
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+  color: var(--color-text-muted);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: none;
+  text-align: center;
+  max-width: 62ch;
+  text-wrap: balance;
+}
+
 .definition-eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.22em;
@@ -274,15 +287,15 @@ button:focus-visible {
 }
 
 .pronunciation-inline .pronunciation-text {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   letter-spacing: 0.08em;
   color: var(--color-text-muted);
 }
 
 .pronunciation-inline .audio-button {
-  padding: 0.3rem 0.7rem;
-  gap: 0.35rem;
-  font-size: 0.8rem;
+  padding: 0.38rem 0.85rem;
+  gap: 0.45rem;
+  font-size: 0.9rem;
 }
 
 .definition-lede {
@@ -310,6 +323,25 @@ button:focus-visible {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.definition-intro {
+  margin: clamp(1.8rem, 5vw, 2.8rem) auto 0;
+  max-width: 65ch;
+  padding: clamp(1.5rem, 4vw, 2rem) clamp(1.1rem, 4vw, 2.4rem);
+  background: rgba(10, 147, 150, 0.14);
+  border: 1px solid rgba(93, 225, 228, 0.22);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(12px);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.definition-intro p {
+  margin: 0;
+  font-size: clamp(1.02rem, 2.3vw, 1.15rem);
+  line-height: 1.7;
+  text-wrap: balance;
 }
 
 .definition-card-stack li {
@@ -821,7 +853,7 @@ button:focus-visible {
 
 .license-list div {
   display: grid;
-  gap: 0.35rem;
+  gap: 0.45rem;
 }
 
 .license-list dt {
