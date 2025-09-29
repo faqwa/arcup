@@ -1,102 +1,212 @@
 ---
+const normalizedBase = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "");
+const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normalizedBase}/` : "/") : `${normalizedBase}${path}`);
 ---
-<main id="main-content" class="page-shell why-page" aria-labelledby="why-title">
-  <header class="why-header">
-    <h2 class="why-question">arc^s journey begins with reflection and responsibility:if everyone was making the same choices as me,<br>what world would we create?</h2>
-    <p>we build technology and conduct reserach to restore, heal, support<br>we work openly with curiosity, excitement and anticipation of a better world for all</p>
+
+<main id="main-content" class="page-shell page-why" aria-labelledby="why-title">
+  
+  <!-- HERO - Stark and Direct -->
+  <header class="why-hero-v2" aria-labelledby="why-title">
+    <h1 id="why-title">
+      what if everyone<br />made the same choices as you?
+    </h1>
+    <p class="why-hero-subtitle">what world would we create?</p>
   </header>
 
-  <section class="why-chat" aria-labelledby="why-chat-title">
-    <h2 id="why-chat-title" class="visually-hidden">Conversation preview</h2>
-    <div class="chat-window" role="article" aria-label="Conversation preview" aria-live="polite">
-      <header class="chat-header">
-        <div class="chat-avatar" aria-hidden="true"></div>
+  <!-- THE CHAT - Now the Star -->
+  <section class="why-chat-v2" aria-labelledby="chat-heading">
+    <h2 id="chat-heading" class="visually-hidden">Conversation about innovation</h2>
+    
+    <div class="chat-window-v2" role="article" aria-label="Conversation about innovation patterns">
+      <!-- Chat Header -->
+      <header class="chat-header-v2">
+        <div class="chat-avatar-v2" aria-hidden="true"></div>
         <div>
-          <p class="chat-title">#1businessBOT$$$Tips</p>
-          <p class="chat-subtitle">a biased conversation</p>
+          <p class="chat-title-v2">#1businessBOT$$$Tips</p>
+          <p class="chat-subtitle-v2">a biased conversation</p>
         </div>
       </header>
-      <div class="chat-body">
-        <p class="chat-timestamp">SUN, 28 SEP at 22:03</p>
-        <!-- Edit or reorder bubbles below to change the conversation script -->
-        <div class="chat-bubble bubble-left">
-          <p>what future would our choices create if we repeat the process of the past?</p>
-          <span class="timestamp">22:03</span>
-        </div>
-        <div class="chat-bubble bubble-right">
-          <p>Typically, innovation has followed wars, industrial booms-</p>
-          <span class="timestamp">22:03</span>
-        </div>
-        <div class="chat-bubble bubble-left">
-          <p>it is an old pattern</p>
-          <span class="timestamp">22:03</span>
-        </div>
-        <div class="chat-bubble bubble-right">
-          <p>a race for profit</p>
-          <span class="timestamp">22:03</span>
-        </div>
-        <div class="chat-bubble bubble-left">
-          <p> and the result ...</p>
-          <span class="timestamp">22:03</span>
-        </div>
-        <div class="chat-bubble bubble-right">
-          <p>patents? means safety! privatization? security! protection! ndas?</p>
-          <span class="timestamp">22:03</span>
-        </div>
-        <div class="chat-bubble bubble-left">
-          <p>idk</p>
-          <span class="timestamp">22:03</span>
-        </div>
-        <div class="chat-bubble bubble-right">
-          <p>money, scalabilty, entrepreneurs</p>
-          <span class="timestamp">22:03</span>
-        </div>
-        <div class="chat-bubble bubble-left">
-          <p>seems like concentration of power</p>
-          <span class="timestamp">22:03</span>
-        </div>
-        <div class="chat-bubble bubble-left">
-          <p>another hegemony...</p>
-          <span class="timestamp">22:03</span>
-        </div>
-        <div class="chat-bubble bubble-right">
-          <p> innovation, millionaires, </p>
-          <span class="timestamp">22:03</span>
-        </div>
-          <div class="chat-bubble bubble-left">
-          <p>at what cost tho</p>
-          <span class="timestamp">22:03</span>
-        </div>
-        <div class="chat-bubble bubble-right">
-          <p>multii-millionaires, billionaires</p>
-          <span class="timestamp">22:03</span>
-        </div>
-        <div class="chat-bubble bubble-left">
-          <p>ecocide, exploitation</p>
-          <span class="timestamp">22:04</span>
-        </div>
-        <div class="chat-bubble bubble-left">
-          <p>cultures erased, humanity lost</p>
-          <span class="timestamp">22:04</span>
-        </div>
-        <div class="chat-status" aria-hidden="true">delivered</div>
-      </div>
-    </div>
-  </section> 
 
-  <section class="why-invite" aria-labelledby="why-invite-title">
-    <h2 id="why-invite-title" class="visually-hidden">Invitation</h2>
-    <p>no copy/paste of the old playbook<br>instead, transparent, collabrative & fair</p>
-   <p>no need for business as usual<br>instead, success is measured by planetary and human health</p>
-    <p><strong>arc^ byali is my framework for collaboration and an open invitation to anyone ready to work differently</strong></p>
-    <div class="cta-group">
-      <a class="button" href="/how">Continue</a>
-      <a class="button button-outline" href="/join">Get involved</a>
+      <!-- Chat Messages -->
+      <div class="chat-body-v2">
+        <p class="chat-timestamp-v2">SUN, 28 SEP at 22:03</p>
+
+        <div class="chat-bubble-v2 bubble-left-v2">
+          <p>what future would our choices create if we repeat the process of the past?</p>
+          <span class="bubble-time">22:03</span>
+        </div>
+
+        <div class="chat-bubble-v2 bubble-right-v2">
+          <p>Typically, innovation has followed wars, industrial booms-</p>
+          <span class="bubble-time">22:03</span>
+        </div>
+
+        <div class="chat-bubble-v2 bubble-left-v2">
+          <p>it is an old pattern</p>
+          <span class="bubble-time">22:03</span>
+        </div>
+
+        <div class="chat-bubble-v2 bubble-right-v2">
+          <p>a race for profit</p>
+          <span class="bubble-time">22:03</span>
+        </div>
+
+        <div class="chat-bubble-v2 bubble-left-v2">
+          <p>and the result ...</p>
+          <span class="bubble-time">22:03</span>
+        </div>
+
+        <div class="chat-bubble-v2 bubble-right-v2">
+          <p>patents? means safety! privatization? security! protection! ndas?</p>
+          <span class="bubble-time">22:03</span>
+        </div>
+
+        <div class="chat-bubble-v2 bubble-left-v2">
+          <p>idk</p>
+          <span class="bubble-time">22:03</span>
+        </div>
+
+        <div class="chat-bubble-v2 bubble-right-v2">
+          <p>money, scalability, entrepreneurs</p>
+          <span class="bubble-time">22:03</span>
+        </div>
+
+        <div class="chat-bubble-v2 bubble-left-v2">
+          <p>seems like concentration of power</p>
+          <span class="bubble-time">22:03</span>
+        </div>
+
+        <div class="chat-bubble-v2 bubble-left-v2">
+          <p>another hegemony...</p>
+          <span class="bubble-time">22:03</span>
+        </div>
+
+        <div class="chat-bubble-v2 bubble-right-v2">
+          <p>innovation, millionaires,</p>
+          <span class="bubble-time">22:03</span>
+        </div>
+
+        <div class="chat-bubble-v2 bubble-left-v2">
+          <p>at what cost tho</p>
+          <span class="bubble-time">22:03</span>
+        </div>
+
+        <div class="chat-bubble-v2 bubble-right-v2">
+          <p>multi-millionaires, billionaires</p>
+          <span class="bubble-time">22:04</span>
+        </div>
+
+        <div class="chat-bubble-v2 bubble-left-v2">
+          <p>ecocide, exploitation</p>
+          <span class="bubble-time">22:04</span>
+        </div>
+
+        <div class="chat-bubble-v2 bubble-left-v2">
+          <p>cultures erased, humanity lost</p>
+          <span class="bubble-time">22:04</span>
+        </div>
+
+        <!-- THE PIVOT - New Ending -->
+        <div class="chat-pivot">
+          <div class="chat-bubble-v2 bubble-left-v2 bubble-highlight">
+            <p>so what do we do differently?</p>
+            <span class="bubble-time">22:05</span>
+          </div>
+
+          <div class="chat-bubble-v2 bubble-right-v2 bubble-highlight">
+            <p>refuse to repeat it.</p>
+            <span class="bubble-time">22:05</span>
+          </div>
+
+          <div class="chat-bubble-v2 bubble-left-v2 bubble-highlight">
+            <p>how?</p>
+            <span class="bubble-time">22:06</span>
+          </div>
+
+          <!-- Typing indicator -->
+          <div class="chat-typing" data-typing-indicator>
+            <div class="typing-bubble">
+              <span class="typing-dot"></span>
+              <span class="typing-dot"></span>
+              <span class="typing-dot"></span>
+            </div>
+          </div>
+        </div>
+
+        <p class="chat-status-v2">delivered</p>
+      </div>
     </div>
   </section>
 
-  <footer class="site-footer why-footer">
-    <p>arc^ by ali � open research and safety-first plasma tech � license: cc-by-sa (draft)</p>
-  </footer>
+  <!-- VISUAL BREAK -->
+  <div class="section-divider-v2" aria-hidden="true">
+    <span class="divider-label-v2">a different approach</span>
+  </div>
+
+  <!-- THE ANSWER -->
+  <section class="why-answer" aria-labelledby="answer-heading">
+    <header class="answer-header">
+      <h2 id="answer-heading">
+        arc^ refuses to copy/paste<br />the old playbook
+      </h2>
+    </header>
+
+    <div class="principle-cards-v2">
+      <article class="principle-card-v2">
+        <h3>transparent</h3>
+        <p>not hidden behind NDAs and patents</p>
+      </article>
+
+      <article class="principle-card-v2">
+        <h3>collaborative</h3>
+        <p>not competitive and extractive</p>
+      </article>
+
+      <article class="principle-card-v2">
+        <h3>health-measured</h3>
+        <p>not profit-obsessed at any cost</p>
+      </article>
+    </div>
+
+    <div class="answer-closing">
+      <p class="answer-statement">
+        <strong>arc^ byali</strong> is my framework for collaboration<br />
+        and an open invitation to anyone ready to work differently
+      </p>
+
+      <div class="cta-group">
+        <a class="button" href={withBase("/how")}>See How We Work Differently →</a>
+        <a class="button button-outline" href={withBase("/join")}>Get Involved</a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
+<footer class="site-footer">
+  <div class="footer-content">
+    <p class="footer-text">
+      arc^ by ali · open research and safety-first plasma tech
+    </p>
+    <p class="footer-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA</a> · 
+      <a href="https://ohwr.org/cern_ohl_s_v2.txt" target="_blank" rel="noopener noreferrer">CERN OHL-S</a> · 
+      <a href="https://www.gnu.org/licenses/agpl-3.0.en.html" target="_blank" rel="noopener noreferrer">AGPL-3.0</a>
+    </p>
+  </div>
+  <button type="button" data-motion-toggle class="button button-muted">Disable Motion</button>
+</footer>
+
+<script>
+  // Typing indicator animation
+  document.addEventListener('DOMContentLoaded', () => {
+    const typingIndicator = document.querySelector('[data-typing-indicator]');
+    
+    if (typingIndicator) {
+      // Show typing indicator after 2 seconds
+      setTimeout(() => {
+        typingIndicator.classList.add('is-visible');
+      }, 2000);
+    }
+  });
+</script>
