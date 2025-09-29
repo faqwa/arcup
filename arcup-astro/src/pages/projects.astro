@@ -2,63 +2,26 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ArcCanvas from "../components/ArcCanvas.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import ProjectsContent from "../components/ProjectsContent.astro";
 
-const description = "Projects and pilots emerging from the arc^ network.";
+const description = "Explore Arc^'s active research projects in plasma-activated water, ecosystem repair, and open hardware.";
 const siteUrl = Astro.site ? new URL("/projects", Astro.site).toString() : undefined;
 
 const seo = {
   canonical: siteUrl,
   openGraph: {
-    title: "arc^ projects",
+    title: "Arc^ Projects",
     description,
     url: siteUrl,
   },
   twitter: {
-    title: "arc^ projects",
+    title: "Arc^ Projects",
     description,
   },
 };
 ---
-<BaseLayout title="arc^ - projects" description={description} bodyClass="page-projects" seo={seo}>
+<BaseLayout title="arc^ - Projects" description={description} bodyClass="page-projects" seo={seo}>
   <ArcCanvas />
   <SiteHeader active="projects" />
-  <main id="main-content" class="page-shell page-projects">
-    <section class="projects-hero">
-      <p class="eyebrow">current pilots</p>
-      <h1>projects on the horizon</h1>
-      <p>
-        Explore the experiments, field trials, and collaborations that arc^ and its partners are preparing. Each project
-        prioritizes ecological repair, community stewardship, and open knowledge.
-      </p>
-    </section>
-
-    <section class="projects-grid" aria-label="Featured projects">
-      <article class="project-card">
-        <h2>Plasma water field trials</h2>
-        <p>Community labs measuring soil vitality, pathogen reduction, and crop resilience with open protocols.</p>
-      </article>
-      <article class="project-card">
-        <h2>Reciprocity fellowships</h2>
-        <p>Support for local stewards to lead monitoring, maintenance, and storytelling in their own contexts.</p>
-      </article>
-      <article class="project-card">
-        <h2>Commons infrastructure</h2>
-        <p>Shared tooling for documentation, licensing, and AI summarization so knowledge circulates responsibly.</p>
-      </article>
-    </section>
-
-    <section class="projects-cta">
-      <h2>Contribute a project</h2>
-      <p>
-        Have a site, community, or idea that could benefit from plasma-activated water research? Share it with the arc^
-        team to co-design a responsible activation.
-      </p>
-      <a class="button" href="/join">Talk with us</a>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <span>arc^ byali — projects rooted in reciprocity</span>
-    <button type="button" data-motion-toggle class="button button-muted">Disable motion</button>
-  </footer>
+  <ProjectsContent />
 </BaseLayout>
