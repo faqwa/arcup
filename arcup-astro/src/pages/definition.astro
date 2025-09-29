@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ArcCanvas from "../components/ArcCanvas.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import DefinitionContent from "../components/DefinitionContent.astro";
+
+const description = "arc^ is a regenerative research and stewardship collective exploring plasma-activated water and community-powered repair.";
+const canonical = Astro.site ? new URL("/", Astro.site).toString() : undefined;
+
+const seo = {
+  canonical,
+  robots: "noindex, follow",
+  openGraph: {
+    title: "arc^ definition",
+    description,
+    url: canonical,
+  },
+  twitter: {
+    title: "arc^ definition",
+    description,
+  },
+};
+---
+<BaseLayout title="arc^ definition" description={description} bodyClass="page-definition" seo={seo}>
+  <ArcCanvas />
+  <SiteHeader active="home" />
+  <DefinitionContent />
+</BaseLayout>
+
+

@@ -1,0 +1,70 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ArcCanvas from "../components/ArcCanvas.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+
+const description = "Join the arc^ commons and help build regenerative, open technology.";
+const siteUrl = Astro.site ? new URL("/join", Astro.site).toString() : undefined;
+
+const seo = {
+  canonical: siteUrl,
+  openGraph: {
+    title: "Join arc^",
+    description,
+    url: siteUrl,
+  },
+  twitter: {
+    title: "Join arc^",
+    description,
+  },
+};
+---
+<BaseLayout title="arc^ - join" description={description} bodyClass="page-join" seo={seo}>
+  <ArcCanvas />
+  <SiteHeader active="join" />
+  <main id="main-content" class="page-shell page-join">
+    <section class="join-hero">
+      <p class="eyebrow">community invitation</p>
+      <h1>join the arc^ commons</h1>
+      <p>
+        We are building a network of researchers, stewards, technologists, and artists who want to advance plasma-activated
+        water with openness, safety, and reciprocity. Choose how you would like to participate.
+      </p>
+    </section>
+
+    <section class="join-options" aria-label="Ways to collaborate">
+      <article class="join-card">
+        <h2>Collaborate on research</h2>
+        <p>Bring a study, lab, or hypothesis and co-design responsible experiments with the arc^ team.</p>
+        <a class="button button-outline" href="mailto:hello@arcup.example">Email us</a>
+      </article>
+      <article class="join-card">
+        <h2>Steward a site</h2>
+        <p>Host a pilot in your community, share monitoring data, and co-author the learnings.</p>
+        <a class="button button-outline" href="#steward-form">Express interest</a>
+      </article>
+      <article class="join-card">
+        <h2>Support the commons</h2>
+        <p>Contribute governance, funding, or documentation support to strengthen open infrastructure.</p>
+        <a class="button button-outline" href="#support">Support the work</a>
+      </article>
+    </section>
+
+    <section class="join-cta">
+      <h2>Your next step</h2>
+      <p>
+        Share how you would like to participate, and we will reach out with next actions. In the meantime, explore the
+        projects and framework to see how arc^ teams move.
+      </p>
+      <div class="cta-group">
+        <a class="button" href="/projects">View projects</a>
+        <a class="button button-outline" href="/how">See how we work</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>arc^ byali — building the commons together</span>
+    <button type="button" data-motion-toggle class="button button-muted">Disable motion</button>
+  </footer>
+</BaseLayout>

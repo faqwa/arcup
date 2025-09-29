@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ArcCanvas from "../components/ArcCanvas.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import WhyContent from "../components/WhyContent.astro";
+
+const description = "Arc^ invites reflection on technology, power, and the incentives behind innovation.";
+const siteUrl = Astro.site ? new URL("/why", Astro.site).toString() : undefined;
+
+const seo = {
+  canonical: siteUrl,
+  openGraph: {
+    title: "Why Arc^",
+    description,
+    url: siteUrl,
+  },
+  twitter: {
+    title: "Why Arc^",
+    description,
+  },
+};
+---
+<BaseLayout title="Arc^ - Why" description={description} bodyClass="page-why" seo={seo}>
+  <ArcCanvas />
+  <SiteHeader active="why" />
+  <WhyContent />
+</BaseLayout>

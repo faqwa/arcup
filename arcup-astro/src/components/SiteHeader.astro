@@ -1,0 +1,31 @@
+---
+const { active = "home" } = Astro.props;
+
+const navItems = [
+  { key: "home", label: "home", href: "/" },
+  { key: "why", label: "why?", href: "/why" },
+  { key: "how", label: "how?", href: "/how" },
+  { key: "projects", label: "projects", href: "/projects" },
+  { key: "join", label: "join", href: "/join" },
+];
+---
+<header class="site-header">
+  <div class="site-brand">
+    <a href="/" class="site-brand__link">arc^ byali</a>
+  </div>
+  <nav aria-label="Primary navigation">
+    <ul class="site-nav">
+      {navItems.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class={`site-nav__link ${item.key === active ? "is-active" : ""}`.trim()}
+            aria-current={item.key === active ? "page" : undefined}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>

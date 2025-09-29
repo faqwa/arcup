@@ -1,0 +1,105 @@
+---
+---
+<main id="main-content" class="page-shell definition-page" aria-labelledby="definition-heading">
+  <header class="definition-header">
+    <div class="definition-title-row">
+      <h1>
+        arc^
+        <span>(noun, verb, movement)</span>
+      </h1>
+      <div class="pronunciation-inline">
+        <span class="pronunciation-text">/'ark-up/</span>
+        <button type="button" class="audio-button" data-audio-trigger aria-pressed="false" aria-label="Play pronunciation">
+          <span aria-hidden="true" class="icon icon-sound">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" role="presentation">
+              <path d="M4 9v6h3l5 4V5L7 9H4Z" fill="currentColor" />
+              <path d="M16.5 8.5a4 4 0 0 1 0 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              <path d="M19.5 6a7 7 0 0 1 0 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+    <!-- Adjust this sentence if you want to change the one-line definition lead-in -->
+    <p class="definition-lede">
+      A collective practice for moving toward regenerative futures through plasma research, open science, and community
+      stewardship.
+    </p>
+    <!-- Move or rewrite this tag line if you prefer a different placement for the lexicon source -->
+    <p class="definition-eyebrow">lexicon by ali</p>
+  </header>
+
+  <section class="definition-entries" aria-label="Definitions">
+    <div class="definition-card-stack">
+      <ul>
+        <li>
+          <span class="definition-emoji" aria-hidden="true">&#x1F9EA;</span>
+          <p>
+            An interdisciplinary research initiative investigating plasma-activated water as a tool for ecological
+            restoration and sustainable systems.
+          </p>
+        </li>
+        <li>
+          <span class="definition-emoji" aria-hidden="true">&#x1F30D;</span>
+          <p>
+            A collective platform for open science and ethics, advancing planetary health and community-driven repair.
+          </p>
+        </li>
+        <li>
+          <span class="definition-emoji" aria-hidden="true">&#x1F3A4;</span>
+          <p>
+            (Australian slang) to arc up, meaning to rise, take action, or become loudly assertive or upset in defense of
+            people and the planet.
+          </p>
+        </li>
+        <li>
+          <span class="definition-emoji" aria-hidden="true">&#x1F91D;</span>
+          <p>A commitment to human dignity, environmental stewardship, and future-conscious innovation.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer definition-footer">
+  <span>arc^ byali - living dictionary entry</span>
+  <button type="button" data-motion-toggle class="button button-muted">Disable motion</button>
+</footer>
+
+<audio data-audio-source preload="none" aria-hidden="true">
+  <source src="/audio/arcup-pronounce.ogg" type="audio/ogg" />
+</audio>
+<script is:inline>
+  (() => {
+    const trigger = document.querySelector('[data-audio-trigger]');
+    const audio = document.querySelector('[data-audio-source]');
+
+    if (!trigger || !audio) {
+      return;
+    }
+
+    const updateState = (isPlaying) => {
+      trigger.setAttribute('aria-pressed', String(isPlaying));
+      trigger.dataset.state = isPlaying ? 'playing' : 'idle';
+    };
+
+    trigger.addEventListener('click', async () => {
+      try {
+        if (audio.paused) {
+          await audio.play();
+          updateState(true);
+        } else {
+          audio.pause();
+          audio.currentTime = 0;
+          updateState(false);
+        }
+      } catch (error) {
+        console.warn('Unable to play pronunciation audio', error);
+      }
+    });
+
+    audio.addEventListener('ended', () => {
+      updateState(false);
+    });
+  })();
+</script>
