@@ -1,13 +1,28 @@
 ---
-const normalizedBase = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "");
-export function withBase(path: string): string {
-  return path === "/"
-    ? normalizedBase
-      ? `${normalizedBase}/`
-      : "/"
-    : `${normalizedBase}${path}`;
+/**
+ * Portable withBase shim — works across Astro versions / build environments.
+ * Ensures a stable base path and defines `globalThis.normalizedBase` for any compiled chunks
+ * that expect that symbol.
+ */
+const _BASE = (import.meta?.env?.BASE_URL ?? "/").replace(/\/+$/, "") || "";
+// Expose normalizedBase globally so compiled chunks referencing it won't crash
+if (typeof globalThis.normalizedBase === "undefined") {
+  globalThis.normalizedBase = _BASE;
+}
+
+export function withBase(path) {
+  // If caller asks for root "/", follow Astro behavior of returning base + "/"
+  if (path === "/") {
+    return globalThis.normalizedBase ? `${globalThis.normalizedBase}/` : "/";
+  }
+  // Ensure a leading slash for the path portion
+  const p = path && path.startsWith("/") ? path : `/${(path ?? "").replace(/^\/+/, "")}`;
+  return (globalThis.normalizedBase === "" || globalThis.normalizedBase === "/")
+    ? p
+    : `${globalThis.normalizedBase}${p}`;
 }
 ---
+
 <main id="main-content" class="page-shell definition-page" aria-labelledby="definition-heading">
   <header class="definition-header">
     <p class="definition-subheading">what if we did science that could create a better world?</p>

@@ -1,0 +1,210 @@
+---
+const normalizedBase = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "");
+const withBase = (path) => (path === "/" ? (normalizedBase ? `${normalizedBase}/` : "/") : `${normalizedBase}${path}`);
+---
+
+<main id="main-content" class="page-shell page-join" aria-labelledby="join-title">
+  
+  <!-- HERO -->
+  <header class="join-hero" aria-labelledby="join-title">
+    <h1 id="join-title">Join Arc^</h1>
+    <p class="join-lede">Arc^ is a framework for building technology differently. Whether you're a student, researcher, builder, or community partner — if you're ready to work openly and ethically, there's a place for you here.</p>
+  </header>
+
+  <!-- GETTING STARTED -->
+  <section class="join-getting-started surface-panel">
+    <h2>Getting Started</h2>
+    <p class="section-intro">New to Arc^ or plasma research? Start here:</p>
+    
+    <div class="getting-started-grid">
+      <article class="start-card">
+        <span class="start-number">01</span>
+        <h3>Read the Framework</h3>
+        <p>Understand RE:TECH principles and how Arc^ approaches research differently.</p>
+        <a href={withBase("/how")} class="button button-outline">Explore How We Work</a>
+      </article>
+
+      <article class="start-card">
+        <span class="start-number">02</span>
+        <h3>Browse Projects</h3>
+        <p>Find a project that matches your interests or skills. Start with replication tasks.</p>
+        <a href={withBase("/projects")} class="button button-outline">View Active Projects</a>
+      </article>
+
+      <article class="start-card">
+        <span class="start-number">03</span>
+        <h3>Reach Out</h3>
+        <p>Contact Ali to discuss how you'd like to contribute. No formal credentials required.</p>
+        <a href="mailto:ali@xbyali.page?subject=Joining%20Arc^" class="button button-outline">Get in Touch</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- WAYS TO CONTRIBUTE -->
+  <div class="section-divider" aria-hidden="true">
+    <span class="divider-label">ways to contribute</span>
+  </div>
+
+  <section class="contribute-section">
+    <header class="section-header">
+      <h2>How You Can Contribute</h2>
+      <p class="lead">Arc^ needs diverse skills and perspectives. Find the path that fits you.</p>
+    </header>
+
+    <div class="contribute-grid">
+      <article class="contribute-card surface-panel">
+        <div class="card-icon">🔬</div>
+        <h3>Research Contributors</h3>
+        <p>Help advance plasma science through replication, analysis, and documentation.</p>
+        <ul class="contribute-tasks">
+          <li>Replicate existing protocols</li>
+          <li>Review literature and methods</li>
+          <li>Analyze open datasets</li>
+          <li>Document experimental procedures</li>
+          <li>Design controlled experiments</li>
+        </ul>
+        <p class="ideal-for"><strong>Ideal for:</strong> Students, independent researchers, scientists, data analysts</p>
+        <a href="mailto:ali@xbyali.page?subject=Research%20Contribution" class="button">Express Interest</a>
+      </article>
+
+      <article class="contribute-card surface-panel">
+        <div class="card-icon">🛠</div>
+        <h3>Technical Contributors</h3>
+        <p>Build open hardware, improve documentation, or develop tools for collaborative research.</p>
+        <ul class="contribute-tasks">
+          <li>Design plasma device components</li>
+          <li>Create CAD files and BOMs</li>
+          <li>Write safety protocols</li>
+          <li>Build data analysis tools</li>
+          <li>Review technical documentation</li>
+        </ul>
+        <p class="ideal-for"><strong>Ideal for:</strong> Engineers, makers, designers, developers, technical writers</p>
+        <a href="mailto:ali@xbyali.page?subject=Technical%20Contribution" class="button">Express Interest</a>
+      </article>
+
+      <article class="contribute-card surface-panel">
+        <div class="card-icon">🌱</div>
+        <h3>Community Partners</h3>
+        <p>Test applications in real-world contexts while co-designing with local knowledge.</p>
+        <ul class="contribute-tasks">
+          <li>Host field trials on your land</li>
+          <li>Monitor ecological outcomes</li>
+          <li>Share traditional knowledge</li>
+          <li>Co-design experiments</li>
+          <li>Contribute local expertise</li>
+        </ul>
+        <p class="ideal-for"><strong>Ideal for:</strong> Farmers, gardeners, land stewards, community organizers</p>
+        <a href="mailto:ali@xbyali.page?subject=Community%20Partnership" class="button">Express Interest</a>
+      </article>
+
+      <article class="contribute-card surface-panel">
+        <div class="card-icon">✍️</div>
+        <h3>Documentation & Translation</h3>
+        <p>Make Arc^ accessible by improving documentation and translating content.</p>
+        <ul class="contribute-tasks">
+          <li>Improve clarity of protocols</li>
+          <li>Translate documentation</li>
+          <li>Create visual guides</li>
+          <li>Edit for accessibility</li>
+          <li>Simplify technical language</li>
+        </ul>
+        <p class="ideal-for"><strong>Ideal for:</strong> Writers, translators, educators, illustrators</p>
+        <a href="mailto:ali@xbyali.page?subject=Documentation%20Contribution" class="button">Express Interest</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- EXPECTATIONS -->
+  <div class="section-divider" aria-hidden="true">
+    <span class="divider-label">what to expect</span>
+  </div>
+
+  <section class="expectations-section">
+    <header class="section-header">
+      <h2>What to Expect</h2>
+      <p class="lead">Contributing to Arc^ means working within a set of shared commitments.</p>
+    </header>
+
+    <div class="expectations-grid">
+      <article class="expectation-card surface-panel">
+        <h3>Open by Default</h3>
+        <p>All work is documented and shared openly. Experiments are logged from day one, not just when results are favorable. Data, methods, and designs remain in the commons.</p>
+      </article>
+
+      <article class="expectation-card surface-panel">
+        <h3>Safety First</h3>
+        <p>High-voltage plasma requires proper protocols. Safety concerns are non-negotiable. If you're unsure about a procedure, ask before proceeding.</p>
+      </article>
+
+      <article class="expectation-card surface-panel">
+        <h3>Iterative & Humble</h3>
+        <p>Mistakes are expected and documented. A single study isn't proof. Replication across contexts is how we build confidence in results.</p>
+      </article>
+
+      <article class="expectation-card surface-panel">
+        <h3>Attribution & Credit</h3>
+        <p>Everyone who contributes gets credited. Attribution ledgers track all contributions — from fieldwork to code to community knowledge.</p>
+      </article>
+
+      <article class="expectation-card surface-panel">
+        <h3>Consent-Based</h3>
+        <p>Communities are partners, not subjects. All engagement is informed, voluntary, and shaped by local knowledge and priorities.</p>
+      </article>
+
+      <article class="expectation-card surface-panel">
+        <h3>No Extraction</h3>
+        <p>Arc^ refuses extractive models. Knowledge stays open. Commercial use requires benefit-sharing agreements that return value to the commons.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section surface-panel">
+    <h2>Frequently Asked Questions</h2>
+    
+    <div class="faq-list">
+      <article class="faq-item">
+        <h3>Do I need formal credentials or a degree?</h3>
+        <p>No. Arc^ values curiosity, rigor, and care over credentials. What matters is your willingness to learn, document thoroughly, and work within safety protocols.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>How much time do I need to commit?</h3>
+        <p>There's no minimum commitment. Contribute at your own pace. Some people start with a single replication study; others become long-term collaborators. Both are valuable.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>Can I contribute remotely?</h3>
+        <p>Yes. Many contributions — literature reviews, data analysis, documentation, CAD design — can be done remotely. Field-based projects require physical presence.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>What if I want to use Arc^ research commercially?</h3>
+        <p>Arc^ operates under open licenses that permit commercial use with conditions. Contact Ali to discuss benefit-sharing agreements that return value to the commons.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>How does Arc^ handle intellectual property?</h3>
+        <p>Knowledge stays in the commons. Documentation is CC BY-NC-SA, hardware is CERN OHL-S, software is AGPL-3.0, and data is ODC-BY or CC BY-SA. No patents.</p>
+      </article>
+
+      <article class="faq-item">
+        <h3>Is Arc^ accepting interns or paid positions?</h3>
+        <p>Arc^ is currently a volunteer-led framework. As the community grows, paid roles may emerge. For now, contributions are collaborative and unpaid.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta surface-panel">
+    <h2>Ready to Begin?</h2>
+    <p>The best way to start is to reach out. Share what interests you, what skills you bring, and how you'd like to contribute. No formal applications — just a conversation.</p>
+    <a href="mailto:ali@xbyali.page?subject=Ready%20to%20Join%20Arc^" class="button button-large">Contact Ali</a>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>arc^ by ali — collaborative research for planetary repair</span>
+  <button type="button" data-motion-toggle class="button button-muted">Disable Motion</button>
+</footer>
