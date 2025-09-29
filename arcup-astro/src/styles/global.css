@@ -105,7 +105,7 @@ button:focus-visible {
   font-size: clamp(1.25rem, 3vw, 1.6rem);
   font-weight: 700;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   color: var(--color-text);
   text-decoration: none;
 }
@@ -231,6 +231,11 @@ button:focus-visible {
   justify-self: end;
 }
 
+.definition-eyebrow--top {
+  justify-self: end;
+  align-self: start;
+}
+
 .definition-title-row {
   display: flex;
   flex-wrap: wrap;
@@ -328,6 +333,17 @@ button:focus-visible {
   margin: 0;
   color: var(--color-text-muted);
   font-size: 0.98rem;
+}
+
+.definition-cta-group {
+  display: flex;
+  justify-content: center;
+  gap: clamp(0.75rem, 2.5vw, 1.5rem);
+  flex-wrap: wrap;
+}
+
+.definition-cta-group .button {
+  min-width: 10rem;
 }
 
 .definition-footer {
@@ -691,36 +707,41 @@ button:focus-visible {
 }
 
 .approach-body {
-  display: grid;
-  gap: clamp(1.4rem, 4vw, 2.2rem);
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  align-items: start;
-}
-
-.approach-summary h3 {
-  font-size: 1.4rem;
-}
-
-.approach-pill-list {
   margin: 0;
-  padding: 0;
-  list-style: none;
+}
+
+.approach-matrix {
   display: grid;
-  gap: 1rem;
+  gap: clamp(1rem, 3vw, 1.8rem);
 }
 
-.approach-pill-list li {
-  background: rgba(14, 24, 44, 0.75);
-  border: 1px solid rgba(93, 225, 228, 0.18);
-  border-radius: var(--radius-md);
-  padding: 1rem 1.1rem;
+.approach-card--core {
+  grid-column: 1 / -1;
 }
 
-.approach-pill-list strong {
-  display: block;
-  margin-bottom: 0.35rem;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
+@media (min-width: 40rem) {
+  .approach-matrix {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  .approach-matrix {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .approach-card--core {
+    grid-column: 1 / span 2;
+  }
+}
+
+.approach-card h3 {
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+
+.approach-card--core p {
+  max-width: 52ch;
 }
 
 .principles-grid,
@@ -998,6 +1019,7 @@ button:focus-visible {
     scroll-behavior: auto !important;
   }
 }
+
 
 
 
