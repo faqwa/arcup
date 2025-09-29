@@ -719,6 +719,7 @@ button:focus-visible {
   grid-column: 1 / -1;
 }
 
+
 @media (min-width: 40rem) {
   .approach-matrix {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1025,3 +1026,137 @@ button:focus-visible {
 
 
 
+.approach-summary {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem 1.75rem;
+}
+
+.approach-summary h3 {
+  margin: 0;
+}
+
+.approach-summary p {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.approach-pill-list {
+  margin: 0;
+  padding-left: 1.5rem;
+  display: grid;
+  gap: 1.1rem;
+  color: var(--color-text-muted);
+}
+
+.approach-pill-list strong {
+  color: var(--color-text);
+}
+
+.principles-compact {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.principle-group ul {
+  margin: 1rem 0 0 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.principle-group strong {
+  color: var(--color-primary-bright);
+}
+
+.method-example {
+  margin-top: 2rem;
+  max-width: 70ch;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.example-steps {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  color: var(--color-text-muted);
+}
+
+.example-steps strong {
+  color: var(--color-text);
+}
+
+.example-outcome {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-primary-bright);
+}
+
+.safety-framework ul {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  color: var(--color-text-muted);
+}
+
+.safety-resources {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.safety-callout {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(10, 147, 150, 0.12);
+  border: 1px solid rgba(93, 225, 228, 0.35);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.collaboration-paths {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 2rem;
+}
+
+.path-card {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.path-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.path-tasks {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}
+
+.join-note {
+  margin-top: 2rem;
+  text-align: center;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+}
