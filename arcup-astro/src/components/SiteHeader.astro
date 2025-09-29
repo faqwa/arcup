@@ -1,17 +1,25 @@
 ---
 const { active = "home" } = Astro.props;
 
+const normalizedBase = import.meta.env.BASE_URL.replace(/\/$/, "");
+const withBase = (path) =>
+  path === "/"
+    ? normalizedBase
+      ? `${normalizedBase}/`
+      : "/"
+    : `${normalizedBase}${path}`;
+
 const navItems = [
-  { key: "home", label: "home", href: "/" },
-  { key: "why", label: "why?", href: "/why" },
-  { key: "how", label: "how?", href: "/how" },
-  { key: "projects", label: "projects", href: "/projects" },
-  { key: "join", label: "join", href: "/join" },
+  { key: "home", label: "home", href: withBase("/") },
+  { key: "why", label: "why?", href: withBase("/why") },
+  { key: "how", label: "how?", href: withBase("/how") },
+  { key: "projects", label: "projects", href: withBase("/projects") },
+  { key: "join", label: "join", href: withBase("/join") },
 ];
 ---
 <header class="site-header">
   <div class="site-brand">
-    <a href="/" class="site-brand__link">arc^ byali</a>
+    <a href={withBase("/")} class="site-brand__link">arc^ byali</a>
   </div>
   <nav aria-label="Primary navigation">
     <ul class="site-nav">
