@@ -1,11 +1,12 @@
 ---
 const normalizedBase = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "");
-const withBase = (path) =>
-  path === "/"
+export function withBase(path: string): string {
+  return path === "/"
     ? normalizedBase
       ? `${normalizedBase}/`
       : "/"
     : `${normalizedBase}${path}`;
+}
 ---
 <main id="main-content" class="page-shell definition-page" aria-labelledby="definition-heading">
   <header class="definition-header">

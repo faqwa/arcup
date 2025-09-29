@@ -1,0 +1,267 @@
+---
+const normalizedBase = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "");
+const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normalizedBase}/` : "/") : `${normalizedBase}${path}`);
+---
+
+<main id="main-content" class="page-shell page-how" aria-labelledby="how-title">
+  
+  <!-- HERO SECTION -->
+  <header class="how-hero" aria-labelledby="how-title">
+    <p class="hero-eyebrow">the answer to "how?"</p>
+    <h1 id="how-title">after the question comes the practice</h1>
+    <div class="hero-subtitle">
+      <p>This is how we refuse to repeat history.</p>
+      <p>This is how we build technology that serves life.</p>
+      <p>This is how we turn principles into protocols.</p>
+    </div>
+  </header>
+
+  <!-- RE:TECH SECTION -->
+  <section id="retech" class="retech-section" aria-labelledby="retech-title">
+    <div class="section-divider" aria-hidden="true">
+      <span class="divider-label">our foundation</span>
+    </div>
+    
+    <header class="section-header">
+      <h2 id="retech-title">RE:TECH: Refusing Extractive Technology</h2>
+      <div class="retech-intro">
+        <p class="retech-statement">For 100+ years, innovation meant:<br><strong>war → industry → patents → profit → power → harm</strong></p>
+        <p class="retech-question">We asked: what if we stopped?</p>
+        <p>What if every choice was filtered through one question: <strong>"If we build this, what world does it create?"</strong></p>
+        <p>If the answer is extraction, exploitation, or ecocide — we don't build it.<br>If the answer is repair, regeneration, or restoration — we move forward.</p>
+        <p class="retech-definition">This is RE:TECH.</p>
+      </div>
+    </header>
+
+    <div class="retech-commitments">
+      <article class="commitment-card surface-panel">
+        <h3>Open by default, non-extractive by design</h3>
+        <p>Research is public from day one. Knowledge stays in the commons. No patents. No paywalls. No proprietary lockdowns.</p>
+      </article>
+
+      <article class="commitment-card surface-panel">
+        <h3>Future-conscious at every scale</h3>
+        <p>We ask "what happens in 10 years?" before we build anything. Short-term wins don't justify long-term harm.</p>
+      </article>
+
+      <article class="commitment-card surface-panel">
+        <h3>Ecological interdependence is reality</h3>
+        <p>Humans aren't separate from nature — we're part of living systems. Our work respects and repairs the web we're woven into.</p>
+      </article>
+
+      <article class="commitment-card surface-panel">
+        <h3>Safety is non-negotiable</h3>
+        <p>High-voltage plasma is dangerous. Ecological applications need monitoring. If harm is likely — weaponization, surveillance, ecocide — we stop.</p>
+      </article>
+    </div>
+
+    <p class="section-note">
+      RE:TECH is Arc^'s design posture — the values that guide every experiment, conversation, and choice.
+      <a href="https://xbyali.page/retech" class="external-link">Read the full RE:TECH framework →</a>
+    </p>
+  </section>
+
+  <!-- PRINCIPLES SECTION -->
+  <section id="principles" class="principles-section" aria-labelledby="principles-title">
+    <div class="section-divider" aria-hidden="true">
+      <span class="divider-label">our constraints</span>
+    </div>
+
+    <header class="section-header">
+      <h2 id="principles-title">Lines in the Sand</h2>
+      <p class="lead">These aren't aspirations — they're constraints that guide every experiment, conversation, and design choice.</p>
+    </header>
+
+    <div class="principles-grid">
+      <article class="principle-group surface-panel">
+        <h3>Who We Protect</h3>
+        <ul>
+          <li><strong>Human dignity first.</strong> No exploitation, extractive labor, or coercion. Contributors are resourced and credited.</li>
+          <li><strong>Center the margins.</strong> Prioritize perspectives from communities most impacted by environmental harm and least served by existing systems.</li>
+          <li><strong>No harm to non-humans.</strong> No invasive animal testing. We use observation, eDNA, and non-invasive methods to study ecosystems.</li>
+        </ul>
+      </article>
+
+      <article class="principle-group surface-panel">
+        <h3>How We Practice</h3>
+        <ul>
+          <li><strong>Iterative humility.</strong> We hypothesis → test → document → share → revise. Mistakes are expected; hiding them isn't.</li>
+          <li><strong>Consent-based participation.</strong> Communities are partners, not subjects. Engagement is informed, voluntary, and shaped by local knowledge.</li>
+          <li><strong>Replicate before we claim.</strong> A single study isn't proof. Results become recommendations only after independent replication.</li>
+        </ul>
+      </article>
+
+      <article class="principle-group surface-panel">
+        <h3>What We Refuse</h3>
+        <ul>
+          <li><strong>No weaponization.</strong> Plasma for harm, surveillance, or control is out of scope.</li>
+          <li><strong>No patent lockdown.</strong> Knowledge stays open. Commercial use requires benefit-sharing back to the commons.</li>
+          <li><strong>No "move fast and break things."</strong> Speed without safety is recklessness. We take time to get it right.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- METHOD SECTION -->
+  <section id="method" class="method-section" aria-labelledby="method-title">
+    <div class="section-divider" aria-hidden="true">
+      <span class="divider-label">our process</span>
+    </div>
+
+    <header class="section-header">
+      <h2 id="method-title">From Idea to Impact</h2>
+      <p class="lead">Most research happens behind closed doors. Results appear fully formed, polished, ready to monetize. We do the opposite.</p>
+      <div class="method-philosophy">
+        <p>We document from day zero. We show our mistakes. We invite scrutiny. We share everything.</p>
+        <p><strong>This is what accountability looks like in practice:</strong></p>
+      </div>
+    </header>
+
+    <ol class="method-steps">
+      <li class="method-step">
+        <span class="step-badge">01</span>
+        <div class="step-content">
+          <h3>Document Early</h3>
+          <p>Experiments are logged from the idea stage, not only after results appear.</p>
+        </div>
+      </li>
+
+      <li class="method-step">
+        <span class="step-badge">02</span>
+        <div class="step-content">
+          <h3>Show the Work</h3>
+          <p>Methods, parameters, safety notes, raw data, decisions, and rationale are published.</p>
+        </div>
+      </li>
+
+      <li class="method-step">
+        <span class="step-badge">03</span>
+        <div class="step-content">
+          <h3>Invite Review</h3>
+          <p>Data lives in shared notebooks for peer feedback, replication, and critique.</p>
+        </div>
+      </li>
+
+      <li class="method-step">
+        <span class="step-badge">04</span>
+        <div class="step-content">
+          <h3>Track Status</h3>
+          <p>Each project carries WIP notes, status indicators, and changelogs that surface decisions.</p>
+        </div>
+      </li>
+
+      <li class="method-step">
+        <span class="step-badge">05</span>
+        <div class="step-content">
+          <h3>Credit Everyone</h3>
+          <p>Attribution ledgers map contributions. Public outputs cite contributors and partners.</p>
+        </div>
+      </li>
+
+      <li class="method-step">
+        <span class="step-badge">06</span>
+        <div class="step-content">
+          <h3>Co-Design with Consent</h3>
+          <p>Communities are partners. Engagement is informed, voluntary, and shaped by local insight.</p>
+        </div>
+      </li>
+
+      <li class="method-step">
+        <span class="step-badge">07</span>
+        <div class="step-content">
+          <h3>Replicate Before We Claim</h3>
+          <p>Findings become claims only after independent replication and safety checks.</p>
+        </div>
+      </li>
+    </ol>
+
+    <!-- EXAMPLE -->
+    <article class="method-example surface-panel">
+      <h3>What This Looks Like in Practice</h3>
+      <p class="example-scenario"><strong>Scenario:</strong> A community garden wants to test if plasma-activated water improves native plant germination.</p>
+
+      <ol class="example-steps">
+        <li><strong>Document early:</strong> Hypothesis, equipment specs, and safety protocols published in GitHub repo before starting.</li>
+        <li><strong>Show the work:</strong> Plasma device schematics (CERN OHL), treatment parameters, seed sources, soil composition — all logged openly.</li>
+        <li><strong>Invite review:</strong> Local ecologists and safety experts review protocol before experiments begin.</li>
+        <li><strong>Track status:</strong> Experiment marked "WIP — Week 3 of 8" with live updates in shared notebook.</li>
+        <li><strong>Credit everyone:</strong> Garden members, equipment designers, and reviewers all listed in final report.</li>
+        <li><strong>Co-design:</strong> Garden community chooses which native species to test based on restoration goals.</li>
+        <li><strong>Replicate:</strong> Protocol shared so other gardens can test with their local species before we make claims.</li>
+      </ol>
+
+      <p class="example-outcome"><strong>Outcome:</strong> Data stays open (CC-BY-SA), hardware designs stay open (CERN OHL), and the garden owns the knowledge about their land.</p>
+    </article>
+
+    <p class="section-note">Iterative humility is normal. Accessibility matters: content is written for mixed backgrounds and translated where possible.</p>
+  </section>
+
+  <!-- COLLABORATION SECTION -->
+  <section id="collaborate" class="collaborate-section" aria-labelledby="collaborate-title">
+    <div class="section-divider" aria-hidden="true">
+      <span class="divider-label">join the practice</span>
+    </div>
+
+    <header class="section-header">
+      <h2 id="collaborate-title">Arc^ Needs You</h2>
+      <div class="collaborate-intro">
+        <p>Not your résumé. Not your credentials.</p>
+        <p>Your curiosity. Your skills. Your care.</p>
+        <p class="collaborate-statement">Whether you're a student, scientist, gardener, or tinkerer — if you're ready to build technology that serves life, there's a place for you here.</p>
+      </div>
+    </header>
+
+    <div class="collaboration-paths">
+      <article class="path-card surface-panel">
+        <span class="path-icon" aria-hidden="true">🔬</span>
+        <h3>Research Contributors</h3>
+        <p>Help with literature reviews, experimental design, data analysis, or replication studies. Perfect for students, independent researchers, or anyone curious about plasma science.</p>
+        <ul class="path-tasks">
+          <li>Review existing PAW literature</li>
+          <li>Design controlled experiments</li>
+          <li>Analyze open datasets</li>
+          <li>Replicate studies in new contexts</li>
+        </ul>
+        <a href="https://github.com/faqwa/arcup/discussions/categories/research" class="button">Browse Research Discussions</a>
+      </article>
+
+      <article class="path-card surface-panel">
+        <span class="path-icon" aria-hidden="true">🛠</span>
+        <h3>Technical Contributors</h3>
+        <p>Improve documentation, design open hardware, write safety protocols, or build tools. Engineers, designers, and makers welcome.</p>
+        <ul class="path-tasks">
+          <li>Design plasma devices (CAD, circuit design)</li>
+          <li>Write clear safety documentation</li>
+          <li>Build data analysis tools</li>
+          <li>Review technical protocols</li>
+        </ul>
+        <a href="https://github.com/faqwa/arcup/issues" class="button">See Open Tasks</a>
+      </article>
+
+      <article class="path-card surface-panel">
+        <span class="path-icon" aria-hidden="true">🌱</span>
+        <h3>Community Partners</h3>
+        <p>Test PAW applications in real-world contexts — farms, gardens, water systems. You bring local knowledge; we bring research rigor and safety oversight.</p>
+        <ul class="path-tasks">
+          <li>Test PAW on local soil/plants</li>
+          <li>Monitor long-term ecological effects</li>
+          <li>Share traditional/local knowledge</li>
+          <li>Co-design experiments for your context</li>
+        </ul>
+        <a href="mailto:ali@xbyali.page" class="button">Propose a Partnership</a>
+      </article>
+    </div>
+
+    <aside class="collaborate-note surface-panel">
+      <h3>New to Plasma Research?</h3>
+      <p>No problem. Arc^ is designed for diverse skill levels. Start by reading existing discussions, reviewing safety protocols, or just introducing yourself.</p>
+      <a href={withBase("/join")} class="button button-outline">Getting Started Guide</a>
+    </aside>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>arc^ by ali — pathways for shared stewardship</span>
+  <button type="button" data-motion-toggle class="button button-muted">Disable Motion</button>
+</footer>

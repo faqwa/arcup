@@ -1282,3 +1282,430 @@ button:focus-visible {
   margin-left: auto;
   margin-right: auto;
 }
+/* HOW PAGE SPECIFIC STYLES */
+
+/* Hero Section */
+.how-hero {
+  display: grid;
+  gap: clamp(1.2rem, 3vw, 1.8rem);
+  justify-items: center;
+  text-align: center;
+  padding: clamp(2rem, 5vw, 3rem) 0;
+}
+
+.hero-eyebrow {
+  text-transform: lowercase;
+  letter-spacing: 0.12em;
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  color: var(--color-primary-bright);
+  margin: 0;
+  font-weight: 500;
+}
+
+.how-hero h1 {
+  margin: 0;
+  font-size: clamp(2.8rem, 7vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 20ch;
+}
+
+.hero-subtitle {
+  display: grid;
+  gap: 0.5rem;
+  max-width: 50ch;
+}
+
+.hero-subtitle p {
+  margin: 0;
+  font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* RE:TECH Section */
+.retech-section {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3rem);
+}
+
+.retech-intro {
+  display: grid;
+  gap: 1rem;
+  max-width: 65ch;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.retech-intro p {
+  margin: 0;
+  font-size: clamp(1rem, 2.3vw, 1.1rem);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+.retech-statement {
+  font-size: clamp(1.15rem, 2.8vw, 1.35rem) !important;
+  color: var(--color-text) !important;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.retech-statement strong {
+  color: var(--color-primary-bright);
+  font-weight: 600;
+}
+
+.retech-question {
+  font-size: clamp(1.1rem, 2.6vw, 1.25rem) !important;
+  color: var(--color-text) !important;
+  font-style: italic;
+}
+
+.retech-definition {
+  font-size: clamp(1.2rem, 3vw, 1.4rem) !important;
+  color: var(--color-primary-bright) !important;
+  font-weight: 600;
+  margin-top: 0.5rem !important;
+}
+
+.retech-commitments {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 2rem;
+}
+
+.commitment-card {
+  text-align: left;
+}
+
+.commitment-card h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.15rem;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.commitment-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+.external-link {
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 2px;
+  transition: border-color var(--transition-base);
+}
+
+.external-link:hover,
+.external-link:focus-visible {
+  border-bottom-color: var(--color-primary-bright);
+}
+
+/* Principles Section */
+.principles-section {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3rem);
+}
+
+.principles-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.principle-group {
+  text-align: left;
+}
+
+.principle-group h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  color: var(--color-text);
+}
+
+.principle-group ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.9rem;
+  list-style: none;
+}
+
+.principle-group li {
+  position: relative;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  padding-left: 0.5rem;
+}
+
+.principle-group li::before {
+  content: "→";
+  position: absolute;
+  left: -1rem;
+  color: var(--color-primary-bright);
+  font-weight: 600;
+}
+
+.principle-group strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* Method Section */
+.method-section {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3rem);
+}
+
+.method-philosophy {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 65ch;
+  margin: 1.5rem auto 0;
+  text-align: center;
+}
+
+.method-philosophy p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.method-philosophy strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.method-steps {
+  list-style: none;
+  margin: 2rem 0 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1.2rem;
+}
+
+.method-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.2rem;
+  align-items: start;
+  padding: 1.5rem;
+  background: rgba(6, 12, 22, 0.62);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  transition: border-color var(--transition-base);
+}
+
+.method-step:hover {
+  border-color: rgba(93, 225, 228, 0.3);
+}
+
+.step-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--color-primary-soft);
+  color: var(--color-primary-bright);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.step-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  color: var(--color-text);
+}
+
+.step-content p {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+.method-example {
+  margin-top: 3rem;
+  max-width: 75ch;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+}
+
+.method-example h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.example-scenario {
+  margin: 0 0 1.5rem 0;
+  padding: 1rem 1.5rem;
+  background: rgba(10, 147, 150, 0.1);
+  border-left: 3px solid var(--color-primary-bright);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.example-steps {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.example-steps strong {
+  color: var(--color-primary-bright);
+}
+
+.example-outcome {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+.example-outcome strong {
+  color: var(--color-primary-bright);
+}
+
+/* Collaboration Section */
+.collaborate-section {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3rem);
+}
+
+.collaborate-intro {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 55ch;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.collaborate-intro p {
+  margin: 0;
+  font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.collaborate-statement {
+  margin-top: 0.5rem !important;
+  font-size: clamp(1.1rem, 2.7vw, 1.25rem) !important;
+  color: var(--color-text) !important;
+  font-weight: 500;
+}
+
+.collaboration-paths {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 2rem;
+}
+
+.path-card {
+  text-align: left;
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  padding: 2rem;
+}
+
+.path-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+  display: block;
+}
+
+.path-card h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--color-text);
+}
+
+.path-card > p {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+.path-tasks {
+  margin: 1rem 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.6rem;
+  list-style: none;
+}
+
+.path-tasks li {
+  position: relative;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  padding-left: 0.5rem;
+}
+
+.path-tasks li::before {
+  content: "•";
+  position: absolute;
+  left: -1rem;
+  color: var(--color-primary-bright);
+  font-weight: 600;
+}
+
+.path-card .button {
+  margin-top: 0.5rem;
+  width: 100%;
+  justify-self: start;
+}
+
+.collaborate-note {
+  max-width: 60ch;
+  margin: 2rem auto 0;
+  text-align: center;
+  padding: 2rem;
+}
+
+.collaborate-note h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.2rem;
+}
+
+.collaborate-note p {
+  margin: 0 0 1.5rem 0;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .method-step {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .step-badge {
+    justify-self: start;
+  }
+
+  .collaboration-paths {
+    grid-template-columns: 1fr;
+  }
+
+  .path-card .button {
+    width: 100%;
+  }
+}
