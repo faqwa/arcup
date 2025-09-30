@@ -8,7 +8,7 @@ const withBase = (path: string) => {
 
 <main id="main-content" class="page-shell page-why-clean" aria-labelledby="why-title">
   
-  <!-- ==================== HERO ==================== -->
+  <!-- HERO -->
   <header class="why-hero-clean" aria-labelledby="why-title">
     <p class="hero-eyebrow">the answer to "why we need arc^"</p>
     <h1 id="why-title" class="hero-question">
@@ -22,12 +22,8 @@ const withBase = (path: string) => {
     </p>
   </header>
 
-  <!-- ==================== SECTION 1: THE PROBLEM ==================== -->
+  <!-- SECTION 1: THE PROBLEM -->
   <section class="section-problem-clean" aria-labelledby="problem-heading">
-    <div class="section-divider" aria-hidden="true">
-      <span class="divider-label">the problem</span>
-    </div>
-    
     <div class="section-container">
       
       <h2 id="problem-heading" class="section-title">what's the problem?</h2>
@@ -40,18 +36,33 @@ const withBase = (path: string) => {
 
       <p class="narrative-lead">i looked backward and saw a pattern:</p>
 
-      <!-- Simple Linear Pattern -->
+      <!-- Pattern Visual - Mobile Optimized -->
       <div class="pattern-simple">
         <span class="pattern-word">conflict</span>
-        <span class="pattern-arrow">→</span>
+        <span class="pattern-arrow" aria-hidden="true">
+          <span class="arrow-desktop">→</span>
+          <span class="arrow-mobile">↓</span>
+        </span>
         <span class="pattern-word">production</span>
-        <span class="pattern-arrow">→</span>
+        <span class="pattern-arrow" aria-hidden="true">
+          <span class="arrow-desktop">→</span>
+          <span class="arrow-mobile">↓</span>
+        </span>
         <span class="pattern-word">patents</span>
-        <span class="pattern-arrow">→</span>
+        <span class="pattern-arrow" aria-hidden="true">
+          <span class="arrow-desktop">→</span>
+          <span class="arrow-mobile">↓</span>
+        </span>
         <span class="pattern-word">profit</span>
-        <span class="pattern-arrow">→</span>
+        <span class="pattern-arrow" aria-hidden="true">
+          <span class="arrow-desktop">→</span>
+          <span class="arrow-mobile">↓</span>
+        </span>
         <span class="pattern-word">power</span>
-        <span class="pattern-arrow pattern-arrow-harm">→</span>
+        <span class="pattern-arrow pattern-arrow-harm" aria-hidden="true">
+          <span class="arrow-desktop">→</span>
+          <span class="arrow-mobile">↓</span>
+        </span>
         <span class="pattern-word pattern-word-harm">harm</span>
       </div>
 
@@ -59,7 +70,7 @@ const withBase = (path: string) => {
         a repeating cycle of violence, materialism, and extraction. dressed up as progress.
       </p>
 
-      <!-- Today's Loop -->
+      <!-- Today's Reality -->
       <div class="today-block">
         <p class="today-label">today that loop looks like:</p>
         <ul class="today-list">
@@ -71,7 +82,7 @@ const withBase = (path: string) => {
         </ul>
       </div>
 
-      <!-- The Cost Block - T-SHAPED LAYOUT -->
+      <!-- The Cost -->
       <div class="cost-block-t-shape">
         <div class="t-shape-top">
           <div class="t-left">
@@ -87,12 +98,12 @@ const withBase = (path: string) => {
         </div>
         <div class="t-bottom">
           <p class="cost-text">
-            and it <strong>has cost us dearly:</strong> exploited people, collapsing ecosystems, fractured communities, polarisation, and futures that are becoming harder to inherit.
+            and it <strong>has cost us dearly:</strong> exploited people, collapsing ecosystems, fractured communities, polarization, and futures that are becoming harder to inherit.
           </p>
         </div>
       </div>
 
-      <!-- Refusal -->
+      <!-- The Refusal -->
       <div class="refusal-block">
         <p class="refusal-statement">
           arc^ refuses to copy/paste the old playbook.<br />
@@ -100,141 +111,113 @@ const withBase = (path: string) => {
         </p>
       </div>
 
-      <!-- IF WE SUCCEED -->
-      <div class="success-vision">
-        <h3>if we succeed</h3>
-        <p>
-          We'll host a public library of community solutions — hardware blueprints, protocols, templates — and a set of tested case studies that let local projects replicate and adapt without gatekeepers.
-        </p>
-        <p class="success-goal">
-          <strong>Our biggest goal:</strong> shift our relationship with technology so that it supports humanity's repair and flourishing.
-        </p>
-      </div>
-
     </div>
   </section>
 
-  <!-- ==================== SECTION 2: THE APPROACH ==================== -->
-  <section class="section-approach-clean" aria-labelledby="approach-heading">
-    <div class="section-divider" aria-hidden="true">
-      <span class="divider-label">the approach</span>
-    </div>
-    
+  <!-- SECTION 2: THE DECISION -->
+  <section class="section-decision" aria-labelledby="decision-heading">
     <div class="section-container">
       
-      <h2 id="approach-heading" class="section-title">what's the approach?</h2>
+      <h2 id="decision-heading" class="section-title">what's the decision?</h2>
 
-      <div class="approach-questions">
-        <p class="question-italic">what if the most ambitious goals — our most outlandish visions — were grounded in accountability?</p>
-        <p class="question-italic">what if responsibility — not secrecy, not profit — defined innovation?</p>
+      <div class="decision-questions">
+        <p class="question-italic">what if the most ambitious goals—our most outlandish visions—were grounded in accountability?</p>
+        <p class="question-italic">what if responsibility—not secrecy, not profit—defined innovation?</p>
       </div>
 
-      <div class="approach-definition-block">
+      <div class="decision-definition">
         <p>
           arc^ is not a brand. It's not a product. It's not a lab that will magically "save the world."
         </p>
         <p class="definition-emphasis">
-          <strong>arc^ is a decision about how we want to be human together:</strong> science as philosophy, praxis and partnership.
+          <strong>arc^ is a decision about how we want to be human together:</strong> science as philosophy, praxis, and partnership.
         </p>
       </div>
 
-      <div class="approach-text-block">
+      <div class="decision-meaning">
         <p>
-          We choose to build in the open, because outdated frameworks that protect work by locking it away are causing harm. 
-          Accountability becomes the architecture of that choice: obligations that are visible, measurable, and reproducible.
+          We choose to build in the open, because outdated frameworks that protect work by locking it away are causing harm.
         </p>
         <p>
-          We design with repair in mind. We are responsible to collective goals — the goals of the many — and we measure everything by their consequences on people, ecosystems, and future generations. 
-          We operate to minimize harm and maximize repair.
+          We design with repair in mind. We are responsible to collective goals—the goals of the many—and we measure everything by their consequences on people, ecosystems, and future generations.
+        </p>
+        <p class="decision-core">
+          <strong>We operate to minimize harm and maximize repair.</strong>
         </p>
       </div>
 
-      <!-- RE:TECH -->
-      <div class="retech-block">
-        <h3>RE:TECH — our design posture</h3>
+      <!-- RE:TECH Brief Intro -->
+      <div class="retech-brief">
+        <h3>RE:TECH: our design posture</h3>
         <p class="retech-tagline">Refuse Extractive Technology.</p>
-        <p class="retech-description">
-          If a tool, process, or system extracts, exploits, or restricts repair and restoration — we do not build it.
+        <p>
+          If a tool, process, or system extracts, exploits, or restricts repair and restoration—we do not build it.
         </p>
 
-        <div class="retech-grid">
-          <div class="retech-item">
+        <div class="retech-principles-brief">
+          <div class="principle-brief">
             <h4>transparent</h4>
             <p>not hidden behind NDAs and patents</p>
           </div>
-          <div class="retech-item">
+          <div class="principle-brief">
             <h4>collaborative</h4>
             <p>not competitive and extractive</p>
           </div>
-          <div class="retech-item">
+          <div class="principle-brief">
             <h4>regenerative</h4>
             <p>not extractive and destructive</p>
           </div>
         </div>
-      </div>
 
-      <!-- Accountability -->
-      <div class="accountability-block">
-        <p class="block-label">what responsibility looks like here:</p>
-        <ul class="accountability-list">
-          <li>Public protocols published from day 0.</li>
-          <li>Named stewards who are accountable for projects.</li>
-          <li>Consent and co-design with affected communities.</li>
-          <li>Reproducibility tests, audits, and public impact reports.</li>
-          <li>Ethics gates that must be passed before anything scales.</li>
-        </ul>
-        <p class="accountability-close">
-          Accountability is not an add-on. It's how arc^ operates.
+        <p class="retech-learn-more">
+          <a href={withBase("/how")}>See how RE:TECH guides our work →</a>
         </p>
-      </div>
-
-      <!-- CTA -->
-      <div class="section-cta">
-        <a href="#retech-docs" class="cta-link">Learn more about the RE:TECH framework →</a>
       </div>
 
     </div>
   </section>
 
-  <!-- ==================== SECTION 3: WHAT WE BUILD ==================== -->
-  <section class="section-build-clean" aria-labelledby="build-heading">
-    <div class="section-divider" aria-hidden="true">
-      <span class="divider-label">what we build</span>
-    </div>
-    
+  <!-- SECTION 3: THE VISION -->
+  <section class="section-vision" aria-labelledby="vision-heading">
     <div class="section-container">
       
-      <h2 id="build-heading" class="section-title">what do we build?</h2>
+      <h2 id="vision-heading" class="section-title">what do we build?</h2>
 
-      <div class="build-intro-block">
-        <h3 class="build-subtitle">open infrastructure for collective repair.</h3>
+      <div class="vision-intro">
+        <h3>open infrastructure for collective repair.</h3>
         <p>
-          arc^ builds the tools, protocols, templates, and living prototypes that let ambitious science happen in public — without exploiting people or the planet. We want discovery to belong to many, not to a privileged few, and to make sure scale is bound to consent and repair.
+          arc^ builds the tools, protocols, templates, and living prototypes that let ambitious science happen in public—without exploiting people or the planet.
+        </p>
+        <p>
+          We want discovery to belong to many, not to a privileged few, and to make sure scale is bound to consent and repair.
         </p>
       </div>
 
-      <!-- Living Work -->
-      <div class="content-block">
-        <h4>living, growing, evolving products — not polished patented barriers</h4>
+      <!-- What We're Building -->
+      <div class="building-block">
+        <h4>living, growing, evolving products—not polished patented barriers</h4>
         <p>
-          We publish early and deliberately: prototypes, experiment notebooks, versioned protocols, modular components that others can adopt, test, and extend. Our goal is reproducible momentum, not a private patent that sits on a shelf.
+          We publish early and deliberately: prototypes, experiment notebooks, versioned protocols, modular components that others can adopt, test, and extend.
+        </p>
+        <p>
+          Our goal is <strong>reproducible momentum</strong>, not a private patent that sits on a shelf.
         </p>
       </div>
 
       <!-- Core Goals -->
-      <div class="content-block">
+      <div class="goals-block">
         <h4>core goals</h4>
         <ul class="goals-list">
           <li>Rebuild safe, open plasma technologies: modular, documented, replicable.</li>
-          <li>Release hardware blueprints and DBD / reactor components as community assets.</li>
-          <li>Create a public library — ArcIndex — of open protocols, templates, and community solutions.</li>
+          <li>Release hardware blueprints and DBD reactor components as community assets.</li>
+          <li>Create a public library (ArcIndex) of open protocols, templates, and community solutions.</li>
           <li>Produce governance templates and consent frameworks for community-led research.</li>
-          <li>Help regenerative, local solutions scale ethically — not extractively.</li>
+          <li>Help regenerative, local solutions scale ethically—not extractively.</li>
         </ul>
       </div>
 
       <!-- Research Areas -->
-      <div class="research-block">
+      <div class="research-areas">
         <h4>research areas</h4>
         <div class="research-grid-clean">
           <div class="research-item">
@@ -264,34 +247,301 @@ const withBase = (path: string) => {
         </div>
       </div>
 
-      <!-- CTA -->
-      <div class="section-cta">
-        <a href={withBase('/join')} class="cta-link">Get involved →</a>
+      <!-- Success Vision -->
+      <div class="success-vision">
+        <h3>if we succeed</h3>
+        <p>
+          We'll host a public library of community solutions—hardware blueprints, protocols, templates—and a set of tested case studies that let local projects replicate and adapt without gatekeepers.
+        </p>
+        <p class="success-goal">
+          <strong>Our biggest goal:</strong> shift our relationship with technology so that it supports humanity's repair and flourishing.
+        </p>
       </div>
 
     </div>
   </section>
 
-  <!-- ==================== CLOSING ==================== -->
-  <section class="closing-clean">
-    <div class="section-divider" aria-hidden="true">
-      <span class="divider-label">moving forward</span>
-    </div>
-    
+  <!-- FINAL CTA -->
+  <section class="closing-cta">
     <div class="section-container">
       <p class="closing-statement">
-        arc^ builds <strong>open infrastructure for collective repair</strong> — 
-        tools, knowledge, and networks that reject the extractive paradigm.
+        arc^ builds <strong>open infrastructure for collective repair</strong>—tools, knowledge, and networks that reject the extractive paradigm.
       </p>
-      <p class="closing-emphasis">
-        because the systems that got us here <strong>won't get us out</strong>.
+      <p class="closing-question">
+        ready to see how this works in practice?
       </p>
-
-      <div class="closing-ctas">
-        <a href={withBase('/join')} class="button">Join Us</a>
-        <a href={withBase('/how')} class="button button-outline">Explore How</a>
+      <div class="closing-buttons">
+        <a href={withBase("/how")} class="button button-large">Explore How We Work</a>
+        <a href={withBase("/projects")} class="button button-outline button-large">Browse Projects</a>
       </div>
     </div>
   </section>
 
 </main>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <p class="footer-text">
+      arc^ by ali · collaborative research for planetary repair
+    </p>
+    <p class="footer-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA</a> · 
+      <a href="https://ohwr.org/cern_ohl_s_v2.txt" target="_blank" rel="noopener noreferrer">CERN OHL-S</a> · 
+      <a href="https://www.gnu.org/licenses/agpl-3.0.en.html" target="_blank" rel="noopener noreferrer">AGPL-3.0</a>
+    </p>
+  </div>
+  <button type="button" data-motion-toggle class="button button-muted">Disable Motion</button>
+</footer>
+
+<style>
+  /* Additional styles for new/modified sections */
+  
+  /* Decision Section */
+  .section-decision {
+    padding: clamp(3rem, 6vw, 4rem) 0;
+  }
+
+  .decision-questions {
+    display: grid;
+    gap: clamp(0.75rem, 2vw, 1rem);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+
+  .decision-definition {
+    margin: clamp(2rem, 4vw, 3rem) 0;
+    padding: clamp(1.75rem, 4vw, 2.25rem);
+    background: rgba(6, 12, 22, 0.5);
+    border-left: 3px solid var(--color-primary-bright);
+    border-radius: 8px;
+  }
+
+  .decision-definition p {
+    margin: 0 0 clamp(1rem, 2.5vw, 1.25rem) 0;
+    font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .decision-definition p:last-child {
+    margin-bottom: 0;
+  }
+
+  .definition-emphasis strong {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .decision-meaning {
+    margin: clamp(2rem, 4vw, 3rem) 0;
+    display: grid;
+    gap: clamp(1.25rem, 3vw, 1.75rem);
+  }
+
+  .decision-meaning p {
+    margin: 0;
+    font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .decision-core {
+    padding: 1.5rem;
+    background: rgba(10, 147, 150, 0.12);
+    border: 1px solid rgba(93, 225, 228, 0.3);
+    border-radius: var(--radius-lg);
+    text-align: center;
+  }
+
+  .decision-core strong {
+    color: var(--color-text);
+    font-size: clamp(1.1rem, 2.8vw, 1.3rem);
+  }
+
+  /* RE:TECH Brief */
+  .retech-brief {
+    margin: clamp(3rem, 6vw, 4rem) 0;
+    padding: clamp(2rem, 4vw, 2.5rem);
+    background: rgba(6, 12, 22, 0.4);
+    border: 1px solid rgba(93, 225, 228, 0.2);
+    border-radius: 12px;
+  }
+
+  .retech-brief h3 {
+    margin: 0 0 clamp(0.75rem, 2vw, 1rem) 0;
+    font-size: clamp(1.4rem, 3.8vw, 1.7rem);
+    color: var(--color-primary-bright);
+    font-weight: 600;
+  }
+
+  .retech-tagline {
+    margin: 0 0 clamp(1rem, 2.5vw, 1.5rem) 0;
+    font-size: clamp(1.1rem, 2.8vw, 1.3rem);
+    color: var(--color-text);
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  .retech-brief > p {
+    margin: 0 0 clamp(1.5rem, 3.5vw, 2rem) 0;
+    font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .retech-principles-brief {
+    display: grid;
+    gap: clamp(1.25rem, 3vw, 1.5rem);
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+    margin-bottom: clamp(1.5rem, 3.5vw, 2rem);
+  }
+
+  @media (min-width: 640px) {
+    .retech-principles-brief {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .principle-brief {
+    padding: clamp(1.5rem, 3.5vw, 1.75rem);
+    background: rgba(8, 15, 27, 0.6);
+    border: 1px solid rgba(93, 225, 228, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .principle-brief:hover {
+    border-color: rgba(93, 225, 228, 0.4);
+    transform: translateY(-3px);
+  }
+
+  .principle-brief h4 {
+    margin: 0 0 clamp(0.5rem, 1.5vw, 0.75rem) 0;
+    font-size: clamp(1.1rem, 2.8vw, 1.25rem);
+    color: var(--color-primary-bright);
+    font-weight: 600;
+  }
+
+  .principle-brief p {
+    margin: 0;
+    font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+    line-height: 1.6;
+    color: var(--color-text-muted);
+  }
+
+  .retech-learn-more {
+    margin: 0;
+    text-align: center;
+  }
+
+  .retech-learn-more a {
+    color: var(--color-primary-bright);
+    text-decoration: none;
+    font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+    font-weight: 500;
+    border-bottom: 1px solid rgba(93, 225, 228, 0.3);
+    transition: border-color var(--transition-base);
+  }
+
+  .retech-learn-more a:hover {
+    border-color: var(--color-primary-bright);
+  }
+
+  /* Vision Section */
+  .section-vision {
+    padding: clamp(3rem, 6vw, 4rem) 0;
+  }
+
+  .vision-intro {
+    margin-bottom: clamp(3rem, 6vw, 4rem);
+  }
+
+  .vision-intro h3 {
+    margin: 0 0 clamp(1rem, 2.5vw, 1.5rem) 0;
+    font-size: clamp(1.5rem, 4vw, 1.9rem);
+    color: var(--color-primary-bright);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .vision-intro p {
+    margin: 0 0 clamp(1rem, 2.5vw, 1.25rem) 0;
+    font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .vision-intro p:last-child {
+    margin-bottom: 0;
+  }
+
+  .building-block,
+  .goals-block,
+  .research-areas {
+    margin: clamp(2.5rem, 5vw, 3.5rem) 0;
+  }
+
+  .building-block h4,
+  .goals-block h4,
+  .research-areas h4 {
+    margin: 0 0 clamp(1rem, 2.5vw, 1.25rem) 0;
+    font-size: clamp(1.2rem, 3.2vw, 1.4rem);
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .building-block p {
+    margin: 0 0 clamp(1rem, 2.5vw, 1.25rem) 0;
+    font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .building-block p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Closing CTA */
+  .closing-cta {
+    padding: clamp(3rem, 6vw, 4rem) 0;
+    text-align: center;
+  }
+
+  .closing-statement {
+    margin: 0 0 clamp(1.5rem, 3vw, 2rem) 0;
+    font-size: clamp(1.15rem, 3vw, 1.35rem);
+    line-height: 1.6;
+    color: var(--color-text-muted);
+  }
+
+  .closing-statement strong {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .closing-question {
+    margin: 0 0 clamp(2rem, 4vw, 3rem) 0;
+    font-size: clamp(1.2rem, 3.2vw, 1.5rem);
+    color: var(--color-text);
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  .closing-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 640px) {
+    .closing-buttons {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .closing-buttons .button {
+      width: 100%;
+    }
+  }
+</style>
