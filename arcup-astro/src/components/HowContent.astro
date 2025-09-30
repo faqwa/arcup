@@ -4,226 +4,826 @@ const withBase = (path: string) => {
   if (path === '/') return `${base}/`;
   return `${base}${path}`;
 };
+
+const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSeaIq1c0a9zu0R5Z0_GHP73HxKKjDr2vcjgjoiV2L3PxSv-ww/viewform?usp=dialog";
 ---
 
 <main id="main-content" class="page-shell page-how" aria-labelledby="how-title">
   
   <!-- HERO SECTION -->
   <header class="how-hero" aria-labelledby="how-title">
-    <p class="hero-eyebrow">the answer to "how?"</p>
-    <h1 id="how-title">after the question comes the practice</h1>
-    <div class="hero-subtitle">
-      <p>This is how we refuse to repeat history.</p>
-      <p>This is how we build technology that serves life.</p>
-      <p>This is how we turn principles into protocols.</p>
-    </div>
+    <p class="hero-eyebrow">Our Framework</p>
+    <h1 id="how-title">How Arc^ Works</h1>
+    <p class="hero-lede">
+      Most research happens behind closed doors. Results appear fully formed, polished, ready to monetize. 
+      <strong>We do the opposite:</strong> document from day zero, share everything, invite scrutiny. Here's how.
+    </p>
   </header>
 
-  <!-- RE:TECH SECTION -->
-  <section id="retech" class="retech-section" aria-labelledby="retech-title">
-    <div class="section-divider" aria-hidden="true">
-      <span class="divider-label">our foundation</span>
-    </div>
-    
-    <header class="section-header">
-      <h2 id="retech-title">RE:TECH: Refusing Extractive Technology</h2>
-      <div class="retech-intro">
-        <p class="retech-statement">For 100+ years, innovation meant:<br><strong>war → industry → patents → profit → power → harm</strong></p>
-        <p class="retech-question">We asked: what if we stopped?</p>
-        <p>What if every choice was filtered through one question: <strong>"If we build this, what world does it create?"</strong></p>
-        <p>If the answer is extraction, exploitation, or ecocide — we don't build it.<br>If the answer is repair, regeneration, or restoration — we move forward.</p>
-        <p class="retech-definition">This is RE:TECH.</p>
-      </div>
-    </header>
-
-    <div class="retech-commitments">
-      <article class="commitment-card surface-panel">
-        <h3>Open by default, non-extractive by design</h3>
-        <p>Research is public from day one. Knowledge stays in the commons. No patents. No paywalls. No proprietary lockdowns.</p>
-      </article>
-
-      <article class="commitment-card surface-panel">
-        <h3>Future-conscious at every scale</h3>
-        <p>We ask "what happens in 10 years?" before we build anything. Short-term wins don't justify long-term harm.</p>
-      </article>
-
-      <article class="commitment-card surface-panel">
-        <h3>Ecological interdependence is reality</h3>
-        <p>Humans aren't separate from nature — we're part of living systems. Our work respects and repairs the web we're woven into.</p>
-      </article>
-
-      <article class="commitment-card surface-panel">
-        <h3>Safety is non-negotiable</h3>
-        <p>High-voltage plasma is dangerous. Ecological applications need monitoring. If harm is likely — weaponization, surveillance, ecocide — we stop.</p>
-      </article>
-    </div>
-
-    <p class="section-note">
-      RE:TECH is Arc^'s design posture — the values that guide every experiment, conversation, and choice.
-      <a href="https://xbyali.page/retech" class="external-link">Read the full RE:TECH framework →</a>
+  <!-- EARTH AS LIVING SYSTEM -->
+  <section class="worldview-section surface-panel">
+    <h2>Earth as Living System</h2>
+    <p>
+      We recognize Earth as a dynamic, emergent network of interacting systems—not a resource to extract from, 
+      but a living whole we're part of. <strong>Human technology must align with Earth's regenerative capacity, 
+      not work against it.</strong>
+    </p>
+    <p class="worldview-note">
+      This understanding shapes every experiment, every design choice, every collaboration.
     </p>
   </section>
 
-  <!-- PRINCIPLES SECTION -->
-  <section id="principles" class="principles-section" aria-labelledby="principles-title">
+  <!-- WHAT WE STAND FOR -->
+  <section class="commitments-section">
     <div class="section-divider" aria-hidden="true">
-      <span class="divider-label">our constraints</span>
+      <span class="divider-label">what we stand for</span>
     </div>
 
     <header class="section-header">
-      <h2 id="principles-title">Lines in the Sand</h2>
-      <p class="lead">These aren't aspirations — they're constraints that guide every experiment, conversation, and design choice.</p>
+      <h2>8 Core Commitments</h2>
+      <p class="lead">These principles guide every decision we make at Arc^:</p>
     </header>
 
-    <div class="principles-grid">
-      <article class="principle-group surface-panel">
-        <h3>Who We Protect</h3>
-        <ul>
-          <li><strong>Human dignity first.</strong> No exploitation, extractive labor, or coercion. Contributors are resourced and credited.</li>
-          <li><strong>Center the margins.</strong> Prioritize perspectives from communities most impacted by environmental harm and least served by existing systems.</li>
-          <li><strong>No harm to non-humans.</strong> No invasive animal testing. We use observation, eDNA, and non-invasive methods to study ecosystems.</li>
-        </ul>
+    <div class="commitments-grid">
+      <article class="commitment-card surface-panel">
+        <div class="commitment-icon">👥</div>
+        <h3>Circle of Care</h3>
+        <p>Human dignity, anti-discrimination, universal access. Everyone deserves to participate in and benefit from scientific progress.</p>
       </article>
 
-      <article class="principle-group surface-panel">
-        <h3>How We Practice</h3>
-        <ul>
-          <li><strong>Iterative humility.</strong> We hypothesis → test → document → share → revise. Mistakes are expected; hiding them isn't.</li>
-          <li><strong>Consent-based participation.</strong> Communities are partners, not subjects. Engagement is informed, voluntary, and shaped by local knowledge.</li>
-          <li><strong>Replicate before we claim.</strong> A single study isn't proof. Results become recommendations only after independent replication.</li>
-        </ul>
+      <article class="commitment-card surface-panel">
+        <div class="commitment-icon">🐾</div>
+        <h3>Multi-Species Ethics</h3>
+        <p>No invasive harm to non-humans. We use observation, eDNA, and non-invasive methods to study ecosystems. Design to avoid disruption.</p>
       </article>
 
-      <article class="principle-group surface-panel">
-        <h3>What We Refuse</h3>
-        <ul>
-          <li><strong>No weaponization.</strong> Plasma for harm, surveillance, or control is out of scope.</li>
-          <li><strong>No patent lockdown.</strong> Knowledge stays open. Commercial use requires benefit-sharing back to the commons.</li>
-          <li><strong>No "move fast and break things."</strong> Speed without safety is recklessness. Ecological repair requires care.</li>
-        </ul>
+      <article class="commitment-card surface-panel">
+        <div class="commitment-icon">🌱</div>
+        <h3>Planetary Restoration</h3>
+        <p>Technology must heal ecosystems, not just serve humans. Repair and regeneration are the measures of success.</p>
+      </article>
+
+      <article class="commitment-card surface-panel">
+        <div class="commitment-icon">🔄</div>
+        <h3>Iterative Humility</h3>
+        <p>Learning matters more than perfection. Mistakes are expected and documented. A single study isn't proof—replication builds confidence.</p>
+      </article>
+
+      <article class="commitment-card surface-panel">
+        <div class="commitment-icon">🌍</div>
+        <h3>Global Majority Orientation</h3>
+        <p>Plural perspectives, no single hegemony. We center voices from communities most impacted by environmental harm and least served by existing systems.</p>
+      </article>
+
+      <article class="commitment-card surface-panel">
+        <div class="commitment-icon">🔓</div>
+        <h3>Openness with Responsibility</h3>
+        <p>Transparent by default, with safety guardrails. Research is public from day one, but we stop if harm is likely.</p>
+      </article>
+
+      <article class="commitment-card surface-panel">
+        <div class="commitment-icon">🪶</div>
+        <h3>Transparency & Credit</h3>
+        <p>Everyone who contributes is seen. Attribution ledgers map contributions. Public outputs cite all collaborators and partners.</p>
+      </article>
+
+      <article class="commitment-card surface-panel">
+        <div class="commitment-icon">🛡️</div>
+        <h3>Safety & Harm Prevention</h3>
+        <p>If a path trends toward weaponization, surveillance, or ecocide—we stop. Safety is non-negotiable, especially with high-voltage plasma.</p>
       </article>
     </div>
   </section>
 
-  <!-- METHOD SECTION -->
-  <section id="method" class="method-section" aria-labelledby="method-title">
+  <!-- RE:TECH DESIGN APPROACH -->
+  <section class="retech-section">
     <div class="section-divider" aria-hidden="true">
-      <span class="divider-label">our method</span>
+      <span class="divider-label">our design approach</span>
     </div>
 
     <header class="section-header">
-      <h2 id="method-title">How We Work: The 7-Step Framework</h2>
-      <div class="method-philosophy">
-        <p>
-          These aren't just values — they're operational constraints embedded in every project.
-        </p>
-        <p>
-          <strong>If we can't do it this way, we don't do it at all.</strong>
-        </p>
-      </div>
+      <h2>RE:TECH: How We Build</h2>
+      <p class="lead">RE:TECH is our design approach—how we translate values into practice. Technology stays at the edge of our fingertips, supporting rather than dominating.</p>
     </header>
 
-    <ol class="method-steps">
+    <div class="retech-flow">
+      <div class="flow-step">
+        <span class="flow-number">01</span>
+        <h3>Re-think</h3>
+        <p>Question assumptions. Ask "what world does this create?" before building anything.</p>
+      </div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">
+        <span class="flow-number">02</span>
+        <h3>Re-align</h3>
+        <p>Design with regeneration in mind. Align technology with Earth's living systems.</p>
+      </div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">
+        <span class="flow-number">03</span>
+        <h3>Re-make</h3>
+        <p>Build openly. Document from day zero. Share methods, data, and designs.</p>
+      </div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">
+        <span class="flow-number">04</span>
+        <h3>Re-share</h3>
+        <p>Knowledge stays in the commons. Enable replication, adaptation, and collective improvement.</p>
+      </div>
+    </div>
+
+    <div class="retech-principles">
+      <h3>This Means:</h3>
+      <ul class="principles-checklist">
+        <li>✓ Open by default, non-extractive by design</li>
+        <li>✓ Future-conscious (10-year thinking)</li>
+        <li>✓ Ecological interdependence (humans aren't separate from nature)</li>
+        <li>✓ Safety as non-negotiable (stop if harm is likely)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK TOGETHER -->
+  <section class="method-section">
+    <div class="section-divider" aria-hidden="true">
+      <span class="divider-label">our process</span>
+    </div>
+
+    <header class="section-header">
+      <h2>How We Work Together</h2>
+      <p class="lead">Seven steps guide every Arc^ project. Here's what accountability looks like in practice:</p>
+    </header>
+
+    <!-- INTEGRATED EXAMPLE BOX -->
+    <article class="example-scenario surface-panel">
+      <h3>Example: Community Garden Testing PAW</h3>
+      <p><strong>Scenario:</strong> A community garden wants to test if plasma-activated water improves native plant germination.</p>
+    </article>
+
+    <ol class="method-steps-integrated">
       <li class="method-step">
-        <span class="step-badge">01</span>
-        <div class="step-content">
-          <h3>Document Before We Build</h3>
-          <p>Hypothesis, methods, and safety protocols are public before experiments start. No retroactive documentation.</p>
+        <div class="step-header">
+          <span class="step-badge">01</span>
+          <h3>Document Early</h3>
+        </div>
+        <p class="step-description">Experiments are logged from the idea stage, not only after results appear.</p>
+        <div class="step-example">
+          <strong>In practice:</strong> Hypothesis, equipment specs, and safety protocols published in GitHub repo <em>before</em> starting experiments.
         </div>
       </li>
 
       <li class="method-step">
-        <span class="step-badge">02</span>
-        <div class="step-content">
-          <h3>Show Our Work</h3>
-          <p>Protocols, equipment specs, data, and code are open (CERN OHL, CC-BY-SA, AGPL). Transparent from day zero.</p>
+        <div class="step-header">
+          <span class="step-badge">02</span>
+          <h3>Show the Work</h3>
+        </div>
+        <p class="step-description">Methods, parameters, safety notes, raw data, decisions, and rationale are published openly.</p>
+        <div class="step-example">
+          <strong>In practice:</strong> Plasma device schematics (CERN OHL), treatment parameters, seed sources, soil composition—all logged openly.
         </div>
       </li>
 
       <li class="method-step">
-        <span class="step-badge">03</span>
-        <div class="step-content">
-          <h3>Invite Review Early</h3>
-          <p>Safety experts, ecologists, and community members review before we proceed. Feedback shapes the work.</p>
+        <div class="step-header">
+          <span class="step-badge">03</span>
+          <h3>Invite Review</h3>
+        </div>
+        <p class="step-description">Data lives in shared notebooks for peer feedback, replication, and critique.</p>
+        <div class="step-example">
+          <strong>In practice:</strong> Local ecologists and safety experts review protocol before experiments begin.
         </div>
       </li>
 
       <li class="method-step">
-        <span class="step-badge">04</span>
-        <div class="step-content">
-          <h3>Track Status Openly</h3>
-          <p>Every project has a clear status: WIP, Testing, Published. Progress is documented in real time.</p>
+        <div class="step-header">
+          <span class="step-badge">04</span>
+          <h3>Track Status</h3>
+        </div>
+        <p class="step-description">Each project carries WIP notes, status indicators, and changelogs that surface decisions.</p>
+        <div class="step-example">
+          <strong>In practice:</strong> Experiment marked "WIP—Week 3 of 8" with live updates in shared notebook.
         </div>
       </li>
 
       <li class="method-step">
-        <span class="step-badge">05</span>
-        <div class="step-content">
+        <div class="step-header">
+          <span class="step-badge">05</span>
           <h3>Credit Everyone</h3>
-          <p>Contributors, reviewers, community partners — everyone who shaped the work is named. Public outputs cite contributors and partners.</p>
+        </div>
+        <p class="step-description">Attribution ledgers map contributions. Public outputs cite contributors and partners.</p>
+        <div class="step-example">
+          <strong>In practice:</strong> Garden members, equipment designers, and reviewers all listed in final report.
         </div>
       </li>
 
       <li class="method-step">
-        <span class="step-badge">06</span>
-        <div class="step-content">
+        <div class="step-header">
+          <span class="step-badge">06</span>
           <h3>Co-Design with Consent</h3>
-          <p>Communities are partners. Engagement is informed, voluntary, and shaped by local insight.</p>
+        </div>
+        <p class="step-description">Communities are partners, not subjects. Engagement is informed, voluntary, and shaped by local knowledge.</p>
+        <div class="step-example">
+          <strong>In practice:</strong> Garden community chooses which native species to test based on restoration goals.
         </div>
       </li>
 
       <li class="method-step">
-        <span class="step-badge">07</span>
-        <div class="step-content">
+        <div class="step-header">
+          <span class="step-badge">07</span>
           <h3>Replicate Before We Claim</h3>
-          <p>Findings become claims only after independent replication and safety checks.</p>
+        </div>
+        <p class="step-description">Findings become claims only after independent replication and safety checks.</p>
+        <div class="step-example">
+          <strong>In practice:</strong> Protocol shared so other gardens can test with their local species before we make broader claims.
         </div>
       </li>
     </ol>
 
-    <!-- EXAMPLE -->
-    <article class="method-example surface-panel">
-      <h3>What This Looks Like in Practice</h3>
-      <p class="example-scenario"><strong>Scenario:</strong> A community garden wants to test if plasma-activated water improves native plant germination.</p>
-
-      <ol class="example-steps">
-        <li><strong>Document early:</strong> Hypothesis, equipment specs, and safety protocols published in GitHub repo before starting.</li>
-        <li><strong>Show the work:</strong> Plasma device schematics (CERN OHL), treatment parameters, seed sources, soil composition — all logged openly.</li>
-        <li><strong>Invite review:</strong> Local ecologists and safety experts review protocol before experiments begin.</li>
-        <li><strong>Track status:</strong> Experiment marked "WIP — Week 3 of 8" with live updates in shared notebook.</li>
-        <li><strong>Credit everyone:</strong> Garden members, equipment designers, and reviewers all listed in final report.</li>
-        <li><strong>Co-design:</strong> Garden community chooses which native species to test based on restoration goals.</li>
-        <li><strong>Replicate:</strong> Protocol shared so other gardens can test with their local species before we make claims.</li>
-      </ol>
-
-      <p class="example-outcome"><strong>Outcome:</strong> Data stays open (CC-BY-SA), hardware designs stay open (CERN OHL), and the garden owns the knowledge about their land.</p>
-    </article>
-
-    <p class="section-note">Iterative humility is normal. Accessibility matters: content is written for mixed backgrounds and translated where possible.</p>
+    <div class="method-outcome surface-panel">
+      <strong>Outcome:</strong> Data stays open (CC BY-SA), hardware designs stay open (CERN OHL), and the garden owns the knowledge about their land.
+    </div>
   </section>
 
-  <!-- CTA SECTION -->
-  <section class="how-cta-section" aria-labelledby="cta-heading">
+  <!-- SAFETY SECTION -->
+  <section class="safety-section">
     <div class="section-divider" aria-hidden="true">
-      <span class="divider-label">ready to begin?</span>
+      <span class="divider-label">safety first</span>
     </div>
 
-    <div class="how-cta-wrapper surface-panel">
-      <h2 id="cta-heading">See the Practice in Action</h2>
-      <p class="cta-description">
-        These principles come to life in our active projects — from plasma-activated water research to open hardware design. Each project follows the RE:TECH framework and invites collaboration.
-      </p>
-      
-      <aside class="beginner-note">
-        <span class="note-icon" aria-hidden="true">💡</span>
-        <p><strong>New to plasma research?</strong> No problem. Many projects have beginner-friendly tasks like documentation, literature review, and replication studies. Start where you are.</p>
-      </aside>
+    <header class="section-header">
+      <h2>Safety is Non-Negotiable</h2>
+      <p class="lead">Plasma research involves high voltage, reactive chemistry, and ecological impacts. These requirements apply to all Arc^ work:</p>
+    </header>
 
-      <div class="cta-buttons">
-        <a href={withBase("/projects")} class="button">Explore Active Projects →</a>
-        <a href={withBase("/join")} class="button button-outline">Learn How to Contribute</a>
-      </div>
+    <div class="safety-grid">
+      <article class="safety-card surface-panel">
+        <h3>⚡ Electrical Safety</h3>
+        <ul>
+          <li>Proper grounding and isolation</li>
+          <li>Personal protective equipment (PPE)</li>
+          <li>High-voltage training required</li>
+          <li>Equipment inspection protocols</li>
+        </ul>
+      </article>
+
+      <article class="safety-card surface-panel">
+        <h3>🧪 Chemical Safety</h3>
+        <ul>
+          <li>Adequate ventilation systems</li>
+          <li>Reactive species monitoring</li>
+          <li>Proper disposal procedures</li>
+          <li>Material safety data sheets (MSDS)</li>
+        </ul>
+      </article>
+
+      <article class="safety-card surface-panel">
+        <h3>🌿 Ecological Ethics</h3>
+        <ul>
+          <li>Long-term monitoring plans</li>
+          <li>Non-invasive research methods</li>
+          <li>Baseline environmental assessments</li>
+          <li>Community consent protocols</li>
+        </ul>
+      </article>
+
+      <article class="safety-card surface-panel">
+        <h3>📋 Incident Reporting</h3>
+        <ul>
+          <li>Failures documented publicly</li>
+          <li>Near-miss reporting system</li>
+          <li>Safety review before scaling</li>
+          <li>Stop rules: halt if harm emerges</li>
+        </ul>
+      </article>
+    </div>
+
+    <p class="safety-note">
+      <strong>If you're unsure about a procedure, ask before proceeding.</strong> Safety concerns are never an inconvenience—they're the foundation of responsible research.
+    </p>
+  </section>
+
+  <!-- LICENSING -->
+  <section class="licensing-section surface-panel">
+    <h2>Licensing & Governance</h2>
+    <p class="licensing-intro">All Arc^ work uses open licenses that keep knowledge in the commons:</p>
+    
+    <table class="licensing-table">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>License</th>
+          <th>Why</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Documentation</strong></td>
+          <td>CC BY-NC-SA 4.0</td>
+          <td>Share and adapt with attribution; commercial use requires benefit-sharing</td>
+        </tr>
+        <tr>
+          <td><strong>Hardware</strong></td>
+          <td>CERN OHL-S 2.0</td>
+          <td>Strong reciprocity—modifications must be shared openly</td>
+        </tr>
+        <tr>
+          <td><strong>Software</strong></td>
+          <td>AGPL-3.0</td>
+          <td>Network copyleft—public use requires open source</td>
+        </tr>
+        <tr>
+          <td><strong>Data</strong></td>
+          <td>ODC-BY or CC BY-SA</td>
+          <td>Open with attribution; derivatives must credit sources</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="licensing-note">
+      <strong>No patents. Ever.</strong> Knowledge generated through Arc^ stays in the commons. Commercial applications are possible, but require benefit-sharing agreements that ensure value flows back to the research community and the ecosystems we serve.
+    </p>
+  </section>
+
+  <!-- START COLLABORATING -->
+  <section class="collaborate-section">
+    <div class="section-divider" aria-hidden="true">
+      <span class="divider-label">start collaborating</span>
+    </div>
+
+    <header class="section-header">
+      <h2>Three Pathways to Contribute</h2>
+      <p class="lead">Choose the path that fits your skills and interests:</p>
+    </header>
+
+    <div class="pathways-grid">
+      <article class="pathway-card surface-panel">
+        <div class="pathway-icon">🔬</div>
+        <h3>Research</h3>
+        <p>Conduct literature reviews, design experiments, analyze data, and document findings openly.</p>
+        <ul class="pathway-tasks">
+          <li>Review existing plasma research</li>
+          <li>Design experimental protocols</li>
+          <li>Analyze datasets and results</li>
+          <li>Write up findings for publication</li>
+        </ul>
+      </article>
+
+      <article class="pathway-card surface-panel">
+        <div class="pathway-icon">🛠️</div>
+        <h3>Build</h3>
+        <p>Create hardware designs, write safety protocols, develop tools, and improve documentation.</p>
+        <ul class="pathway-tasks">
+          <li>Design plasma devices (CAD, schematics)</li>
+          <li>Build and test prototypes</li>
+          <li>Write safety and testing protocols</li>
+          <li>Develop analysis software tools</li>
+        </ul>
+      </article>
+
+      <article class="pathway-card surface-panel">
+        <div class="pathway-icon">🌱</div>
+        <h3>Apply</h3>
+        <p>Test plasma-activated water in real contexts with ethical oversight and community partnership.</p>
+        <ul class="pathway-tasks">
+          <li>Host field trials on your land</li>
+          <li>Monitor ecological outcomes</li>
+          <li>Co-design with local communities</li>
+          <li>Share traditional knowledge</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta-section">
+    <h2>See These Principles in Action</h2>
+    <p>Every Arc^ project follows this framework. Explore active research and find where you fit.</p>
+    <div class="cta-buttons">
+      <a href={withBase("/projects")} class="button button-large">Browse Open Projects</a>
+      <a href={formURL} target="_blank" class="button button-outline button-large">Contact Ali</a>
     </div>
   </section>
 
 </main>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <p class="footer-text">
+      arc^ by ali · collaborative research for planetary repair
+    </p>
+    <p class="footer-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA</a> · 
+      <a href="https://ohwr.org/cern_ohl_s_v2.txt" target="_blank" rel="noopener noreferrer">CERN OHL-S</a> · 
+      <a href="https://www.gnu.org/licenses/agpl-3.0.en.html" target="_blank" rel="noopener noreferrer">AGPL-3.0</a>
+    </p>
+  </div>
+  <button type="button" data-motion-toggle class="button button-muted">Disable Motion</button>
+</footer>
+
+<style>
+  /* Additional styles specific to new sections */
+  
+  /* Worldview Section */
+  .worldview-section {
+    max-width: 75ch;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+  }
+
+  .worldview-section h2 {
+    margin: 0 0 1.5rem 0;
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+    color: var(--color-text);
+  }
+
+  .worldview-section p {
+    margin: 0 0 1rem 0;
+    font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .worldview-note {
+    font-size: 1rem !important;
+    font-style: italic;
+    color: var(--color-text-muted);
+  }
+
+  /* 8 Commitments Grid */
+  .commitments-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  }
+
+  @media (min-width: 768px) {
+    .commitments-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .commitments-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .commitment-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  /* RE:TECH Flow */
+  .retech-flow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2.5rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .flow-step {
+    flex: 1;
+    min-width: 200px;
+    padding: 1.5rem;
+    background: rgba(6, 12, 22, 0.4);
+    border: 1px solid rgba(93, 225, 228, 0.2);
+    border-radius: var(--radius-lg);
+    text-align: center;
+  }
+
+  .flow-number {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-primary-bright);
+    font-weight: 700;
+  }
+
+  .flow-step h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    color: var(--color-text);
+  }
+
+  .flow-step p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+  }
+
+  .flow-arrow {
+    font-size: 1.5rem;
+    color: var(--color-primary-bright);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .retech-flow {
+      flex-direction: column;
+    }
+    
+    .flow-arrow {
+      transform: rotate(90deg);
+    }
+  }
+
+  .principles-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0 0;
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .principles-checklist li {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  /* Integrated Method Steps */
+  .example-scenario {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-left: 3px solid var(--color-primary-bright);
+  }
+
+  .example-scenario h3 {
+    margin: 0 0 0.75rem 0;
+    color: var(--color-primary-bright);
+  }
+
+  .example-scenario p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .method-steps-integrated {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .method-step {
+    padding: clamp(1.6rem, 4vw, 2rem);
+    background: rgba(6, 12, 22, 0.4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .step-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--color-text);
+  }
+
+  .step-description {
+    margin: 0 0 1rem 0;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .step-example {
+    padding: 1rem;
+    background: rgba(10, 147, 150, 0.08);
+    border-left: 2px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+  }
+
+  .step-example strong {
+    color: var(--color-primary-bright);
+  }
+
+  .step-example em {
+    font-style: italic;
+    color: var(--color-text);
+  }
+
+  .method-outcome {
+    padding: 1.5rem;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  /* Safety Grid */
+  .safety-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  }
+
+  @media (min-width: 900px) {
+    .safety-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .safety-card {
+    padding: 2rem;
+  }
+
+  .safety-card h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    color: var(--color-text);
+  }
+
+  .safety-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .safety-card li {
+    position: relative;
+    padding-left: 1.5rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .safety-card li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary-bright);
+    font-weight: 700;
+  }
+
+  .safety-note {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(10, 147, 150, 0.12);
+    border: 1px solid rgba(93, 225, 228, 0.3);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .safety-note strong {
+    color: var(--color-text);
+  }
+
+  /* Licensing Table */
+  .licensing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+  }
+
+  .licensing-table th,
+  .licensing-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .licensing-table th {
+    background: rgba(10, 147, 150, 0.12);
+    color: var(--color-primary-bright);
+    font-weight: 600;
+  }
+
+  .licensing-table td {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .licensing-table strong {
+    color: var(--color-text);
+  }
+
+  .licensing-note {
+    margin-top: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .licensing-note strong {
+    color: var(--color-text);
+  }
+
+  /* Pathways Grid */
+  .pathways-grid {
+    display: grid;
+    gap: 1.8rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  }
+
+  @media (min-width: 900px) {
+    .pathways-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .pathway-card {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .pathway-icon {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .pathway-card h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.3rem;
+    color: var(--color-text);
+  }
+
+  .pathway-card > p {
+    margin: 0 0 1.5rem 0;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    text-align: left;
+  }
+
+  .pathway-tasks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.6rem;
+    text-align: left;
+  }
+
+  .pathway-tasks li {
+    position: relative;
+    padding-left: 1.5rem;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .pathway-tasks li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary-bright);
+    font-weight: 700;
+  }
+
+  /* Final CTA */
+  .final-cta-section {
+    max-width: 65ch;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+  }
+
+  .final-cta-section h2 {
+    margin: 0 0 1rem 0;
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+    color: var(--color-text);
+  }
+
+  .final-cta-section p {
+    margin: 0 0 2rem 0;
+    font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 640px) {
+    .cta-buttons {
+      flex-direction: column;
+    }
+    
+    .cta-buttons .button {
+      width: 100%;
+    }
+  }
+</style>

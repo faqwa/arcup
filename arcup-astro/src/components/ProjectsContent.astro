@@ -1,71 +1,96 @@
 ---
 const normalizedBase = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "");
 const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normalizedBase}/` : "/") : `${normalizedBase}${path}`);
+
+const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSeaIq1c0a9zu0R5Z0_GHP73HxKKjDr2vcjgjoiV2L3PxSv-ww/viewform?usp=dialog";
 ---
 
 <main id="main-content" class="page-shell page-projects" aria-labelledby="projects-title">
   
-  <!-- ========================================
-       HERO SECTION
-       ======================================== -->
+  <!-- HERO SECTION -->
   <header class="projects-hero" aria-labelledby="projects-title">
-    <p class="hero-eyebrow">active research</p>
+    <p class="hero-eyebrow">Early-Stage Collaborative Research</p>
     <h1 id="projects-title">Projects</h1>
-    <p class="projects-lede">Each project applies RE:TECH principles — open, safe, iterative — and follows Arc^'s licensing and governance. Find an entry point below, then contribute through replication, documentation, or design.</p>
+    <p class="projects-lede">
+      Each project applies RE:TECH principles — open, safe, iterative — and follows Arc^'s licensing and governance. 
+      <strong>These are real-world challenges that need collaborative solutions.</strong> Whether you're testing a hypothesis, 
+      building hardware, or bringing community knowledge — there's a way in.
+    </p>
   </header>
 
-  <!-- ========================================
-       EARLY STAGE INFO - Getting Started
-       ======================================== -->
-  <section class="projects-guide surface-panel">
+  <!-- GETTING INVOLVED - CARD FORMAT -->
+  <section class="getting-involved-section">
     <h2>Getting Involved</h2>
+    <p class="section-intro">Arc^ is in early stages, which means <strong>you can help shape the direction</strong> from the ground up.</p>
     
-    <div style="margin-bottom: 1.5rem;">
-      <h3 style="margin: 0 0 0.8rem 0; color: var(--color-primary-bright); font-size: 1.1rem; font-weight: 600;">For Students</h3>
-      <p style="margin: 0; color: var(--color-text-muted); line-height: 1.7;">
-        If you're working on a final year project, honours thesis, or PhD, you can reach out to discuss ideas—but you'll need to find supervisors at your own institution who are willing to work within Arc^'s research framework.
-      </p>
+    <div class="involvement-grid">
+      <article class="involvement-card surface-panel">
+        <div class="card-icon">🎓</div>
+        <h3>For Students</h3>
+        <p>Working on a final year project, honours thesis, or PhD? You can explore Arc^ projects as part of your coursework. You'll need to find supervisors at your institution who are willing to work within Arc^'s open research framework.</p>
+        <p class="card-note"><strong>What you'll need:</strong> A project proposal, supervisor approval, and commitment to open licensing.</p>
+      </article>
+
+      <article class="involvement-card surface-panel">
+        <div class="card-icon">🔬</div>
+        <h3>For Researchers</h3>
+        <p>Independent researchers are welcome! Fair warning: there aren't public designs or protocols yet. But that's the opportunity — <strong>early contributors help define the methods and set the standards.</strong></p>
+        <p class="card-note"><strong>What's available now:</strong> Research questions, literature leads, experimental frameworks to build together.</p>
+      </article>
+
+      <article class="involvement-card surface-panel">
+        <div class="card-icon">🌱</div>
+        <h3>Current Reality</h3>
+        <p>Arc^ is building in public, which means it's messy, evolving, and honest about uncertainty. The most valuable contribution right now is <strong>dialogue, co-design, and shaping direction together.</strong></p>
+        <p class="card-note"><strong>Best way to start:</strong> Pick a project below that interests you, then reach out to discuss how we can collaborate.</p>
+      </article>
     </div>
 
-    <div style="margin-bottom: 1.5rem;">
-      <h3 style="margin: 0 0 0.8rem 0; color: var(--color-primary-bright); font-size: 1.1rem; font-weight: 600;">For Independent Researchers</h3>
-      <p style="margin: 0; color: var(--color-text-muted); line-height: 1.7;">
-        Independent researchers are welcome too, but fair warning: there aren't any public designs or protocols yet. I'm working on it, but we're not quite there!
-      </p>
+    <div class="involvement-cta">
+      <a href={formURL} target="_blank" class="button">Let's Talk</a>
     </div>
-
-    <p style="margin: 0 0 1.5rem 0; color: var(--color-text-muted); line-height: 1.7; font-style: italic;">
-      Arc^ is super early right now. For now, the best way to get involved is to contact me directly and we can figure it out together.
-    </p>
-    
-    <a href="mailto:ali@xbyali.page?subject=Getting%20Involved%20with%20Arc^" class="button">Contact Ali</a>
   </section>
 
-  <!-- ========================================
-       PROJECT CLUSTERS DIVIDER
-       ======================================== -->
+  <!-- CHOOSE YOUR PATH SECTION (OPTIONAL - FOR TESTING) -->
+<section class="choose-path-section surface-panel" data-testable>
+    <h2>Choose Your Entry Point</h2>
+    <p class="section-intro">Not sure where to start? Filter projects by what you bring:</p>
+    
+    <div class="path-filters">
+      <button class="path-filter-btn active" data-filter="all">
+        <span class="filter-icon">🔍</span>
+        <span>All Projects</span>
+      </button>
+      <button class="path-filter-btn" data-filter="physics">
+        <span class="filter-icon">⚛️</span>
+        <span>Physics & Plasma</span>
+      </button>
+      <button class="path-filter-btn" data-filter="chemistry">
+        <span class="filter-icon">⚗️</span>
+        <span>Chemistry</span>
+      </button>
+      <button class="path-filter-btn" data-filter="biology">
+        <span class="filter-icon">🌱</span>
+        <span>Biology & Ecology</span>
+      </button>
+      <button class="path-filter-btn" data-filter="engineering">
+        <span class="filter-icon">🛠️</span>
+        <span>Engineering</span>
+      </button>
+      <button class="path-filter-btn" data-filter="community">
+        <span class="filter-icon">🌍</span>
+        <span>Community</span>
+      </button>
+    </div>
+    <p class="filter-note">Click a category to highlight relevant projects below. This is just a guide — all projects welcome diverse perspectives!</p>
+  </section>
+
+  <!-- PROJECT CLUSTERS DIVIDER -->
   <div class="section-divider" aria-hidden="true">
     <span class="divider-label">project clusters</span>
   </div>
 
-  <!-- ========================================
-       CLUSTER 1: WATER & SOILS
-       
-       HOW TO ADD A NEW PROJECT:
-       1. Copy the entire <article class="project-item"> block
-       2. Change data-project="your-project-id" (must be unique!)
-       3. Change data-project-content="your-project-id" (must match!)
-       4. Update the title, summary, and all content sections
-       5. Update the email subject in the mailto link
-
-       One tiny reminder for later:
-        When you want to change a project's status, just update the class name:
-
-        status-early-idea (blue)
-        status-testing (orange)
-        status-writing (teal)
-        status-published (green)
-       ======================================== -->
+  <!-- CLUSTER 1: WATER & SOILS -->
   <section class="project-cluster" aria-labelledby="cluster-water">
     <header class="cluster-header">
       <h2 id="cluster-water">Water & Soils</h2>
@@ -79,7 +104,7 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
     <div class="projects-list">
       
       <!-- PROJECT 1: Saltwater Irrigation -->
-      <article class="project-item">
+      <article class="project-item" data-disciplines="biology,chemistry,engineering">
         <button class="project-toggle" aria-expanded="false" data-project="saltwater">
           <div class="project-header-content">
             <div style="display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;">
@@ -87,6 +112,7 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
               <span class="status-badge status-early-idea">Early Idea</span>
             </div>
             <p class="project-summary">Exploring strategies for salinity-tolerant cultivation and soil recovery.</p>
+            <p class="project-updated">Last updated: October 2025</p>
           </div>
           <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -97,10 +123,27 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
             <h4>Why It Matters</h4>
             <p>Saline encroachment threatens food security globally. Understanding tolerance thresholds and recovery pathways is critical for coastal and arid regions.</p>
           </div>
+
           <div class="detail-section">
-            <h4>Status</h4>
-            <p><strong>Hypothesis & early trials.</strong> Seeking agronomy partners and data analysts.</p>
+            <h4>What's Needed Now</h4>
+            <ul>
+              <li>Literature review on salinity tolerance mechanisms in crops</li>
+              <li>Partners with agronomy or soil science expertise</li>
+              <li>Recommendations for low-cost soil moisture/salinity sensors</li>
+              <li>Potential field trial locations (coastal or inland saline soils)</li>
+              <li>Baseline data on local salinity conditions</li>
+            </ul>
           </div>
+
+          <div class="detail-section">
+            <h4>Project Timeline</h4>
+            <ul class="timeline-list">
+              <li><strong>End of 2025:</strong> Finalize research questions, identify field partners, complete literature review</li>
+              <li><strong>Mid 2026:</strong> Set up first field trials, deploy monitoring systems, begin data collection</li>
+              <li><strong>End of 2026:</strong> Analyze initial results, document protocols, publish interim findings openly</li>
+            </ul>
+          </div>
+
           <div class="detail-section">
             <h4>How to Contribute</h4>
             <ul>
@@ -110,8 +153,11 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
               <li>Document replication protocols</li>
             </ul>
           </div>
+
           <div class="detail-section">
             <h4>Project Resources</h4>
+            <p class="resources-note">Documentation and protocols will be published here as they're developed. For now, all collaboration happens via direct communication.</p>
+            <!-- COMMENTED OUT RESOURCE LINKS
             <div class="resources-grid">
               <a href="#" class="resource-link disabled">
                 <span class="resource-icon">📚</span>
@@ -123,33 +169,26 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
                 <span class="resource-label">GitHub Repository</span>
                 <span class="resource-status">(Coming Soon)</span>
               </a>
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">📖</span>
-                <span class="resource-label">Documentation</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">💬</span>
-                <span class="resource-label">Discussion Forum</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
             </div>
+            -->
           </div>
+
           <div class="project-cta">
-            <a href="https://forms.gle/BZMEtQuMgNgkyvVV7" target="_blank" rel="noopener noreferrer" class="button button-outline">Express Interest →</a>
+            <a href={formURL} target="_blank" rel="noopener noreferrer" class="button button-outline">Join This Project →</a>
           </div>
         </div>
       </article>
 
       <!-- PROJECT 2: PAW for Pathogens & Nutrients -->
-      <article class="project-item">
+      <article class="project-item" data-disciplines="chemistry,biology,physics">
         <button class="project-toggle" aria-expanded="false" data-project="paw-pathogens">
           <div class="project-header-content">
             <div style="display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;">
-              <h3 style="margin: 0;">Plasma-Activated Water for Pathogens & Nutrients</h3>
+              <h3 style="margin: 0;">PAW for Pathogens & Nutrients</h3>
               <span class="status-badge status-early-idea">Early Idea</span>
             </div>
-            <p class="project-summary">Reduce chemical inputs through PAW applications for water treatment and crop health.</p>
+            <p class="project-summary">Testing plasma-activated water for pathogen control and nutrient transformation.</p>
+            <p class="project-updated">Last updated: October 2025</p>
           </div>
           <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -158,48 +197,47 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
         <div class="project-details" data-project-content="paw-pathogens" hidden>
           <div class="detail-section">
             <h4>Why It Matters</h4>
-            <p>Safer water for crops and communities while reducing reliance on harsh chemicals. PAW shows promise for pathogen reduction and nutrient availability.</p>
+            <p>Waterborne pathogens and nutrient runoff threaten agriculture and ecosystems. Chemical treatments have downstream impacts. Plasma offers a potential alternative.</p>
           </div>
+
           <div class="detail-section">
-            <h4>Status</h4>
-            <p><strong>Lab protocols maturing.</strong> Need replication across different contexts and climates.</p>
+            <h4>What's Needed Now</h4>
+            <ul>
+              <li>Literature review on plasma-activated water efficacy against common pathogens</li>
+              <li>Access to microbiology lab facilities or partners</li>
+              <li>Baseline water quality testing protocols</li>
+              <li>Understanding of local water quality challenges (what pathogens/nutrients?)</li>
+              <li>Safety protocols for handling contaminated water samples</li>
+            </ul>
           </div>
+
+          <div class="detail-section">
+            <h4>Project Timeline</h4>
+            <ul class="timeline-list">
+              <li><strong>End of 2025:</strong> Define target pathogens and nutrients, establish lab partnerships, review existing PAW research</li>
+              <li><strong>Mid 2026:</strong> Conduct bench-scale experiments, measure efficacy, document reactive species chemistry</li>
+              <li><strong>End of 2026:</strong> Test in agricultural context, compare with standard treatments, publish results</li>
+            </ul>
+          </div>
+
           <div class="detail-section">
             <h4>How to Contribute</h4>
             <ul>
-              <li>Design or build PAW rigs (open hardware)</li>
-              <li>Run dose-response experiments</li>
-              <li>Share raw data from trials</li>
-              <li>Test pathogen reduction claims</li>
+              <li>Conduct lab assays on pathogen viability</li>
+              <li>Measure nutrient transformation pathways</li>
+              <li>Analyze water chemistry before/after treatment</li>
+              <li>Test PAW on agricultural pests or plant pathogens</li>
+              <li>Document experimental protocols</li>
             </ul>
           </div>
+
           <div class="detail-section">
             <h4>Project Resources</h4>
-            <div class="resources-grid">
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">📚</span>
-                <span class="resource-label">Wiki</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">💻</span>
-                <span class="resource-label">GitHub Repository</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">📖</span>
-                <span class="resource-label">Documentation</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">💬</span>
-                <span class="resource-label">Discussion Forum</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-            </div>
+            <p class="resources-note">Documentation and protocols will be published here as they're developed. For now, all collaboration happens via direct communication.</p>
           </div>
+
           <div class="project-cta">
-            <a href="https://forms.gle/BZMEtQuMgNgkyvVV7" target="_blank" rel="noopener noreferrer" class="button button-outline">Express Interest →</a>
+            <a href={formURL} target="_blank" rel="noopener noreferrer" class="button button-outline">Join This Project →</a>
           </div>
         </div>
       </article>
@@ -207,9 +245,7 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
     </div>
   </section>
 
-  <!-- ========================================
-       CLUSTER 2: AIR & SURFACES
-       ======================================== -->
+  <!-- CLUSTER 2: AIR & SURFACES -->
   <section class="project-cluster" aria-labelledby="cluster-air">
     <header class="cluster-header">
       <h2 id="cluster-air">Air & Surfaces</h2>
@@ -223,7 +259,7 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
     <div class="projects-list">
       
       <!-- PROJECT 3: Airborne Pathogens -->
-      <article class="project-item">
+      <article class="project-item" data-disciplines="physics,chemistry,engineering">
         <button class="project-toggle" aria-expanded="false" data-project="airborne">
           <div class="project-header-content">
             <div style="display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;">
@@ -231,6 +267,7 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
               <span class="status-badge status-early-idea">Early Idea</span>
             </div>
             <p class="project-summary">Scalable sanitation without harsh chemicals for indoor air quality.</p>
+            <p class="project-updated">Last updated: October 2025</p>
           </div>
           <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -239,111 +276,110 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
         <div class="project-details" data-project-content="airborne" hidden>
           <div class="detail-section">
             <h4>Why It Matters</h4>
-            <p>Chemical-free air sanitation could transform indoor public health, especially in high-density or vulnerable settings.</p>
+            <p>Indoor air quality impacts health, especially in schools, hospitals, and crowded spaces. Plasma-based systems could offer chemical-free pathogen inactivation.</p>
           </div>
+
           <div class="detail-section">
-            <h4>Status</h4>
-            <p><strong>Benchtop prototypes.</strong> Validation and safety monitoring needed.</p>
+            <h4>What's Needed Now</h4>
+            <ul>
+              <li>Literature review on non-thermal plasma for airborne pathogen control</li>
+              <li>Understanding of air filtration standards and requirements</li>
+              <li>Access to aerosol testing facilities or partners</li>
+              <li>Baseline data on indoor air quality challenges</li>
+              <li>Safety considerations for ozone byproducts</li>
+            </ul>
           </div>
+
+          <div class="detail-section">
+            <h4>Project Timeline</h4>
+            <ul class="timeline-list">
+              <li><strong>End of 2025:</strong> Review existing plasma air purification research, identify gaps, define testing protocols</li>
+              <li><strong>Mid 2026:</strong> Design prototype plasma air treatment system, conduct lab tests on pathogen viability</li>
+              <li><strong>End of 2026:</strong> Test in real-world setting, measure efficacy and safety, document openly</li>
+            </ul>
+          </div>
+
           <div class="detail-section">
             <h4>How to Contribute</h4>
             <ul>
-              <li>CFD modeling of airflow patterns</li>
-              <li>Ozone and NOx monitoring protocols</li>
-              <li>Document safety parameters</li>
-              <li>Test in controlled environments</li>
+              <li>Design plasma reactor prototypes</li>
+              <li>Test pathogen inactivation rates</li>
+              <li>Measure byproduct formation (ozone, NOx)</li>
+              <li>Conduct safety assessments</li>
+              <li>Document hardware designs and protocols</li>
             </ul>
           </div>
+
           <div class="detail-section">
             <h4>Project Resources</h4>
-            <div class="resources-grid">
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">📚</span>
-                <span class="resource-label">Wiki</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">💻</span>
-                <span class="resource-label">GitHub Repository</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">📖</span>
-                <span class="resource-label">Documentation</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">💬</span>
-                <span class="resource-label">Discussion Forum</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-            </div>
+            <p class="resources-note">Documentation and protocols will be published here as they're developed. For now, all collaboration happens via direct communication.</p>
           </div>
+
           <div class="project-cta">
-            <a href="https://forms.gle/BZMEtQuMgNgkyvVV7" target="_blank" rel="noopener noreferrer" class="button button-outline">Express Interest →</a>
+            <a href={formURL} target="_blank" rel="noopener noreferrer" class="button button-outline">Join This Project →</a>
           </div>
         </div>
       </article>
 
-      <!-- PROJECT 4: Surface Biofilm Disruption -->
-      <article class="project-item">
-        <button class="project-toggle" aria-expanded="false" data-project="biofilm">
+      <!-- PROJECT 4: Surface Decontamination -->
+      <article class="project-item" data-disciplines="chemistry,engineering">
+        <button class="project-toggle" aria-expanded="false" data-project="surface">
           <div class="project-header-content">
             <div style="display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;">
-              <h3 style="margin: 0;">Surface Biofilm Disruption</h3>
+              <h3 style="margin: 0;">Plasma for Surface Decontamination</h3>
               <span class="status-badge status-early-idea">Early Idea</span>
             </div>
-            <p class="project-summary">Reduce hospital-acquired infections through plasma-based surface treatment.</p>
+            <p class="project-summary">Chemical-free sanitation for food processing and medical settings.</p>
+            <p class="project-updated">Last updated: October 2025</p>
           </div>
           <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
-        <div class="project-details" data-project-content="biofilm" hidden>
+        <div class="project-details" data-project-content="surface" hidden>
           <div class="detail-section">
             <h4>Why It Matters</h4>
-            <p>Biofilms on medical surfaces contribute to persistent infections. Non-toxic disruption methods could save lives.</p>
+            <p>Surface contamination in food processing and medical environments requires effective, non-toxic treatment. Plasma could reduce chemical residues.</p>
           </div>
+
           <div class="detail-section">
-            <h4>Status</h4>
-            <p><strong>Method exploration.</strong> Safety review open for community input.</p>
+            <h4>What's Needed Now</h4>
+            <ul>
+              <li>Literature review on plasma surface treatment efficacy</li>
+              <li>Understanding of industry sanitation standards</li>
+              <li>Access to microbiology lab for swab testing</li>
+              <li>Identification of target surfaces and pathogens</li>
+              <li>Safety protocols for plasma treatment of various materials</li>
+            </ul>
           </div>
+
+          <div class="detail-section">
+            <h4>Project Timeline</h4>
+            <ul class="timeline-list">
+              <li><strong>End of 2025:</strong> Review plasma surface treatment literature, identify testing materials and protocols</li>
+              <li><strong>Mid 2026:</strong> Design plasma treatment device, test on various surfaces and pathogens</li>
+              <li><strong>End of 2026:</strong> Measure treatment efficacy, assess material compatibility, document findings</li>
+            </ul>
+          </div>
+
           <div class="detail-section">
             <h4>How to Contribute</h4>
             <ul>
-              <li>Material compatibility testing</li>
-              <li>Microscopy image sets</li>
-              <li>Safety protocol review</li>
-              <li>Replication across surface types</li>
+              <li>Design plasma applicator devices</li>
+              <li>Test pathogen reduction on surfaces</li>
+              <li>Analyze surface chemistry changes</li>
+              <li>Measure treatment times and energy requirements</li>
+              <li>Document hardware and protocols</li>
             </ul>
           </div>
+
           <div class="detail-section">
             <h4>Project Resources</h4>
-            <div class="resources-grid">
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">📚</span>
-                <span class="resource-label">Wiki</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">💻</span>
-                <span class="resource-label">GitHub Repository</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">📖</span>
-                <span class="resource-label">Documentation</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">💬</span>
-                <span class="resource-label">Discussion Forum</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-            </div>
+            <p class="resources-note">Documentation and protocols will be published here as they're developed. For now, all collaboration happens via direct communication.</p>
           </div>
+
           <div class="project-cta">
-            <a href="https://forms.gle/BZMEtQuMgNgkyvVV7" target="_blank" rel="noopener noreferrer" class="button button-outline">Express Interest →</a>
+            <a href={formURL} target="_blank" rel="noopener noreferrer" class="button button-outline">Join This Project →</a>
           </div>
         </div>
       </article>
@@ -351,9 +387,7 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
     </div>
   </section>
 
-  <!-- ========================================
-       CLUSTER 3: ECOSYSTEM REPAIR
-       ======================================== -->
+  <!-- CLUSTER 3: ECOSYSTEM REPAIR -->
   <section class="project-cluster" aria-labelledby="cluster-ecosystem">
     <header class="cluster-header">
       <h2 id="cluster-ecosystem">Ecosystem Repair</h2>
@@ -367,7 +401,7 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
     <div class="projects-list">
       
       <!-- PROJECT 5: Wetland & Riparian Support -->
-      <article class="project-item">
+      <article class="project-item" data-disciplines="biology,chemistry,community">
         <button class="project-toggle" aria-expanded="false" data-project="wetland">
           <div class="project-header-content">
             <div style="display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;">
@@ -375,6 +409,7 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
               <span class="status-badge status-early-idea">Early Idea</span>
             </div>
             <p class="project-summary">PAW variants for water quality and species resilience in wetland ecosystems.</p>
+            <p class="project-updated">Last updated: October 2025</p>
           </div>
           <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -383,48 +418,110 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
         <div class="project-details" data-project-content="wetland" hidden>
           <div class="detail-section">
             <h4>Why It Matters</h4>
-            <p>Water quality impacts biodiversity and ecosystem resilience. Wetlands are critical buffers that need protection and restoration.</p>
+            <p>Water quality impacts biodiversity and ecosystem resilience. Plasma-treated water might support restoration without disrupting natural systems.</p>
           </div>
+
           <div class="detail-section">
-            <h4>Status</h4>
-            <p><strong>Scoping with community partners.</strong> Early stage, seeking local knowledge and monitoring capacity.</p>
+            <h4>What's Needed Now</h4>
+            <ul>
+              <li>Literature review on wetland restoration and water quality interventions</li>
+              <li>Partners with ecology or restoration experience</li>
+              <li>Baseline water quality data from potential test sites</li>
+              <li>Understanding of local biodiversity and ecosystem needs</li>
+              <li>Community partnerships with land access</li>
+            </ul>
           </div>
+
+          <div class="detail-section">
+            <h4>Project Timeline</h4>
+            <ul class="timeline-list">
+              <li><strong>End of 2025:</strong> Identify restoration sites, establish community partnerships, baseline ecological assessment</li>
+              <li><strong>Mid 2026:</strong> Begin small-scale PAW trials, monitor water quality and species response</li>
+              <li><strong>End of 2026:</strong> Analyze ecological outcomes, document methods, share findings with restoration communities</li>
+            </ul>
+          </div>
+
           <div class="detail-section">
             <h4>How to Contribute</h4>
             <ul>
-              <li>Local water quality monitoring</li>
-              <li>Non-invasive sampling (eDNA, epigenetic markers)</li>
-              <li>Co-design protocols with traditional knowledge</li>
-              <li>Document ecological baselines</li>
+              <li>Conduct ecological monitoring</li>
+              <li>Test water quality parameters</li>
+              <li>Document species presence/absence</li>
+              <li>Work with community partners on co-design</li>
+              <li>Share traditional ecological knowledge</li>
             </ul>
           </div>
+
           <div class="detail-section">
             <h4>Project Resources</h4>
-            <div class="resources-grid">
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">📚</span>
-                <span class="resource-label">Wiki</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">💻</span>
-                <span class="resource-label">GitHub Repository</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">📖</span>
-                <span class="resource-label">Documentation</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">💬</span>
-                <span class="resource-label">Discussion Forum</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-            </div>
+            <p class="resources-note">Documentation and protocols will be published here as they're developed. For now, all collaboration happens via direct communication.</p>
           </div>
+
           <div class="project-cta">
-            <a href="https://forms.gle/BZMEtQuMgNgkyvVV7" target="_blank" rel="noopener noreferrer" class="button button-outline">Express Interest →</a>
+            <a href={formURL} target="_blank" rel="noopener noreferrer" class="button button-outline">Join This Project →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 6: Native Plant Support -->
+      <article class="project-item" data-disciplines="biology,community">
+        <button class="project-toggle" aria-expanded="false" data-project="native-plants">
+          <div class="project-header-content">
+            <div style="display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;">
+              <h3 style="margin: 0;">Native Plant Propagation Support</h3>
+              <span class="status-badge status-early-idea">Early Idea</span>
+            </div>
+            <p class="project-summary">Using PAW to improve germination and resilience of native species.</p>
+            <p class="project-updated">Last updated: October 2025</p>
+          </div>
+          <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="project-details" data-project-content="native-plants" hidden>
+          <div class="detail-section">
+            <h4>Why It Matters</h4>
+            <p>Native plant propagation is crucial for restoration. Improving germination rates and seedling resilience could scale up restoration efforts.</p>
+          </div>
+
+          <div class="detail-section">
+            <h4>What's Needed Now</h4>
+            <ul>
+              <li>Literature review on seed priming and germination enhancement</li>
+              <li>Partners with native plant nursery experience</li>
+              <li>Access to seeds of local native species</li>
+              <li>Baseline germination rate data for target species</li>
+              <li>Understanding of local restoration priorities</li>
+            </ul>
+          </div>
+
+          <div class="detail-section">
+            <h4>Project Timeline</h4>
+            <ul class="timeline-list">
+              <li><strong>End of 2025:</strong> Select target native species, establish nursery partnerships, design germination experiments</li>
+              <li><strong>Mid 2026:</strong> Run controlled PAW treatment trials, measure germination and growth</li>
+              <li><strong>End of 2026:</strong> Assess seedling resilience, document protocols, share with restoration practitioners</li>
+            </ul>
+          </div>
+
+          <div class="detail-section">
+            <h4>How to Contribute</h4>
+            <ul>
+              <li>Run seed germination trials</li>
+              <li>Monitor seedling growth and health</li>
+              <li>Test PAW treatment variations</li>
+              <li>Document protocols for replication</li>
+              <li>Connect with local restoration projects</li>
+            </ul>
+          </div>
+
+          <div class="detail-section">
+            <h4>Project Resources</h4>
+            <p class="resources-note">Documentation and protocols will be published here as they're developed. For now, all collaboration happens via direct communication.</p>
+          </div>
+
+          <div class="project-cta">
+            <a href={formURL} target="_blank" rel="noopener noreferrer" class="button button-outline">Join This Project →</a>
           </div>
         </div>
       </article>
@@ -432,223 +529,75 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
     </div>
   </section>
 
-  <!-- ========================================
-       CLUSTER 4: TOOLING & INFRASTRUCTURE
-       ======================================== -->
-  <section class="project-cluster" aria-labelledby="cluster-tooling">
-    <header class="cluster-header">
-      <h2 id="cluster-tooling">Tooling & Infrastructure</h2>
-      <div class="cluster-tags">
-        <span class="tag">open hardware</span>
-        <span class="tag">data</span>
-        <span class="tag">documentation</span>
-      </div>
-    </header>
-
-    <div class="projects-list">
-      
-      <!-- PROJECT 6: Open PAW Rigs & Safety Kits -->
-      <article class="project-item">
-        <button class="project-toggle" aria-expanded="false" data-project="hardware">
-          <div class="project-header-content">
-            <div style="display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;">
-              <h3 style="margin: 0;">Open PAW Rigs & Safety Kits</h3>
-              <span class="status-badge status-early-idea">Early Idea</span>
-            </div>
-            <p class="project-summary">Reproducible hardware to accelerate learning and ensure safety.</p>
-          </div>
-          <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <div class="project-details" data-project-content="hardware" hidden>
-          <div class="detail-section">
-            <h4>Why It Matters</h4>
-            <p>Open hardware designs enable independent replication and accelerate collaborative learning across contexts.</p>
-          </div>
-          <div class="detail-section">
-            <h4>Status</h4>
-            <p><strong>Designing CERN OHL-S reference builds.</strong> CAD files and BOMs in progress.</p>
-          </div>
-          <div class="detail-section">
-            <h4>How to Contribute</h4>
-            <ul>
-              <li>CAD design and optimization</li>
-              <li>Bill of materials (BOM) validation</li>
-              <li>Assembly documentation</li>
-              <li>Safety interlock design</li>
-            </ul>
-          </div>
-          <div class="detail-section">
-            <h4>Project Resources</h4>
-            <div class="resources-grid">
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">📚</span>
-                <span class="resource-label">Wiki</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">💻</span>
-                <span class="resource-label">GitHub Repository</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">📖</span>
-                <span class="resource-label">Documentation</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">💬</span>
-                <span class="resource-label">Discussion Forum</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-            </div>
-          </div>
-          <div class="project-cta">
-            <a href="https://forms.gle/BZMEtQuMgNgkyvVV7" target="_blank" rel="noopener noreferrer" class="button button-outline">Express Interest →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- PROJECT 7: Open Data & Methods -->
-      <article class="project-item">
-        <button class="project-toggle" aria-expanded="false" data-project="data">
-          <div class="project-header-content">
-            <div style="display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;">
-              <h3 style="margin: 0;">Open Data & Methods</h3>
-              <span class="status-badge status-early-idea">Early Idea</span>
-            </div>
-            <p class="project-summary">Standardized datasets and attribution for comparable results across sites.</p>
-          </div>
-          <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <div class="project-details" data-project-content="data" hidden>
-          <div class="detail-section">
-            <h4>Why It Matters</h4>
-            <p>Comparable, well-documented data enables meta-analysis and accelerates collective learning.</p>
-          </div>
-          <div class="detail-section">
-            <h4>Status</h4>
-            <p><strong>Schema and attribution ledger in progress.</strong> Seeking data stewards and analysts.</p>
-          </div>
-          <div class="detail-section">
-            <h4>How to Contribute</h4>
-            <ul>
-              <li>Create dataset templates</li>
-              <li>Build analysis pipelines</li>
-              <li>Design replication badges</li>
-              <li>Develop attribution systems</li>
-            </ul>
-          </div>
-          <div class="detail-section">
-            <h4>Project Resources</h4>
-            <div class="resources-grid">
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">📚</span>
-                <span class="resource-label">Wiki</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">💻</span>
-                <span class="resource-label">GitHub Repository</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">📖</span>
-                <span class="resource-label">Documentation</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-              <a href="#" class="resource-link disabled">
-                <span class="resource-icon">💬</span>
-                <span class="resource-label">Discussion Forum</span>
-                <span class="resource-status">(Coming Soon)</span>
-              </a>
-            </div>
-          </div>
-          <div class="project-cta">
-            <a href="https://forms.gle/BZMEtQuMgNgkyvVV7" target="_blank" rel="noopener noreferrer" class="button button-outline">Express Interest →</a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- ========================================
-       PROPOSE A PROJECT SECTION
-       ======================================== -->
-  <section class="propose-section surface-panel">
-    <h2>Propose a Project</h2>
-    <p>Have a use case or idea aligned with RE:TECH? Start by reaching out with:</p>
-    <ul class="proposal-checklist">
-      <li>Problem statement and context</li>
-      <li>Safety considerations and legal compliance</li>
-      <li>Method outline and success metrics</li>
-      <li>Licensing alignment (see below)</li>
-      <li>Needed roles and timeline</li>
-    </ul>
-    <a href="mailto:ali@xbyali.page?subject=Project%20Proposal" class="button">Propose a Project</a>
-  </section>
-
-  <!-- ========================================
-       SAFETY & LICENSING SECTION
-       ======================================== -->
+  <!-- LICENSING & GOVERNANCE -->
   <section class="legal-section surface-panel">
-    <h2>Safety & Licensing</h2>
-    <p class="legal-intro">These requirements apply to all Arc^ projects:</p>
+    <h2>Licensing & Governance</h2>
+    <p class="legal-intro">All Arc^ projects follow the same open framework:</p>
     
     <div class="legal-grid">
       <div class="legal-item">
-        <h3>Safety</h3>
-        <p>Follow Arc^'s safety framework. High-voltage plasma is dangerous and requires proper protocols. If a project path trends toward weaponization, surveillance, or ecocide — we stop.</p>
+        <h3>Documentation</h3>
+        <p><strong>License:</strong> CC BY-NC-SA 4.0</p>
+        <p>Protocols, guides, and written materials are free to share and adapt with attribution. Non-commercial by default — commercial use requires benefit-sharing agreements that return value to the commons.</p>
       </div>
-      
+
       <div class="legal-item">
-        <h3>Licensing</h3>
-        <ul>
-          <li><strong>Documentation:</strong> CC BY-NC-SA</li>
-          <li><strong>Hardware:</strong> CERN OHL-S</li>
-          <li><strong>Software:</strong> AGPL-3.0</li>
-          <li><strong>Data:</strong> ODC-BY / CC BY-SA</li>
-        </ul>
-        <p class="legal-note">Proprietary integrations require a Contributor Assignment Agreement (CAA).</p>
+        <h3>Hardware</h3>
+        <p><strong>License:</strong> CERN OHL-S 2.0</p>
+        <p>Device designs, schematics, and CAD files are strongly reciprocal — modifications must be shared openly under the same terms. This ensures collective improvement.</p>
+      </div>
+
+      <div class="legal-item">
+        <h3>Software</h3>
+        <p><strong>License:</strong> AGPL-3.0</p>
+        <p>Code for data analysis, automation, or web services must be shared if used publicly. Network-copyleft ensures collaborative tools remain open.</p>
+      </div>
+
+      <div class="legal-item">
+        <h3>Data</h3>
+        <p><strong>License:</strong> ODC-BY or CC BY-SA 4.0</p>
+        <p>Research data is shared openly with attribution requirements. Derivatives must credit sources and remain accessible for replication.</p>
       </div>
     </div>
+
+    <p class="legal-note">
+      <strong>No patents. Ever.</strong> Knowledge generated through Arc^ stays in the commons. Commercial applications are possible, but require benefit-sharing agreements that ensure value flows back to the research community and the ecosystems we serve.
+    </p>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta-section">
+    <h2>Ready to Dive In?</h2>
+    <p>Pick a project that resonates, or reach out to discuss how your skills and interests could fit. Arc^ grows through collaboration — let's build this together.</p>
+    <a href={formURL} target="_blank" class="button button-large">Get Involved</a>
+    <p class="cta-note">If you're curious about the bigger picture, check out <a href="https://www.xbyali.page" target="_blank" rel="noopener noreferrer">www.xbyali.page</a></p>
   </section>
 
 </main>
 
-<!-- ========================================
-     ABOUT XBYALI
-     ======================================== -->
-<section class="xbyali-note surface-panel" style="max-width: 70ch; margin: clamp(2rem, 5vw, 3rem) auto; padding: clamp(2rem, 5vw, 2.5rem); text-align: center;">
-  <p style="margin: 0; color: var(--color-text-muted); line-height: 1.7; font-size: 1.05rem;">
-    Arc^ by Ali is part of a larger project called <strong style="color: var(--color-text);">xbyali</strong> — where I'm trying to build a future where the world is better, doing things differently from the past. If you're curious about the bigger picture, check out <a href="https://www.xbyali.page" target="_blank" rel="noopener noreferrer">www.xbyali.page</a>
-  </p>
-</section>
-
-<!-- ========================================
-     FOOTER
-     ======================================== -->
+<!-- FOOTER -->
 <footer class="site-footer">
-  <span>arc^ by ali — open research for planetary repair</span>
+  <div class="footer-content">
+    <p class="footer-text">
+      arc^ by ali · collaborative research for planetary repair
+    </p>
+    <p class="footer-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA</a> · 
+      <a href="https://ohwr.org/cern_ohl_s_v2.txt" target="_blank" rel="noopener noreferrer">CERN OHL-S</a> · 
+      <a href="https://www.gnu.org/licenses/agpl-3.0.en.html" target="_blank" rel="noopener noreferrer">AGPL-3.0</a>
+    </p>
+  </div>
   <button type="button" data-motion-toggle class="button button-muted">Disable Motion</button>
 </footer>
 
-<!-- ========================================
-     BACK TO TOP BUTTON
-     ======================================== -->
+<!-- BACK TO TOP BUTTON -->
 <button class="back-to-top" id="backToTop" aria-label="Back to top">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M12 19V5M5 12l7-7 7 7"/>
   </svg>
 </button>
 
-<!-- ========================================
-     JAVASCRIPT FOR ACCORDION FUNCTIONALITY
-     ======================================== -->
+<!-- JAVASCRIPT FOR FUNCTIONALITY -->
 <script>
   // Accordion functionality for project items
   document.addEventListener('DOMContentLoaded', () => {
@@ -668,18 +617,59 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
         button.classList.toggle('is-expanded', !isExpanded);
       });
     });
+
+    // Back to top button
+    const backToTop = document.getElementById('backToTop');
+    if (backToTop) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // OPTIONAL: Path filter functionality (if testing section is enabled)
+    const pathFilters = document.querySelectorAll('.path-filter-btn');
+    pathFilters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        
+        // Update active state
+        pathFilters.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Filter projects
+        const projects = document.querySelectorAll('.project-item');
+        projects.forEach(project => {
+          if (filter === 'all') {
+            project.style.display = '';
+            project.style.opacity = '1';
+          } else {
+            const disciplines = project.dataset.disciplines || '';
+            if (disciplines.includes(filter)) {
+              project.style.display = '';
+              project.style.opacity = '1';
+              // Optionally add highlight
+              project.style.borderColor = 'rgba(93, 225, 228, 0.5)';
+            } else {
+              project.style.opacity = '0.4';
+              project.style.borderColor = 'var(--color-border)';
+            }
+          }
+        });
+      });
+    });
   });
 </script>
 
 <style>
-  /* ==========================================
-     STATUS BADGES
-     HOW TO USE: Change the class name to update status
-     - status-early-idea (blue)
-     - status-testing (orange)
-     - status-writing (teal)
-     - status-published (green)
-     ========================================== */
+  /* STATUS BADGES */
   .status-badge {
     display: inline-block;
     padding: 0.35rem 0.85rem;
@@ -691,94 +681,259 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
     white-space: nowrap;
   }
 
-  /* Early Idea - Blue/Purple */
   .status-early-idea {
     background: rgba(96, 165, 250, 0.15);
     color: #93c5fd;
     border: 1px solid rgba(96, 165, 250, 0.3);
   }
 
-  /* Testing & Exploring - Orange/Yellow */
   .status-testing {
     background: rgba(251, 146, 60, 0.15);
     color: #fbbf24;
     border: 1px solid rgba(251, 146, 60, 0.3);
   }
 
-  /* Writing Findings - Teal/Cyan */
   .status-writing {
     background: rgba(20, 184, 166, 0.15);
     color: #5eead4;
     border: 1px solid rgba(20, 184, 166, 0.3);
   }
 
-  /* Results Available - Green */
   .status-published {
     background: rgba(34, 197, 94, 0.15);
     color: #86efac;
     border: 1px solid rgba(34, 197, 94, 0.3);
   }
 
-  /* Project Resources Grid Styling */
-  .resources-grid {
-    display: grid;
-    gap: 0.5rem;
-  }
-
-  .resource-link {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.8rem 1rem;
-    background: rgba(6, 12, 22, 0.4);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    text-decoration: none;
+  /* PROJECT UPDATED TEXT */
+  .project-updated {
+    margin: 0.5rem 0 0 0;
+    font-size: 0.85rem;
     color: var(--color-text-muted);
-    transition: all var(--transition-base);
+    font-style: italic;
   }
 
-  .resource-link.disabled {
-    cursor: not-allowed;
-    opacity: 0.7;
+  /* TIMELINE LIST */
+  .timeline-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.8rem;
   }
 
-  .resource-link:not(.disabled):hover {
+  .timeline-list li {
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .timeline-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary-bright);
+    font-weight: 700;
+  }
+
+  .timeline-list strong {
+    color: var(--color-primary-bright);
+    font-weight: 600;
+  }
+
+  /* RESOURCES NOTE */
+  .resources-note {
+    margin: 0;
+    padding: 1rem;
     background: rgba(10, 147, 150, 0.08);
-    border-color: rgba(93, 225, 228, 0.3);
-  }
-
-  .resource-icon {
-    font-size: 1.2rem;
-    flex-shrink: 0;
-  }
-
-  .resource-label {
-    flex: 1;
+    border-left: 3px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-muted);
     font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* GETTING INVOLVED SECTION */
+  .getting-involved-section {
+    max-width: 100ch;
+    margin: 0 auto;
+  }
+
+  .getting-involved-section h2 {
+    text-align: center;
+    margin: 0 0 1rem 0;
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
     color: var(--color-text);
   }
 
-  .resource-status {
-    font-size: 0.85rem;
-    font-style: italic;
+  .involvement-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    margin: 2rem 0;
+  }
+
+  @media (min-width: 900px) {
+    .involvement-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .involvement-card {
+    padding: 2rem;
+    text-align: center;
+    display: grid;
+    gap: 1rem;
+    align-content: start;
+    transition: all var(--transition-base);
+  }
+
+  .involvement-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(93, 225, 228, 0.4);
+  }
+
+  .involvement-card .card-icon {
+    font-size: 3rem;
+    line-height: 1;
+    margin: 0 auto;
+  }
+
+  .involvement-card h3 {
+    margin: 0;
+    font-size: clamp(1.2rem, 3vw, 1.35rem);
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .involvement-card p {
+    margin: 0;
     color: var(--color-text-muted);
+    line-height: 1.7;
+    font-size: 1.02rem;
+    text-align: left;
   }
 
-  /* Project CTA (Express Interest Button) */
-  .project-cta {
-    margin-top: 1rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--color-border);
+  .card-note {
+    font-size: 0.95rem !important;
+    font-style: italic;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(93, 225, 228, 0.2);
+  }
+
+  .card-note strong {
+    color: var(--color-primary-bright);
+  }
+
+  .involvement-cta {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    margin-top: 2rem;
   }
 
-  .project-cta .button {
-    min-width: 180px;
+  /* CHOOSE YOUR PATH SECTION (TESTABLE) */
+  .choose-path-section {
+    max-width: 90ch;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 3rem);
+    text-align: center;
   }
 
-  /* Back to Top Button */
+  .choose-path-section h2 {
+    margin: 0 0 1rem 0;
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+    color: var(--color-text);
+  }
+
+  .path-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+
+  .path-filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(6, 12, 22, 0.4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-base);
+  }
+
+  .path-filter-btn:hover {
+    background: rgba(10, 147, 150, 0.08);
+    border-color: rgba(93, 225, 228, 0.3);
+    color: var(--color-text);
+  }
+
+  .path-filter-btn.active {
+    background: rgba(10, 147, 150, 0.15);
+    border-color: var(--color-primary-bright);
+    color: var(--color-text);
+  }
+
+  .filter-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  .filter-note {
+    margin: 1rem 0 0 0;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  /* FINAL CTA SECTION */
+  .final-cta-section {
+    max-width: 60ch;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .final-cta-section h2 {
+    margin: 0;
+    font-size: clamp(1.6rem, 4vw, 2rem);
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .final-cta-section p {
+    margin: 0;
+    font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .cta-note {
+    font-size: 0.95rem !important;
+    font-style: italic;
+  }
+
+  .cta-note a {
+    color: var(--color-primary-bright);
+    text-decoration: underline;
+    text-decoration-color: rgba(93, 225, 228, 0.3);
+    transition: text-decoration-color var(--transition-base);
+  }
+
+  .cta-note a:hover {
+    text-decoration-color: var(--color-primary-bright);
+  }
+
+  /* BACK TO TOP BUTTON */
   .back-to-top {
     position: fixed;
     bottom: 2rem;
@@ -816,13 +971,19 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
     height: 24px;
   }
 
+  /* MOBILE RESPONSIVE */
   @media (max-width: 640px) {
-    .project-cta {
-      justify-content: stretch;
+    .involvement-grid {
+      grid-template-columns: 1fr;
     }
-    
-    .project-cta .button {
-      width: 100%;
+
+    .path-filters {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .path-filter-btn {
+      justify-content: center;
     }
 
     .back-to-top {
