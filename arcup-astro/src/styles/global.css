@@ -1955,7 +1955,190 @@ button:focus-visible {
   margin-top: 0.5rem;
   width: 100%;
 }
+/* ============================================
+   JOIN PAGE - ACKNOWLEDGEMENTS SECTION + GRID FIXES
+   Add this to global.css after existing Join page styles
+   ============================================ */
 
+/* Acknowledgements Section */
+.acknowledgements-section {
+  max-width: 85ch;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 3.5rem);
+  text-align: center;
+}
+
+.acknowledgements-section h2 {
+  margin: 0 0 1.5rem 0;
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.acknowledgements-intro {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 65ch;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.acknowledgements-intro p {
+  margin: 0;
+  font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.acknowledgements-intro strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* Acknowledgements Grid - FIXED 2x4 on desktop */
+.acknowledgements-grid {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  margin: 2rem 0;
+}
+
+@media (min-width: 768px) {
+  .acknowledgements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .acknowledgements-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.acknowledgement-card {
+  padding: 1.5rem;
+  background: rgba(6, 12, 22, 0.4);
+  border: 1px solid rgba(93, 225, 228, 0.2);
+  border-radius: var(--radius-md);
+  text-align: left;
+  display: grid;
+  gap: 0.6rem;
+  align-content: start;
+  transition: all var(--transition-base);
+}
+
+.acknowledgement-card:hover {
+  border-color: rgba(93, 225, 228, 0.4);
+  background: rgba(10, 147, 150, 0.08);
+  transform: translateY(-2px);
+}
+
+.acknowledgement-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.acknowledgement-card h3 a {
+  color: var(--color-primary-bright);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.acknowledgement-card h3 a:hover,
+.acknowledgement-card h3 a:focus-visible {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.acknowledgement-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.acknowledgements-note {
+  margin: 2rem 0 0 0;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.acknowledgements-note a {
+  font-weight: 600;
+}
+
+/* FIXED: Contribute Grid - 2x2 on desktop, no orphans */
+@media (min-width: 768px) {
+  .contribute-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .contribute-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* FIXED: Expectations Grid - 2x3 on desktop */
+@media (min-width: 768px) {
+  .expectations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .expectations-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile Adjustments for Acknowledgements */
+@media (max-width: 640px) {
+  .acknowledgements-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .acknowledgements-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .acknowledgements-intro {
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .acknowledgements-intro p {
+    font-size: 1.02rem;
+  }
+
+  .acknowledgements-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .acknowledgement-card {
+    padding: 1.2rem;
+  }
+
+  .acknowledgement-card h3 {
+    font-size: 1rem;
+  }
+
+  .acknowledgement-card p {
+    font-size: 0.92rem;
+  }
+
+  .acknowledgements-note {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+  }
+}
 /* Contribute Section */
 .contribute-section {
   display: grid;
