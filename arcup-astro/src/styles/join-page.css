@@ -1,13 +1,12 @@
-/* JOIN PAGE CSS */
-/* Styles for join.astro page */
-
 /* ============================================
-   JOIN PAGE LAYOUT
+   JOIN PAGE - REFACTORED
+   Uses design system from base-global.css
+   Only unique page-specific styles remain
    ============================================ */
 
+/* Page uses .page-shell from base-global */
 .page-join {
-  display: grid;
-  gap: clamp(3rem, 7vw, 5rem);
+  gap: clamp(3rem, 6vw, 5rem);
 }
 
 /* ============================================
@@ -24,50 +23,114 @@
 }
 
 .join-hero h1 {
+  /* Inherits from base-global h1 */
   margin: 0;
-  font-size: clamp(2.5rem, 6.5vw, 3.5rem);
-  line-height: 1.2;
-  font-weight: 700;
-  color: var(--color-text);
 }
 
 .join-lede {
+  /* Uses .lead style from base-global */
   margin: 0;
   font-size: clamp(1.1rem, 2.8vw, 1.3rem);
-  color: var(--color-text-muted);
   line-height: 1.65;
 }
 
 /* ============================================
-   GETTING STARTED SECTION
+   ACKNOWLEDGEMENTS SECTION - Uses .surface-panel
    ============================================ */
 
-.getting-started-section {
-  max-width: 90ch;
+.acknowledgements-section {
+  max-width: 85ch;
   margin: 0 auto;
 }
 
-.getting-started-intro {
-  max-width: 65ch;
+.acknowledgements-section h2 {
+  /* Uses h2 from base-global */
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+.acknowledgements-intro {
+  max-width: 70ch;
   margin: 0 auto 2rem;
   text-align: center;
 }
 
-.getting-started-intro p {
+.acknowledgements-intro p {
   margin: 0;
   font-size: clamp(1.05rem, 2.5vw, 1.15rem);
   color: var(--color-text-muted);
   line-height: 1.7;
 }
 
-.getting-started-intro strong {
-  color: var(--color-text);
-  font-weight: 600;
+.acknowledgements-grid {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  margin-top: 2rem;
 }
 
-.getting-started-intro em {
-  color: var(--color-text);
-  font-size: 1.08rem;
+@media (min-width: 768px) {
+  .acknowledgements-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.acknowledgement-card {
+  padding: 1.5rem;
+  background: rgba(6, 12, 22, 0.4);
+  border: 1px solid rgba(93, 225, 228, 0.2);
+  border-radius: var(--radius-md);
+  text-align: left;
+  display: grid;
+  gap: 0.6rem;
+  align-content: start;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.acknowledgement-card:hover {
+  border-color: rgba(93, 225, 228, 0.5);
+  background: rgba(10, 147, 150, 0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(10, 147, 150, 0.2);
+}
+
+.acknowledgement-card h3 {
+  /* Uses h3 from base-global */
+  margin: 0;
+}
+
+.acknowledgement-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* ============================================
+   GETTING STARTED SECTION - Uses .surface-panel
+   ============================================ */
+
+.join-getting-started {
+  max-width: 90ch;
+  margin: 0 auto;
+}
+
+.join-getting-started h2 {
+  /* Uses h2 from base-global */
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.section-intro {
+  max-width: 65ch;
+  margin: 0 auto 2rem;
+  text-align: center;
+  font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+  color: var(--color-text-muted);
+  line-height: 1.7;
 }
 
 .getting-started-grid {
@@ -103,10 +166,8 @@
 }
 
 .start-card h3 {
+  /* Uses h3 from base-global */
   margin: 0;
-  font-size: 1.25rem;
-  color: var(--color-text);
-  font-weight: 600;
 }
 
 .start-card p {
@@ -130,19 +191,6 @@
   margin: 0 auto;
 }
 
-.contribute-intro {
-  max-width: 68ch;
-  margin: 0 auto 2.5rem;
-  text-align: center;
-}
-
-.contribute-intro p {
-  margin: 0;
-  font-size: clamp(1.05rem, 2.5vw, 1.15rem);
-  color: var(--color-text-muted);
-  line-height: 1.7;
-}
-
 .contribute-grid {
   display: grid;
   gap: 1.8rem;
@@ -156,6 +204,7 @@
 }
 
 .contribute-card {
+  /* Uses .surface-panel */
   padding: clamp(1.8rem, 4vw, 2.2rem);
   text-align: center;
   display: grid;
@@ -176,10 +225,8 @@
 }
 
 .contribute-card h3 {
+  /* Uses h3 from base-global */
   margin: 0;
-  font-size: clamp(1.2rem, 3vw, 1.35rem);
-  color: var(--color-text);
-  font-weight: 600;
 }
 
 .contribute-card p {
@@ -191,6 +238,7 @@
 }
 
 .contribute-tasks {
+  /* Similar to .styled-list */
   list-style: none;
   padding: 0;
   margin: 0;
@@ -240,19 +288,6 @@
   margin: 0 auto;
 }
 
-.expectations-intro {
-  max-width: 65ch;
-  margin: 0 auto 2rem;
-  text-align: center;
-}
-
-.expectations-intro p {
-  margin: 0;
-  font-size: clamp(1.05rem, 2.5vw, 1.15rem);
-  color: var(--color-text-muted);
-  line-height: 1.7;
-}
-
 .expectations-grid {
   display: grid;
   gap: 1.5rem;
@@ -266,6 +301,7 @@
 }
 
 .expectation-card {
+  /* Uses .surface-panel */
   padding: clamp(1.6rem, 4vw, 2rem);
   text-align: left;
   display: grid;
@@ -280,10 +316,8 @@
 }
 
 .expectation-card h3 {
+  /* Uses h3 from base-global */
   margin: 0;
-  font-size: clamp(1.15rem, 3vw, 1.3rem);
-  color: var(--color-text);
-  font-weight: 600;
 }
 
 .expectation-card p {
@@ -302,149 +336,54 @@
   margin: 0 auto;
 }
 
-.faq-grid {
+.faq-section h2 {
+  /* Uses h2 from base-global */
+  margin: 0 0 2rem 0;
+  text-align: center;
+}
+
+.faq-list {
   display: grid;
   gap: 1.8rem;
-  margin-top: 2rem;
 }
 
 .faq-item {
-  padding: clamp(1.6rem, 4vw, 2rem);
+  padding: 1.8rem;
   background: rgba(6, 12, 22, 0.4);
   border: 1px solid rgba(93, 225, 228, 0.2);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   display: grid;
-  gap: 1rem;
-  transition: all var(--transition-base);
-}
-
-.faq-item:hover {
-  border-color: rgba(93, 225, 228, 0.4);
-  background: rgba(10, 147, 150, 0.08);
+  gap: 0.8rem;
 }
 
 .faq-item h3 {
+  /* Uses h3 from base-global */
   margin: 0;
-  font-size: clamp(1.1rem, 2.8vw, 1.25rem);
-  color: var(--color-text);
-  font-weight: 600;
-  line-height: 1.4;
+  color: var(--color-primary-bright);
 }
 
 .faq-item p {
   margin: 0;
   color: var(--color-text-muted);
   line-height: 1.7;
-  font-size: 1.05rem;
+  font-size: 1.02rem;
 }
 
 /* ============================================
-   ACKNOWLEDGEMENTS SECTION
-   ============================================ */
-
-.acknowledgements-section {
-  max-width: 85ch;
-  margin: 0 auto;
-  padding: clamp(2.5rem, 6vw, 3.5rem);
-  text-align: center;
-}
-
-.acknowledgements-section h2 {
-  margin: 0 0 1.5rem 0;
-  font-size: clamp(1.8rem, 4vw, 2.2rem);
-  color: var(--color-text);
-  font-weight: 600;
-}
-
-.acknowledgements-intro {
-  display: grid;
-  gap: 0.8rem;
-  max-width: 65ch;
-  margin: 0 auto 2.5rem;
-  text-align: center;
-}
-
-.acknowledgements-intro p {
-  margin: 0;
-  font-size: clamp(1.05rem, 2.5vw, 1.15rem);
-  color: var(--color-text-muted);
-  line-height: 1.7;
-}
-
-.acknowledgements-intro strong {
-  color: var(--color-text);
-  font-weight: 600;
-}
-
-.acknowledgements-grid {
-  display: grid;
-  gap: 1.2rem;
-  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-  margin: 2rem 0;
-}
-
-@media (min-width: 768px) {
-  .acknowledgements-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1100px) {
-  .acknowledgements-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.acknowledgement-card {
-  padding: 1.5rem;
-  background: rgba(6, 12, 22, 0.4);
-  border: 1px solid rgba(93, 225, 228, 0.2);
-  border-radius: var(--radius-md);
-  text-align: left;
-  display: grid;
-  gap: 0.6rem;
-  align-content: start;
-  transition: all var(--transition-base);
-}
-
-.acknowledgement-card:hover {
-  border-color: rgba(93, 225, 228, 0.4);
-  background: rgba(10, 147, 150, 0.08);
-  transform: translateY(-2px);
-}
-
-.acknowledgement-card h3 {
-  margin: 0;
-  font-size: 1.1rem;
-  color: var(--color-text);
-  font-weight: 600;
-}
-
-.acknowledgement-card p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--color-text-muted);
-  line-height: 1.6;
-}
-
-/* ============================================
-   FINAL CTA
+   FINAL CTA - Uses .surface-panel
    ============================================ */
 
 .final-cta {
   max-width: 60ch;
   margin: 0 auto;
-  padding: clamp(2rem, 5vw, 3rem);
   text-align: center;
   display: grid;
   gap: 1.5rem;
 }
 
 .final-cta h2 {
+  /* Uses h2 from base-global */
   margin: 0;
-  font-size: clamp(1.6rem, 4vw, 2rem);
-  color: var(--color-text);
-  font-weight: 600;
 }
 
 .final-cta p {
@@ -471,10 +410,6 @@
     padding: 1.5rem 0;
   }
 
-  .join-hero h1 {
-    font-size: 2.2rem;
-  }
-
   .getting-started-grid,
   .contribute-grid,
   .expectations-grid {
@@ -490,15 +425,9 @@
     grid-template-columns: 1fr;
   }
 
-  .acknowledgements-section {
-    padding: 2rem 1rem;
-  }
-
   /* Remove line breaks on mobile */
   .join-hero h1 br,
   .join-lede br {
     display: none;
   }
 }
-
-/* JOIN PAGE CSS */

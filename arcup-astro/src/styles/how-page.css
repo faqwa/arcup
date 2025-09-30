@@ -1,13 +1,13 @@
-/* HOW PAGE CSS */
-/* Styles for how.astro page */
-
 /* ============================================
-   HOW PAGE LAYOUT
+   HOW PAGE - REFACTORED
+   Uses design system from base-global.css
+   Only unique page-specific styles remain
    ============================================ */
 
+/* Page uses .page-shell from base-global */
 .page-how {
-  display: grid;
-  gap: clamp(3rem, 7vw, 5rem);
+  /* Inherits from .page-shell, just adjusts gap */
+  gap: clamp(3rem, 6vw, 5rem);
 }
 
 /* ============================================
@@ -19,23 +19,13 @@
   gap: clamp(1.5rem, 4vw, 2.2rem);
   justify-items: center;
   text-align: center;
-  padding: clamp(3rem, 6vw, 4rem) 0;
+  padding: clamp(2rem, 5vw, 3rem) 0;
 }
 
-.hero-eyebrow {
-  text-transform: lowercase;
-  letter-spacing: 0.16em;
-  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
-  color: var(--color-primary-bright);
-  margin: 0;
-  font-weight: 600;
-}
+/* Uses .hero-eyebrow from base-global */
 
 .how-hero h1 {
-  margin: 0;
-  font-size: clamp(2.8rem, 7vw, 4rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  /* Inherits from base-global h1 */
   max-width: 20ch;
 }
 
@@ -59,7 +49,7 @@
 
 .retech-section {
   display: grid;
-  gap: clamp(2.5rem, 6vw, 4rem);
+  gap: clamp(2.5rem, 5vw, 3.5rem);
 }
 
 .retech-intro {
@@ -111,11 +101,13 @@
   margin-top: 0.5rem;
 }
 
-/* RE:TECH Commitments */
+/* RE:TECH Commitments - Uses .surface-panel */
 .retech-commitments {
   display: grid;
-  gap: 1.5rem;
+  gap: clamp(1.5rem, 3.5vw, 2rem);
   grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  max-width: 95ch;
+  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
@@ -124,31 +116,16 @@
   }
 }
 
-.commitment-card {
-  padding: clamp(1.8rem, 4vw, 2.2rem);
-  text-align: left;
-  display: grid;
-  gap: 1rem;
-  transition: all var(--transition-base);
-}
-
-.commitment-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(93, 225, 228, 0.35);
-}
-
 .commitment-card h3 {
-  margin: 0;
-  font-size: clamp(1.2rem, 3vw, 1.35rem);
-  color: var(--color-text);
-  font-weight: 600;
+  /* Uses h3 from base-global */
+  margin: 0 0 0.8rem 0;
 }
 
 .commitment-card p {
   margin: 0;
+  font-size: 1.05rem;
   color: var(--color-text-muted);
   line-height: 1.7;
-  font-size: 1.05rem;
 }
 
 /* ============================================
@@ -157,62 +134,52 @@
 
 .principles-section {
   display: grid;
-  gap: clamp(2.5rem, 6vw, 4rem);
+  gap: clamp(2.5rem, 5vw, 3.5rem);
 }
 
 .principles-grid {
   display: grid;
-  gap: 1.8rem;
+  gap: clamp(1.5rem, 3.5vw, 2rem);
   grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  max-width: 95ch;
+  margin: 0 auto;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   .principles-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.principle-group {
-  text-align: left;
-  padding: clamp(1.6rem, 4vw, 2.2rem);
-  transition: transform var(--transition-base), border-color var(--transition-base);
-}
-
-.principle-group:hover {
-  transform: translateY(-4px);
-  border-color: rgba(93, 225, 228, 0.35);
-}
-
 .principle-group h3 {
-  margin: 0 0 1.2rem 0;
-  font-size: clamp(1.2rem, 3vw, 1.35rem);
-  color: var(--color-text);
-  font-weight: 600;
+  /* Uses h3 from base-global */
+  margin: 0 0 1rem 0;
+  color: var(--color-primary-bright);
 }
 
 .principle-group ul {
-  margin: 0;
-  padding-left: 0;
-  display: grid;
-  gap: 1.1rem;
+  /* Similar to .styled-list */
   list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.9rem;
 }
 
 .principle-group li {
-  position: relative;
+  font-size: 1.05rem;
   color: var(--color-text-muted);
   line-height: 1.7;
+  position: relative;
   padding-left: 1.5rem;
-  font-size: 1.02rem;
 }
 
 .principle-group li::before {
-  content: "→";
+  content: '→';
   position: absolute;
   left: 0;
   color: var(--color-primary-bright);
-  font-weight: 700;
-  font-size: 1.1rem;
+  opacity: 0.6;
 }
 
 .principle-group strong {
@@ -226,7 +193,7 @@
 
 .method-section {
   display: grid;
-  gap: clamp(2.5rem, 6vw, 4rem);
+  gap: clamp(2.5rem, 5vw, 3.5rem);
 }
 
 .method-philosophy {
@@ -291,10 +258,8 @@
 }
 
 .step-content h3 {
+  /* Uses h3 from base-global */
   margin: 0 0 0.8rem 0;
-  font-size: clamp(1.15rem, 3vw, 1.3rem);
-  color: var(--color-text);
-  font-weight: 600;
 }
 
 .step-content p {
@@ -304,14 +269,76 @@
   font-size: 1.05rem;
 }
 
+/* Method Example - Uses .surface-panel */
+.method-example {
+  margin-top: 2rem;
+  max-width: 80ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.method-example h3 {
+  /* Uses h3 from base-global */
+  margin: 0 0 1.5rem 0;
+}
+
+.example-scenario {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.08rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.example-steps {
+  /* Similar to .styled-list */
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.example-steps li {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.example-steps li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary-bright);
+  opacity: 0.6;
+}
+
+.example-steps strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.example-outcome {
+  margin: 0;
+  font-size: 1.08rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.example-outcome strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
 /* ============================================
-   HOW CTA SECTION
+   CTA SECTION
    ============================================ */
 
 .how-cta-section {
   display: grid;
-  gap: clamp(2rem, 5vw, 3rem);
-  margin-top: clamp(3rem, 7vw, 5rem);
+  gap: clamp(2rem, 4vw, 3rem);
+  margin-top: clamp(2rem, 5vw, 3rem);
 }
 
 .how-cta-wrapper {
@@ -324,11 +351,8 @@
 }
 
 .how-cta-wrapper h2 {
+  /* Uses h2 from base-global */
   margin: 0;
-  font-size: clamp(1.8rem, 4.5vw, 2.4rem);
-  color: var(--color-text);
-  font-weight: 600;
-  line-height: 1.2;
 }
 
 .cta-description {
@@ -372,6 +396,7 @@
 }
 
 .cta-buttons {
+  /* Uses .cta-group from base-global */
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -398,10 +423,6 @@
 
   .how-hero h1 {
     font-size: 2.2rem;
-  }
-
-  .hero-eyebrow {
-    font-size: 0.95rem;
   }
 
   .hero-subtitle {
@@ -475,5 +496,3 @@
     display: none;
   }
 }
-
-/* HOW PAGE CSS */

@@ -1,13 +1,21 @@
-/* WHY PAGE CSS - CLEAN UI VERSION */
-
 /* ============================================
-   LAYOUT & SPACING SYSTEM
+   WHY PAGE - REFACTORED
+   Uses design system from base-global.css
+   Only unique page-specific styles remain
    ============================================ */
 
+/* Page uses .page-shell from base-global */
 .page-why-clean {
+  /* Additional spacing override for why page */
+  gap: clamp(3rem, 6vw, 5rem);
+}
+
+/* Section spacing adjustments for dividers */
+.section-problem-clean,
+.section-approach-clean,
+.section-build-clean {
   display: grid;
-  gap: clamp(4rem, 8vw, 6rem);
-  padding-bottom: clamp(3rem, 6vw, 4rem);
+  gap: clamp(2rem, 4vw, 3rem);
 }
 
 .section-container {
@@ -16,38 +24,60 @@
   padding: 0 clamp(1rem, 3vw, 2rem);
 }
 
-/* Consistent section spacing */
-.section-problem-clean,
-.section-approach-clean,
-.section-build-clean {
-  padding: clamp(2rem, 4vw, 3rem) 0;
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.why-hero-clean {
+  max-width: 70ch;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 3vw, 2rem);
+  text-align: center;
+}
+
+.hero-question {
+  /* Uses h1 from base-global, just adds specifics */
+  margin: 0 0 clamp(1.25rem, 3vw, 1.75rem) 0;
+  line-height: 1.25;
+}
+
+.hero-subquestion {
+  margin: 0 0 clamp(1.5rem, 3.5vw, 2rem) 0;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  line-height: 1.5;
+  font-weight: 300;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.hero-origin {
+  /* Uses .lead from base-global style */
+  margin: 0;
+  font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+  line-height: 1.6;
+  color: var(--color-text-muted);
 }
 
 /* ============================================
-   TYPOGRAPHY SYSTEM
+   SECTION HEADERS - Use base-global h2
    ============================================ */
 
 .section-title {
+  /* Inherits from h2 in base-global, just adds color */
   margin: 0 0 clamp(2rem, 4vw, 3rem) 0;
-  font-size: clamp(1.8rem, 4.5vw, 2.4rem);
-  font-weight: 600;
   color: var(--color-primary-bright);
-  letter-spacing: -0.01em;
-}
-.hero-eyebrow {
-  text-transform: lowercase;
-  letter-spacing: 0.16em;
-  font-size: clamp(0.95rem, 2.2vw, 1rem);
-  color: var(--color-primary-bright);
-  margin: 0;
-  font-weight: 600;
 }
 
-.block-label {
-  margin: 0 0 clamp(1rem, 2.5vw, 1.5rem) 0;
-  font-size: clamp(1.1rem, 2.8vw, 1.25rem);
-  font-weight: 500;
-  color: var(--color-text);
+/* ============================================
+   UNIQUE WHY PAGE PATTERNS
+   ============================================ */
+
+/* Question Lists */
+.problem-questions,
+.approach-questions {
+  display: grid;
+  gap: clamp(0.75rem, 2vw, 1rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
 .question-italic {
@@ -65,121 +95,68 @@
   color: var(--color-text-muted);
 }
 
-/* ============================================
-   HERO SECTION
-   ============================================ */
-
-.why-hero-clean {
-  max-width: 70ch;
-  margin: 0 auto;
-  padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 3vw, 2rem);
-  text-align: center;
-}
-
-.hero-question {
-  margin: 0 0 clamp(1.25rem, 3vw, 1.75rem) 0;
-  font-size: clamp(2.2rem, 5.5vw, 3.2rem);
-  line-height: 1.25;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: var(--color-text);
-}
-
-.hero-subquestion {
-  margin: 0 0 clamp(1.5rem, 3.5vw, 2rem) 0;
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
-  line-height: 3.5;
-  font-weight: 300;
-  color: var(--color-text-muted);
-  font-style: italic;
-}
-
-.hero-origin {
-  margin: 0;
-  font-size: clamp(1.05rem, 2.5vw, 1.5rem);
-  line-height: 1.6;
-  color: var(--color-text-muted);
-}
-
-/* ============================================
-   SECTION 1: PROBLEM
-   ============================================ */
-
-.problem-questions {
-  display: grid;
-  gap: clamp(0.5rem, 1.5vw, 0.75rem);
-  margin-bottom: clamp(2rem, 4vw, 3rem);
-}
-
-/* Simple Linear Pattern */
+/* Pattern Visualization - UNIQUE */
 .pattern-simple {
   display: flex;
   flex-wrap: wrap;
+  gap: clamp(0.5rem, 1.5vw, 0.75rem);
   align-items: center;
   justify-content: center;
-  gap: clamp(0.75rem, 2vw, 1.25rem);
-  padding: clamp(2rem, 4vw, 2.5rem) clamp(1.5rem, 3vw, 2rem);
-  background: rgba(6, 12, 22, 0.6);
-  border: 1px solid rgba(93, 225, 228, 0.25);
-  border-radius: 12px;
+  padding: clamp(1.5rem, 3vw, 2rem) 0;
   margin: clamp(1.5rem, 3vw, 2rem) 0;
 }
 
 .pattern-word {
-  font-size: clamp(1.1rem, 2.8vw, 1.3rem);
-  font-weight: 600;
+  font-size: clamp(1.1rem, 2.8vw, 1.35rem);
   color: var(--color-text);
-  padding: clamp(0.5rem, 1.5vw, 0.65rem) clamp(0.85rem, 2vw, 1.1rem);
-  background: rgba(8, 15, 27, 0.8);
-  border: 1px solid rgba(93, 225, 228, 0.2);
-  border-radius: 8px;
-  white-space: nowrap;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
 }
 
 .pattern-word-harm {
-  background: rgba(255, 80, 100, 0.15);
-  border-color: rgba(255, 80, 100, 0.4);
-  color: #ffb3be;
-  font-weight: 700;
+  color: #FF6B6B;
+  font-weight: 600;
 }
 
 .pattern-arrow {
-  font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
   color: var(--color-primary-bright);
-  opacity: 0.6;
-  font-weight: 300;
+  opacity: 0.5;
 }
 
 .pattern-arrow-harm {
-  color: #ff9eaa;
+  color: #FF6B6B;
   opacity: 0.8;
 }
 
 .pattern-caption {
-  margin: clamp(1rem, 2.5vw, 1.5rem) 0 0 0;
-  font-size: clamp(1rem, 2.3vw, 1.15rem);
+  margin: clamp(1rem, 2.5vw, 1.5rem) 0;
+  font-size: clamp(1rem, 2.3vw, 1.1rem);
+  line-height: 1.6;
   color: var(--color-text-muted);
-  font-style: italic;
   text-align: center;
+  font-style: italic;
 }
 
-/* Today Block */
+/* Today's Loop - Similar to .surface-panel */
 .today-block {
-  margin: clamp(2.5rem, 5vw, 3.5rem) 0;
+  margin: clamp(2rem, 4vw, 3rem) 0;
   padding: clamp(1.75rem, 4vw, 2.25rem);
   background: rgba(6, 12, 22, 0.4);
-  border-left: 3px solid var(--color-primary-bright);
-  border-radius: 8px;
+  border: 1px solid rgba(93, 225, 228, 0.2);
+  border-radius: 12px;
 }
 
 .today-label {
-  margin: 0 0 clamp(1rem, 2.5vw, 1.25rem) 0;
-  font-size: clamp(1.05rem, 2.5vw, 1.2rem);
-  font-weight: 500;
+  margin: 0 0 clamp(1rem, 2.5vw, 1.5rem) 0;
+  font-size: clamp(1.1rem, 2.8vw, 1.25rem);
   color: var(--color-text);
+  font-weight: 500;
 }
 
 .today-list {
+  /* Similar to .styled-list from base-global */
   list-style: none;
   padding: 0;
   margin: 0;
@@ -203,7 +180,7 @@
   opacity: 0.6;
 }
 
-/* Cost Block - T-SHAPED LAYOUT */
+/* T-Shaped Layout - UNIQUE to Why page */
 .cost-block-t-shape {
   margin: clamp(2.5rem, 5vw, 3.5rem) 0;
   display: grid;
@@ -217,14 +194,13 @@
   align-items: center;
 }
 
-.t-left {
+.t-left,
+.t-right {
   text-align: center;
   padding: clamp(1.5rem, 3vw, 2rem);
 }
 
 .t-right {
-  text-align: center;
-  padding: clamp(1.5rem, 3vw, 2rem);
   display: grid;
   gap: clamp(0.4rem, 1.2vw, 0.6rem);
 }
@@ -261,24 +237,15 @@
   color: var(--color-text-muted);
 }
 
-/* Mobile: T-shape becomes vertical stack */
+/* Mobile: T-shape becomes vertical */
 @media (max-width: 768px) {
   .t-shape-top {
     grid-template-columns: 1fr;
     gap: clamp(1.5rem, 4vw, 2rem);
   }
-  
-  .t-left,
-  .t-right {
-    padding: clamp(1rem, 3vw, 1.5rem);
-  }
-  
-  .t-bottom {
-    padding: clamp(1.25rem, 3vw, 1.75rem) clamp(1rem, 3vw, 1.5rem);
-  }
 }
 
-/* Refusal Block */
+/* Refusal Block - Highlighted panel */
 .refusal-block {
   margin: clamp(2.5rem, 5vw, 3.5rem) 0;
   padding: clamp(2rem, 4vw, 2.5rem);
@@ -296,7 +263,7 @@
   font-weight: 500;
 }
 
-/* Success Vision - NEW LOCATION */
+/* Success Vision */
 .success-vision {
   margin: clamp(3rem, 6vw, 4rem) 0 0 0;
   padding: clamp(2rem, 4vw, 2.5rem);
@@ -306,10 +273,9 @@
 }
 
 .success-vision h3 {
+  /* Uses h3 from base-global */
   margin: 0 0 clamp(1rem, 2.5vw, 1.5rem) 0;
-  font-size: clamp(1.3rem, 3.5vw, 1.6rem);
   color: var(--color-primary-bright);
-  font-weight: 600;
 }
 
 .success-vision p {
@@ -323,24 +289,9 @@
   margin-bottom: 0;
 }
 
-.success-goal {
-  margin-top: clamp(1rem, 2.5vw, 1.5rem);
-}
-
-.success-goal strong {
-  color: var(--color-text);
-  font-weight: 600;
-}
-
 /* ============================================
    SECTION 2: APPROACH
    ============================================ */
-
-.approach-questions {
-  display: grid;
-  gap: clamp(0.75rem, 2vw, 1rem);
-  margin-bottom: clamp(2rem, 4vw, 3rem);
-}
 
 .approach-definition-block {
   margin: clamp(2rem, 4vw, 3rem) 0;
@@ -361,15 +312,6 @@
   margin-bottom: 0;
 }
 
-.definition-emphasis {
-  margin-top: clamp(1rem, 2.5vw, 1.5rem);
-}
-
-.definition-emphasis strong {
-  color: var(--color-text);
-  font-weight: 600;
-}
-
 .approach-text-block {
   margin: clamp(2rem, 4vw, 3rem) 0;
   display: grid;
@@ -383,7 +325,7 @@
   color: var(--color-text-muted);
 }
 
-/* RE:TECH Block */
+/* RE:TECH Block - Uses .surface-panel style */
 .retech-block {
   margin: clamp(3rem, 6vw, 4rem) 0;
   padding: clamp(2rem, 4vw, 2.5rem);
@@ -393,10 +335,9 @@
 }
 
 .retech-block h3 {
+  /* Uses h3 from base-global */
   margin: 0 0 clamp(0.75rem, 2vw, 1rem) 0;
-  font-size: clamp(1.4rem, 3.8vw, 1.7rem);
   color: var(--color-primary-bright);
-  font-weight: 600;
 }
 
 .retech-tagline {
@@ -414,6 +355,7 @@
   color: var(--color-text-muted);
 }
 
+/* RE:TECH Grid - Similar to .card-grid-3 */
 .retech-grid {
   display: grid;
   gap: clamp(1.25rem, 3vw, 1.5rem);
@@ -427,6 +369,7 @@
 }
 
 .retech-item {
+  /* Similar to .surface-panel */
   padding: clamp(1.5rem, 3.5vw, 1.75rem);
   background: rgba(8, 15, 27, 0.6);
   border: 1px solid rgba(93, 225, 228, 0.2);
@@ -440,10 +383,9 @@
 }
 
 .retech-item h4 {
+  /* Uses h4 from base-global */
   margin: 0 0 clamp(0.5rem, 1.5vw, 0.75rem) 0;
-  font-size: clamp(1.1rem, 2.8vw, 1.25rem);
   color: var(--color-primary-bright);
-  font-weight: 600;
 }
 
 .retech-item p {
@@ -462,7 +404,15 @@
   border-radius: 8px;
 }
 
+.block-label {
+  margin: 0 0 clamp(1rem, 2.5vw, 1.5rem) 0;
+  font-size: clamp(1.1rem, 2.8vw, 1.25rem);
+  font-weight: 500;
+  color: var(--color-text);
+}
+
 .accountability-list {
+  /* Similar to .styled-list */
   list-style: none;
   padding: 0;
   margin: clamp(1rem, 2.5vw, 1.5rem) 0;
@@ -522,10 +472,8 @@
 }
 
 .content-block h4 {
+  /* Uses h4 from base-global */
   margin: 0 0 clamp(1rem, 2.5vw, 1.25rem) 0;
-  font-size: clamp(1.2rem, 3.2vw, 1.4rem);
-  color: var(--color-text);
-  font-weight: 600;
 }
 
 .content-block p {
@@ -536,6 +484,7 @@
 }
 
 .goals-list {
+  /* Similar to .styled-list */
   list-style: none;
   padding: 0;
   margin: 0;
@@ -559,19 +508,18 @@
   opacity: 0.6;
 }
 
-/* Research Block */
+/* Research Block & Grid */
 .research-block {
   margin: clamp(3rem, 6vw, 4rem) 0;
 }
 
 .research-block h4 {
+  /* Uses h4 from base-global */
   margin: 0 0 clamp(1.5rem, 3.5vw, 2rem) 0;
-  font-size: clamp(1.2rem, 3.2vw, 1.4rem);
-  color: var(--color-text);
-  font-weight: 600;
 }
 
 .research-grid-clean {
+  /* Similar to .card-grid-3 */
   display: grid;
   gap: clamp(1.25rem, 3vw, 1.5rem);
   grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
@@ -590,6 +538,7 @@
 }
 
 .research-item {
+  /* Similar to .surface-panel */
   padding: clamp(1.5rem, 3.5vw, 1.75rem);
   background: rgba(6, 12, 22, 0.4);
   border: 1px solid rgba(93, 225, 228, 0.2);
@@ -618,7 +567,7 @@
 }
 
 /* ============================================
-   CTA LINKS
+   CTA LINKS - Similar to .external-link
    ============================================ */
 
 .section-cta {
@@ -649,7 +598,12 @@
    ============================================ */
 
 .closing-clean {
-  padding: clamp(3rem, 6vw, 4rem) 0;
+  padding-top: clamp(2rem, 4vw, 3rem);
+  display: grid;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+.closing-clean .section-container {
   text-align: center;
 }
 
@@ -679,75 +633,14 @@
 }
 
 .closing-ctas {
+  /* Uses .cta-group from base-global */
   display: flex;
   gap: clamp(1rem, 2.5vw, 1.5rem);
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.button-primary {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-bright));
-  color: #031115;
-  border: 1px solid rgba(93, 225, 228, 0.4);
-  box-shadow: 0 8px 24px rgba(93, 225, 228, 0.3);
-}
-
-.button-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(93, 225, 228, 0.4);
-}
-
-.button-secondary {
-  background: transparent;
-  color: var(--color-primary-bright);
-  border: 2px solid rgba(93, 225, 228, 0.4);
-}
-
-.button-secondary:hover {
-  background: rgba(93, 225, 228, 0.1);
-  border-color: rgba(93, 225, 228, 0.6);
-}
-
-/* ============================================
-   BACK TO TOP BUTTON
-   ============================================ */
-
-.back-to-top-page {
-  position: fixed;
-  bottom: clamp(1.5rem, 4vw, 2rem);
-  right: clamp(1.5rem, 4vw, 2rem);
-  width: clamp(50px, 11vw, 56px);
-  height: clamp(50px, 11vw, 56px);
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-bright));
-  border: 1px solid rgba(93, 225, 228, 0.4);
-  box-shadow: 0 8px 24px rgba(93, 225, 228, 0.3);
-  cursor: pointer;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.3s ease;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #031115;
-}
-
-.back-to-top-page.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.back-to-top-page:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(93, 225, 228, 0.45);
-}
-
-.back-to-top-page svg {
-  width: clamp(22px, 5vw, 26px);
-  height: clamp(22px, 5vw, 26px);
-  stroke-width: 2.5;
-}
+/* Buttons use .button and .button-outline from base-global */
 
 /* ============================================
    MOBILE RESPONSIVE
@@ -766,7 +659,6 @@
     padding: clamp(1.5rem, 4vw, 2rem) 1rem;
   }
 
-  /* Pattern stacks vertically */
   .pattern-simple {
     flex-direction: column;
     align-items: stretch;
@@ -790,18 +682,11 @@
     align-items: stretch;
   }
 
-  .button {
+  .closing-ctas .button {
     width: 100%;
   }
 
-  .back-to-top-page {
-    bottom: 1.25rem;
-    right: 1.25rem;
-    width: 50px;
-    height: 50px;
-  }
-
-  /* Remove unnecessary line breaks */
+  /* Remove line breaks on mobile */
   .hero-question br,
   .refusal-statement br {
     display: none;
@@ -815,38 +700,7 @@
 @media (prefers-reduced-motion: reduce) {
   .retech-item:hover,
   .research-item:hover,
-  .cta-link:hover,
-  .button-primary:hover,
-  .button-secondary:hover,
-  .back-to-top-page:hover {
+  .cta-link:hover {
     transform: none;
   }
-
-  * {
-    animation: none !important;
-    transition: none !important;
-  }
-
-  html {
-    scroll-behavior: auto;
-  }
 }
-
-/* Focus styles */
-.retech-item:focus-within,
-.research-item:focus-within,
-.cta-link:focus,
-.button:focus {
-  outline: 2px solid var(--color-primary-bright);
-  outline-offset: 3px;
-}
-
-/* Print styles */
-@media print {
-  .back-to-top-page,
-  .closing-ctas {
-    display: none;
-  }
-}
-
-/* WHY PAGE CSS - CLEAN UI VERSION */

@@ -6,44 +6,42 @@ const withBase = (path: string) => {
 };
 ---
 
-<main id="main-content" class="page-shell definition-page" aria-labelledby="definition-title">
+<main id="main-content" class="page-shell" aria-labelledby="definition-title">
 
-    <!-- HEADER with improved hierarchy -->
+  <!-- HEADER with proper hierarchy -->
   <header class="definition-header">
-    <p class="definition-subheading">
+    <p class="hero-eyebrow">
       a regenerative research and stewardship collective
     </p>
-      <!-- New compelling H1 -->
-    <h2 class="definition-lede">
-      what if we did science that created a better world? <br>
-    </h2>
+    
+    <!-- H1 is the main title -->
+    <h1 id="definition-title">
+      what if we did science that created a better world?
+    </h1>
   </header>
 
+  <!-- arc^ with pronunciation - H2 -->
+  <div class="definition-title-row">
+    <h2>
+      <span></span>arc^
+      <span class="pronunciation-inline">
+        <span class="pronunciation-text">/ark-up/</span>
+        <button class="audio-button" aria-label="Play pronunciation" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+        </button>
+      </span>
+    </h2>
+    <p class="definition-eyebrow">(noun, verb, movement)</p>
+  </div>
 
-    <!-- Improved title row for mobile -->
-    <div class="definition-title-row">
-      <h1 id="definition-title">
-        <span></span>arc^
-        <span class="pronunciation-inline">
-          <span class="pronunciation-text">/ark-up/</span>
-          <button class="audio-button" aria-label="Play pronunciation" type="button">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="5 3 19 12 5 21 5 3"></polygon>
-            </svg>
-          </button>
-        </span>
-      </h1>
-      <p class="definition-eyebrow">(noun, verb, movement)</p>
-    </div>
-
-
-
-  <!-- Definition Cards with better hierarchy -->
+  <!-- Definition Cards -->
   <ul class="definition-card-stack">
     <li>
       <div class="definition-emoji">🗣️</div>
       <p>
-        <strong>"to arc up"</strong> (Australian slang) - to rise loudly in defense of people and planet. 
+        <strong>"to arc up"</strong> (Australian slang) — to rise loudly in defense of people and planet. 
         To take action when it matters most.
       </p>
     </li>
@@ -90,7 +88,7 @@ const withBase = (path: string) => {
       Instead of locking discoveries behind patents, we publish early, document openly, and share freely.
     </p>
     <p class="intro-hope">
-      My hope? Arc^ will flourish into a global community of future conscious development, changemakers, and pioneers.
+      My hope? Arc^ will flourish into a global community of future-conscious development, changemakers, and pioneers.
     </p>
     <p class="wip-notice">
       <strong>This is a living project.</strong> We're building in public, iterating constantly, and learning as we go. 
@@ -105,19 +103,19 @@ const withBase = (path: string) => {
       Choose your entry point based on what you're curious about.
     </p>
     <div class="definition-cta-group">
-      <a href={withBase('/why')} class="button button-primary">
+      <a href={withBase('/why')} class="button">
         <span>Why arc^ exists</span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
       </a>
-      <a href={withBase('/how')} class="button button-secondary">
+      <a href={withBase('/how')} class="button button-outline">
         <span>How we work</span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
       </a>
-      <a href={withBase('/projects')} class="button button-secondary">
+      <a href={withBase('/projects')} class="button button-outline">
         <span>See the work</span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -143,7 +141,7 @@ const withBase = (path: string) => {
     const audio = new Audio('/arcup/audio/arcup-pronounce.ogg');
     
     audioButton.addEventListener('click', () => {
-      audio.currentTime = 0; // Reset if already playing
+      audio.currentTime = 0;
       audio.play().catch(err => {
         console.warn('Audio playback failed:', err);
         // Fallback to mp3 if ogg fails
