@@ -1,6 +1,9 @@
 ---
-const normalizedBase = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "");
-const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normalizedBase}/` : "/") : `${normalizedBase}${path}`);
+const withBase = (path: string) => {
+  const base = '/arcup';
+  if (path === '/') return `${base}/`;
+  return `${base}${path}`;
+};
 ---
 
 <main id="main-content" class="page-shell page-how" aria-labelledby="how-title">
@@ -196,72 +199,42 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
     <p class="section-note">Iterative humility is normal. Accessibility matters: content is written for mixed backgrounds and translated where possible.</p>
   </section>
 
-  <!-- COLLABORATION SECTION -->
-  <section id="collaborate" class="collaborate-section" aria-labelledby="collaborate-title">
+  <!-- NEW: CALL TO ACTION WITH BEGINNER NOTE -->
+  <section class="how-cta-section" aria-labelledby="cta-heading">
     <div class="section-divider" aria-hidden="true">
-      <span class="divider-label">join the practice</span>
+      <span class="divider-label">ready to begin?</span>
     </div>
 
-    <header class="section-header">
-      <h2 id="collaborate-title">Arc^ Needs You</h2>
-      <div class="collaborate-intro">
-        <p>Not your résumé. Not your credentials.</p>
-        <p>Your curiosity. Your skills. Your care.</p>
-        <p class="collaborate-statement">Whether you're a student, scientist, gardener, or tinkerer — if you're ready to build technology that serves life, there's a place for you here.</p>
+    <div class="how-cta-wrapper surface-panel">
+      <h2 id="cta-heading">See the Practice in Action</h2>
+      <p class="cta-description">
+        These principles come to life in our active projects — from plasma-activated water research to open hardware design. Each project follows the RE:TECH framework and invites collaboration.
+      </p>
+      
+      <aside class="beginner-note">
+        <span class="note-icon" aria-hidden="true">💡</span>
+        <p><strong>New to plasma research?</strong> No problem. Many projects have beginner-friendly tasks like documentation, literature review, and replication studies. Start where you are.</p>
+      </aside>
+
+      <div class="cta-buttons">
+        <a href={withBase("/projects")} class="button">Explore Active Projects →</a>
+        <a href={withBase("/join")} class="button button-outline">Learn How to Contribute</a>
       </div>
-    </header>
-
-    <div class="collaboration-paths">
-      <article class="path-card surface-panel">
-        <span class="path-icon" aria-hidden="true">🔬</span>
-        <h3>Research Contributors</h3>
-        <p>Help with literature reviews, experimental design, data analysis, or replication studies. Perfect for students, independent researchers, or anyone curious about plasma science.</p>
-        <ul class="path-tasks">
-          <li>Review existing PAW literature</li>
-          <li>Design controlled experiments</li>
-          <li>Analyze open datasets</li>
-          <li>Replicate studies in new contexts</li>
-        </ul>
-        <a href="https://github.com/faqwa/arcup/discussions/categories/research" class="button">Browse Research Discussions</a>
-      </article>
-
-      <article class="path-card surface-panel">
-        <span class="path-icon" aria-hidden="true">🛠</span>
-        <h3>Technical Contributors</h3>
-        <p>Improve documentation, design open hardware, write safety protocols, or build tools. Engineers, designers, and makers welcome.</p>
-        <ul class="path-tasks">
-          <li>Design plasma devices (CAD, circuit design)</li>
-          <li>Write clear safety documentation</li>
-          <li>Build data analysis tools</li>
-          <li>Review technical protocols</li>
-        </ul>
-        <a href="https://github.com/faqwa/arcup/issues" class="button">See Open Tasks</a>
-      </article>
-
-      <article class="path-card surface-panel">
-        <span class="path-icon" aria-hidden="true">🌱</span>
-        <h3>Community Partners</h3>
-        <p>Test PAW applications in real-world contexts — farms, gardens, water systems. You bring local knowledge; we bring research rigor and safety oversight.</p>
-        <ul class="path-tasks">
-          <li>Test PAW on local soil/plants</li>
-          <li>Monitor long-term ecological effects</li>
-          <li>Share traditional/local knowledge</li>
-          <li>Co-design experiments for your context</li>
-        </ul>
-        <a href="mailto:ali@xbyali.page" class="button">Propose a Partnership</a>
-      </article>
     </div>
-
-    <aside class="collaborate-note surface-panel">
-      <h3>New to Plasma Research?</h3>
-      <p>No problem. Arc^ is designed for diverse skill levels. Start by reading existing discussions, reviewing safety protocols, or just introducing yourself.</p>
-      <a href={withBase("/join")} class="button button-outline">Getting Started Guide</a>
-    </aside>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <span>arc^ by ali — pathways for shared stewardship</span>
+  <div class="footer-content">
+    <p class="footer-text">
+      arc^ by ali · open research and safety-first plasma tech
+    </p>
+    <p class="footer-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA</a> · 
+      <a href="https://ohwr.org/cern_ohl_s_v2.txt" target="_blank" rel="noopener noreferrer">CERN OHL-S</a> · 
+      <a href="https://www.gnu.org/licenses/agpl-3.0.en.html" target="_blank" rel="noopener noreferrer">AGPL-3.0</a>
+    </p>
+  </div>
   <button type="button" data-motion-toggle class="button button-muted">Disable Motion</button>
 </footer>
