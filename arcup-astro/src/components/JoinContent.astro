@@ -1,6 +1,9 @@
 ---
-const normalizedBase = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "");
-const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normalizedBase}/` : "/") : `${normalizedBase}${path}`);
+const withBase = (path: string) => {
+  const base = '/arcup';
+  if (path === '/') return `${base}/`;
+  return `${base}${path}`;
+};
 ---
 
 <main id="main-content" class="page-shell page-join" aria-labelledby="join-title">
@@ -10,6 +13,62 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
     <h1 id="join-title">Join Arc^</h1>
     <p class="join-lede">Arc^ is a framework for building technology differently. Whether you're a student, researcher, builder, or community partner — if you're ready to work openly and ethically, there's a place for you here.</p>
   </header>
+
+  <!-- ACKNOWLEDGEMENTS SECTION - NOW FIRST -->
+  <section class="acknowledgements-section surface-panel" aria-labelledby="acknowledgements-heading">
+    <h2 id="acknowledgements-heading">Standing on Shoulders</h2>
+    
+    <div class="acknowledgements-intro">
+      <p>Arc^ exists because others paved the way. We're part of a larger movement of open science, community-powered research, and technology that serves life rather than profit.</p>
+      <p><strong>We draw inspiration and learn from:</strong></p>
+    </div>
+
+    <div class="acknowledgements-grid">
+      <article class="acknowledgement-card">
+        <h3><a href="https://openhardware.science/" target="_blank" rel="noopener noreferrer">Open Hardware Science</a></h3>
+        <p>Demonstrating that scientific tools can be accessible, repairable, and shared freely across borders and institutions.</p>
+      </article>
+
+      <article class="acknowledgement-card">
+        <h3><a href="https://www.gosh-community.org/" target="_blank" rel="noopener noreferrer">GOSH Community</a></h3>
+        <p>Building a global network where hardware knowledge flows freely, centering equity and local agency in tool development.</p>
+      </article>
+
+      <article class="acknowledgement-card">
+        <h3><a href="https://publiclab.org/" target="_blank" rel="noopener noreferrer">Public Lab</a></h3>
+        <p>Pioneering community science with accessible tools for environmental monitoring and data sovereignty.</p>
+      </article>
+
+      <article class="acknowledgement-card">
+        <h3><a href="https://www.appropedia.org/" target="_blank" rel="noopener noreferrer">Appropedia</a></h3>
+        <p>Creating a living library of sustainable technology and collaborative problem-solving for communities worldwide.</p>
+      </article>
+
+      <article class="acknowledgement-card">
+        <h3><a href="https://www.oshwa.org/" target="_blank" rel="noopener noreferrer">OSHWA</a></h3>
+        <p>Advocating for open source hardware principles and building infrastructure for collaborative innovation.</p>
+      </article>
+
+      <article class="acknowledgement-card">
+        <h3><a href="https://farmhack.org/" target="_blank" rel="noopener noreferrer">Farm Hack</a></h3>
+        <p>Empowering farmers as designers and innovators, sharing agricultural tools and knowledge in the commons.</p>
+      </article>
+
+      <article class="acknowledgement-card">
+        <h3><a href="https://www.scienceforsociety.org/" target="_blank" rel="noopener noreferrer">Community Science</a></h3>
+        <p>Movements globally that center local knowledge, consent-based research, and accountability to communities.</p>
+      </article>
+
+      <article class="acknowledgement-card">
+        <h3><a href="https://creativecommons.org/" target="_blank" rel="noopener noreferrer">Creative Commons</a></h3>
+        <p>Building legal infrastructure that lets knowledge flow freely while protecting creator rights and community interests.</p>
+      </article>
+    </div>
+
+    <p class="acknowledgements-note">
+      If you're working on similar open science or regenerative tech projects, <a href="mailto:ali@xbyali.page">let's connect</a>. We're stronger together.
+    </p>
+  </section>
 
   <!-- GETTING STARTED -->
   <section class="join-getting-started surface-panel">
@@ -61,7 +120,6 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
           <li>Review literature and methods</li>
           <li>Analyze open datasets</li>
           <li>Document experimental procedures</li>
-          <li>Design controlled experiments</li>
         </ul>
         <p class="ideal-for"><strong>Ideal for:</strong> Students, independent researchers, scientists, data analysts</p>
         <a href="mailto:ali@xbyali.page?subject=Research%20Contribution" class="button">Express Interest</a>
@@ -76,7 +134,6 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
           <li>Create CAD files and BOMs</li>
           <li>Write safety protocols</li>
           <li>Build data analysis tools</li>
-          <li>Review technical documentation</li>
         </ul>
         <p class="ideal-for"><strong>Ideal for:</strong> Engineers, makers, designers, developers, technical writers</p>
         <a href="mailto:ali@xbyali.page?subject=Technical%20Contribution" class="button">Express Interest</a>
@@ -91,7 +148,6 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
           <li>Monitor ecological outcomes</li>
           <li>Share traditional knowledge</li>
           <li>Co-design experiments</li>
-          <li>Contribute local expertise</li>
         </ul>
         <p class="ideal-for"><strong>Ideal for:</strong> Farmers, gardeners, land stewards, community organizers</p>
         <a href="mailto:ali@xbyali.page?subject=Community%20Partnership" class="button">Express Interest</a>
@@ -106,7 +162,6 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
           <li>Translate documentation</li>
           <li>Create visual guides</li>
           <li>Edit for accessibility</li>
-          <li>Simplify technical language</li>
         </ul>
         <p class="ideal-for"><strong>Ideal for:</strong> Writers, translators, educators, illustrators</p>
         <a href="mailto:ali@xbyali.page?subject=Documentation%20Contribution" class="button">Express Interest</a>
@@ -205,6 +260,15 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
 </main>
 
 <footer class="site-footer">
-  <span>arc^ by ali — collaborative research for planetary repair</span>
+  <div class="footer-content">
+    <p class="footer-text">
+      arc^ by ali · collaborative research for planetary repair
+    </p>
+    <p class="footer-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA</a> · 
+      <a href="https://ohwr.org/cern_ohl_s_v2.txt" target="_blank" rel="noopener noreferrer">CERN OHL-S</a> · 
+      <a href="https://www.gnu.org/licenses/agpl-3.0.en.html" target="_blank" rel="noopener noreferrer">AGPL-3.0</a>
+    </p>
+  </div>
   <button type="button" data-motion-toggle class="button button-muted">Disable Motion</button>
 </footer>
