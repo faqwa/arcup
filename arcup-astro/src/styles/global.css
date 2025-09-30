@@ -3146,3 +3146,116 @@ button:focus-visible {
     font-size: 0.8em;
   }
 }
+
+/* ============================================
+   HOW PAGE - NEW CTA SECTION
+   Add this to global.css after the existing How page styles
+   ============================================ */
+
+.how-cta-section {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3rem);
+  margin-top: clamp(3rem, 7vw, 5rem);
+}
+
+.how-cta-wrapper {
+  max-width: 75ch;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 3.5rem);
+  text-align: center;
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2rem);
+}
+
+.how-cta-wrapper h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4.5vw, 2.4rem);
+  color: var(--color-text);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.cta-description {
+  margin: 0;
+  font-size: clamp(1.08rem, 2.6vw, 1.2rem);
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.beginner-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: clamp(1.5rem, 4vw, 2rem);
+  background: rgba(10, 147, 150, 0.12);
+  border: 1px solid rgba(93, 225, 228, 0.25);
+  border-radius: var(--radius-lg);
+  text-align: left;
+  margin: 0.5rem 0;
+}
+
+.note-icon {
+  font-size: 2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.beginner-note p {
+  margin: 0;
+  font-size: clamp(1.02rem, 2.4vw, 1.12rem);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.beginner-note strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.cta-buttons .button {
+  min-width: 200px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .how-cta-section {
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .how-cta-wrapper {
+    padding: 2rem 1.5rem;
+  }
+
+  .beginner-note {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .note-icon {
+    font-size: 2.5rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-buttons .button {
+    width: 100%;
+    min-width: auto;
+  }
+}
