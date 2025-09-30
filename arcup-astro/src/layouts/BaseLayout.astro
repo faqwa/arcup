@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import ScrollToTop from "../components/ScrollToTop.astro";
 
 const {
   title = "arc^ byali",
@@ -62,6 +63,7 @@ const bodyClasses = ["site-body", bodyClass].filter(Boolean).join(" ");
   </head>
   <body class={bodyClasses}>
     <slot />
+    <ScrollToTop />
     <slot name="scripts" />
   </body>
 </html>
