@@ -1,0 +1,504 @@
+/* JOIN PAGE CSS */
+/* Styles for join.astro page */
+
+/* ============================================
+   JOIN PAGE LAYOUT
+   ============================================ */
+
+.page-join {
+  display: grid;
+  gap: clamp(3rem, 7vw, 5rem);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.join-hero {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2rem);
+  text-align: center;
+  max-width: 68ch;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 3rem) 0;
+}
+
+.join-hero h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 6.5vw, 3.5rem);
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.join-lede {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.8vw, 1.3rem);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+/* ============================================
+   GETTING STARTED SECTION
+   ============================================ */
+
+.getting-started-section {
+  max-width: 90ch;
+  margin: 0 auto;
+}
+
+.getting-started-intro {
+  max-width: 65ch;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.getting-started-intro p {
+  margin: 0;
+  font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.getting-started-intro strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.getting-started-intro em {
+  color: var(--color-text);
+  font-size: 1.08rem;
+}
+
+.getting-started-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  margin-top: 2rem;
+}
+
+.start-card {
+  display: grid;
+  gap: 1rem;
+  padding: 1.8rem;
+  background: rgba(10, 147, 150, 0.08);
+  border: 1px solid rgba(93, 225, 228, 0.25);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  align-content: start;
+}
+
+.start-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-bright));
+  color: #031115;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.start-card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.start-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  font-size: 1.02rem;
+}
+
+.start-card .button {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+/* ============================================
+   CONTRIBUTE SECTION
+   ============================================ */
+
+.contribute-section {
+  max-width: 95ch;
+  margin: 0 auto;
+}
+
+.contribute-intro {
+  max-width: 68ch;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.contribute-intro p {
+  margin: 0;
+  font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.contribute-grid {
+  display: grid;
+  gap: 1.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+}
+
+@media (min-width: 900px) {
+  .contribute-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.contribute-card {
+  padding: clamp(1.8rem, 4vw, 2.2rem);
+  text-align: center;
+  display: grid;
+  gap: 1.2rem;
+  align-content: start;
+  transition: all var(--transition-base);
+}
+
+.contribute-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(93, 225, 228, 0.4);
+}
+
+.card-icon {
+  font-size: 3rem;
+  line-height: 1;
+  margin: 0 auto;
+}
+
+.contribute-card h3 {
+  margin: 0;
+  font-size: clamp(1.2rem, 3vw, 1.35rem);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.contribute-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  font-size: 1.05rem;
+  text-align: left;
+}
+
+.contribute-tasks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.7rem;
+  text-align: left;
+}
+
+.contribute-tasks li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.contribute-tasks li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary-bright);
+  font-weight: 700;
+}
+
+.ideal-for {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  text-align: left;
+}
+
+.ideal-for strong {
+  color: var(--color-primary-bright);
+  font-weight: 600;
+}
+
+.contribute-card .button {
+  margin-top: 0.5rem;
+}
+
+/* ============================================
+   EXPECTATIONS SECTION
+   ============================================ */
+
+.expectations-section {
+  max-width: 90ch;
+  margin: 0 auto;
+}
+
+.expectations-intro {
+  max-width: 65ch;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.expectations-intro p {
+  margin: 0;
+  font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.expectations-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+}
+
+@media (min-width: 768px) {
+  .expectations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.expectation-card {
+  padding: clamp(1.6rem, 4vw, 2rem);
+  text-align: left;
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  transition: all var(--transition-base);
+}
+
+.expectation-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(93, 225, 228, 0.35);
+}
+
+.expectation-card h3 {
+  margin: 0;
+  font-size: clamp(1.15rem, 3vw, 1.3rem);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.expectation-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  font-size: 1.02rem;
+}
+
+/* ============================================
+   FAQ SECTION
+   ============================================ */
+
+.faq-section {
+  max-width: 75ch;
+  margin: 0 auto;
+}
+
+.faq-grid {
+  display: grid;
+  gap: 1.8rem;
+  margin-top: 2rem;
+}
+
+.faq-item {
+  padding: clamp(1.6rem, 4vw, 2rem);
+  background: rgba(6, 12, 22, 0.4);
+  border: 1px solid rgba(93, 225, 228, 0.2);
+  border-radius: var(--radius-lg);
+  display: grid;
+  gap: 1rem;
+  transition: all var(--transition-base);
+}
+
+.faq-item:hover {
+  border-color: rgba(93, 225, 228, 0.4);
+  background: rgba(10, 147, 150, 0.08);
+}
+
+.faq-item h3 {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.8vw, 1.25rem);
+  color: var(--color-text);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.faq-item p {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+/* ============================================
+   ACKNOWLEDGEMENTS SECTION
+   ============================================ */
+
+.acknowledgements-section {
+  max-width: 85ch;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 3.5rem);
+  text-align: center;
+}
+
+.acknowledgements-section h2 {
+  margin: 0 0 1.5rem 0;
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.acknowledgements-intro {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 65ch;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.acknowledgements-intro p {
+  margin: 0;
+  font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.acknowledgements-intro strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.acknowledgements-grid {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  margin: 2rem 0;
+}
+
+@media (min-width: 768px) {
+  .acknowledgements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .acknowledgements-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.acknowledgement-card {
+  padding: 1.5rem;
+  background: rgba(6, 12, 22, 0.4);
+  border: 1px solid rgba(93, 225, 228, 0.2);
+  border-radius: var(--radius-md);
+  text-align: left;
+  display: grid;
+  gap: 0.6rem;
+  align-content: start;
+  transition: all var(--transition-base);
+}
+
+.acknowledgement-card:hover {
+  border-color: rgba(93, 225, 228, 0.4);
+  background: rgba(10, 147, 150, 0.08);
+  transform: translateY(-2px);
+}
+
+.acknowledgement-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.acknowledgement-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* ============================================
+   FINAL CTA
+   ============================================ */
+
+.final-cta {
+  max-width: 60ch;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 3rem);
+  text-align: center;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.final-cta h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.final-cta p {
+  margin: 0;
+  font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.final-cta .button {
+  margin-top: 0.5rem;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+
+@media (max-width: 640px) {
+  .page-join {
+    gap: 2.5rem;
+  }
+
+  .join-hero {
+    padding: 1.5rem 0;
+  }
+
+  .join-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .getting-started-grid,
+  .contribute-grid,
+  .expectations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contribute-card .button,
+  .start-card .button {
+    width: 100%;
+  }
+
+  .acknowledgements-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .acknowledgements-section {
+    padding: 2rem 1rem;
+  }
+
+  /* Remove line breaks on mobile */
+  .join-hero h1 br,
+  .join-lede br {
+    display: none;
+  }
+}
+
+/* JOIN PAGE CSS */
