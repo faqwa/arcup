@@ -3,6 +3,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ArcCanvas from "../components/ArcCanvas.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import ProjectsContent from "../components/ProjectsContent.astro";
+import '../styles/projects-page.css';  // ← ADD THIS LINE
+
 
 const description = "Explore Arc^'s active research projects in plasma-activated water, ecosystem repair, and open hardware.";
 const siteUrl = Astro.site ? new URL("/projects", Astro.site).toString() : undefined;

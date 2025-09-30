@@ -1,126 +1,155 @@
 ---
-const normalizedBase = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "");
-const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normalizedBase}/` : "/") : `${normalizedBase}${path}`);
+const withBase = (path: string) => {
+  const base = '/arcup';
+  if (path === '/') return `${base}/`;
+  return `${base}${path}`;
+};
 ---
 
-<main id="main-content" class="page-shell definition-page" aria-labelledby="definition-heading">
+<main id="main-content" class="page-shell definition-page" aria-labelledby="definition-title">
+
+    <!-- HEADER with improved hierarchy -->
   <header class="definition-header">
-    <p class="definition-subheading">what if we did science that could create a better world?</p>
-    <div class="definition-title-row">
-      <h1 id="definition-heading">
-        arc^
-        <span>(noun, verb, movement)</span>
-      </h1>
-      <div class="pronunciation-inline">
-        <span class="pronunciation-text">/ark-up/</span>
-        <button type="button" class="audio-button" data-audio-trigger aria-pressed="false" aria-label="Play pronunciation">
-          <span aria-hidden="true" class="icon icon-sound">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" role="presentation">
-              <path d="M4 9v6h3l5 4V5L7 9H4Z" fill="currentColor" />
-              <path d="M16.5 8.5a4 4 0 0 1 0 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-              <path d="M19.5 6a7 7 0 0 1 0 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-            </svg>
-          </span>
-        </button>
-      </div>
-    </div>
-    <p class="definition-lede">
-      A framework for refusing extractive innovation and leaving business as usual in the past. Here we use plasma research,
-      open science, and community stewardship to build technology that does not harm nor exploit.
+    <p class="definition-subheading">
+      a regenerative research and stewardship collective
     </p>
+      <!-- New compelling H1 -->
+    <h2 class="definition-lede">
+      what if we did science that created a better world? <br>
+    </h2>
   </header>
 
-  <section class="definition-entries" aria-label="Definitions">
-    <div class="definition-card-stack">
-      <ul role="list">
-        <li role="listitem">
-          <span class="definition-emoji" aria-hidden="true">&#x1F4E3;</span>
-          <p>
-            "to arc up" (Australian slang) - to rise loudly in defense of people and planet. To take action when it matters
-            most.
-          </p>
-        </li>
-        <li role="listitem">
-          <span class="definition-emoji" aria-hidden="true">&#x1F9EC;</span>
-          <p>
-            Investigating plasma-activated water as a tool for soil regeneration, ecological restoration, and bridging
-            physics with biology for planetary repair.
-          </p>
-        </li>
-        <li role="listitem">
-          <span class="definition-emoji" aria-hidden="true">&#x1F30D;</span>
-          <p>
-            An open invitation to students, scientists, engineers, tinkerers, and technologists ready to collaborate on
-            technology that serves life and creates a better future for all.
-          </p>
-        </li>
-        <li role="listitem">
-          <span class="definition-emoji" aria-hidden="true">&#x1F91D;</span>
-          <p>
-            Built on principles, dignity, ethics, and the belief that knowledge belongs in the commons&mdash;not locked behind
-            patents.
-          </p>
-        </li>
-      </ul>
-    </div>
-  </section>
 
-  <section class="definition-intro" aria-label="Personal introduction">
+    <!-- Improved title row for mobile -->
+    <div class="definition-title-row">
+      <h1 id="definition-title">
+        <span></span>arc^
+        <span class="pronunciation-inline">
+          <span class="pronunciation-text">/ark-up/</span>
+          <button class="audio-button" aria-label="Play pronunciation" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+          </button>
+        </span>
+      </h1>
+      <p class="definition-eyebrow">(noun, verb, movement)</p>
+    </div>
+
+
+
+  <!-- Definition Cards with better hierarchy -->
+  <ul class="definition-card-stack">
+    <li>
+      <div class="definition-emoji">🗣️</div>
+      <p>
+        <strong>"to arc up"</strong> (Australian slang) - to rise loudly in defense of people and planet. 
+        To take action when it matters most.
+      </p>
+    </li>
+    <li>
+      <div class="definition-emoji">🔬</div>
+      <p>
+        <strong>a framework</strong> for doing plasma research that refuses extractive, profit-driven science
+      </p>
+    </li>
+    <li>
+      <div class="definition-emoji">🌱</div>
+      <p>
+        <strong>a practice</strong> of building tools and protocols in the open, designed for repair and restoration
+      </p>
+    </li>
+    <li>
+      <div class="definition-emoji">🤝</div>
+      <p>
+        <strong>a community</strong> of researchers, makers, and stewards working toward regenerative futures
+      </p>
+    </li>
+  </ul>
+
+  <!-- Personal Introduction -->
+  <section class="personal-intro">
+    <p class="intro-greeting">I'm Ali.</p>
     <p>
-      I'm Ali. Arc^ started as my response to a question: if I make the same choices as the good people before me, what world
-      would it create? Right now, arc^ is just one person, and it's a framework that refuses the old processes of innovation.
-      My hope? arc^ will flourish into a global community of future conscious development, changemakers, and pioneers.
+      Arc^ started as my response to a question: if I make the same choices as the good people before me, 
+      what world would it create?
+    </p>
+    <p>
+      Right now, arc^ is just one person, and it's a framework that refuses the old processes of innovation.
     </p>
   </section>
 
-  <nav class="definition-cta-group" aria-label="Definition page navigation">
-    <a class="button" href={withBase("/why")}>Why arc^?</a>
-    <a class="button button-outline" href={withBase("/projects")}>Explore projects</a>
-  </nav>
+  <!-- Technical intro with WIP notice -->
+  <section class="definition-intro">
+    <p>
+      <strong>arc^ is an experiment in doing science differently.</strong> It's plasma research guided by RE:TECH: 
+      Refuse Extractive Technology. That means transparent protocols, collaborative methods, and regenerative goals.
+    </p>
+    <p>
+      We're exploring plasma-activated water (PAW) for agriculture, remediation, and ecological restoration. 
+      Instead of locking discoveries behind patents, we publish early, document openly, and share freely.
+    </p>
+    <p class="intro-hope">
+      My hope? Arc^ will flourish into a global community of future conscious development, changemakers, and pioneers.
+    </p>
+    <p class="wip-notice">
+      <strong>This is a living project.</strong> We're building in public, iterating constantly, and learning as we go. 
+      More experiments, protocols, and community tools are coming soon.
+    </p>
+  </section>
+
+  <!-- Primary CTA Section -->
+  <section class="definition-cta-section">
+    <h3 class="cta-heading">where to start?</h3>
+    <p class="cta-description">
+      Choose your entry point based on what you're curious about.
+    </p>
+    <div class="definition-cta-group">
+      <a href={withBase('/why')} class="button button-primary">
+        <span>Why arc^ exists</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+      <a href={withBase('/how')} class="button button-secondary">
+        <span>How we work</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+      <a href={withBase('/projects')} class="button button-secondary">
+        <span>See the work</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="definition-footer">
+    <p class="definition-note">
+      built by <a href="https://xbyali.page" target="_blank" rel="noopener noreferrer">ali</a> · 
+      all research <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA</a>
+    </p>
+  </footer>
+
 </main>
 
-<footer class="site-footer definition-footer">
-  <span>
-    arc^ <a href="https://xbyali.page">byali</a> &middot; living entry &middot; last updated 29 Sep 2025
-  </span>
-  <button type="button" data-motion-toggle class="button button-muted">Disable motion</button>
-</footer>
-
-<audio data-audio-source preload="none" aria-hidden="true">
-  <source src={withBase("/audio/arcup-pronounce.ogg")} type="audio/ogg" />
-</audio>
-<script is:inline>
-  (() => {
-    const trigger = document.querySelector('[data-audio-trigger]');
-    const audio = document.querySelector('[data-audio-source]');
-
-    if (!trigger || !audio) {
-      return;
-    }
-
-    const updateState = (isPlaying) => {
-      trigger.setAttribute('aria-pressed', String(isPlaying));
-      trigger.dataset.state = isPlaying ? 'playing' : 'idle';
-    };
-
-    trigger.addEventListener('click', async () => {
-      try {
-        if (audio.paused) {
-          await audio.play();
-          updateState(true);
-        } else {
-          audio.pause();
-          audio.currentTime = 0;
-          updateState(false);
-        }
-      } catch (error) {
-        console.warn('Unable to play pronunciation audio', error);
-      }
+<script>
+  // Audio pronunciation
+  const audioButton = document.querySelector('.audio-button');
+  if (audioButton) {
+    const audio = new Audio('/arcup/audio/arcup-pronounce.ogg');
+    
+    audioButton.addEventListener('click', () => {
+      audio.currentTime = 0; // Reset if already playing
+      audio.play().catch(err => {
+        console.warn('Audio playback failed:', err);
+        // Fallback to mp3 if ogg fails
+        const audioMp3 = new Audio('/arcup/audio/EN-AU_dc1_arc_up.mp3');
+        audioMp3.play().catch(e => console.warn('MP3 playback also failed:', e));
+      });
     });
-
-    audio.addEventListener('ended', () => {
-      updateState(false);
-    });
-  })();
+  }
 </script>
-

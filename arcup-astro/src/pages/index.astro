@@ -3,22 +3,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ArcCanvas from "../components/ArcCanvas.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import DefinitionContent from "../components/DefinitionContent.astro";
-import '../styles/home-definition-page.css';  // ADD THIS
+import '../styles/home-definition-page.css';
 
-
-const description = "arc^ is a regenerative research and stewardship collective exploring plasma-activated water and community-powered repair.";
+// IMPROVED SEO
+const title = "arc^ - Open Plasma Research for Ecological Restoration";
+const description = "arc^ is regenerative plasma research done in the open. We explore plasma-activated water for agriculture and restoration, publishing protocols freely under RE:TECH principles: transparent, collaborative, and regenerative.";
 const siteUrl = Astro.site ? new URL("/", Astro.site).toString() : undefined;
 
 const seo = {
   canonical: siteUrl,
   openGraph: {
-    title: "arc^ - Plasma Research for Planetary Wide Ecological Restoration",
+    title: "arc^ byali - Open Science for a Better World",
     description,
     url: siteUrl,
+    type: "website",
   },
   twitter: {
-    title: "arc^ - Plasma Research for Planetary Wide Ecological Restoration",
+    title,
     description,
+    card: "summary_large_image",
   },
 };
 
@@ -27,18 +30,30 @@ const structuredData = {
   "@type": "Organization",
   name: "arc^ byali",
   description,
+  url: siteUrl,
+  founder: {
+    "@type": "Person",
+    name: "ali"
+  },
+  keywords: "plasma research, open science, regenerative technology, plasma activated water, ecological restoration, community science"
 };
-
-if (siteUrl) {
-  structuredData.url = siteUrl;
-}
 ---
-<BaseLayout title="arc^ - Plasma Research for Planetary Wide Ecological Restoration" description={description} bodyClass="page-definition" seo={seo}>
+
+<BaseLayout 
+  title={title}
+  description={description} 
+  bodyClass="page-definition" 
+  seo={seo}
+>
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(structuredData)} />
+  
+  <!-- Additional SEO meta tags -->
+  <meta slot="head" name="keywords" content="plasma research, open science, regenerative agriculture, plasma activated water, ecological restoration, RE:TECH, community research" />
+  <meta slot="head" name="author" content="ali" />
+  <meta slot="head" property="og:locale" content="en_US" />
+  
   <ArcCanvas />
   <SiteHeader active="home" />
   <DefinitionContent />
-  <script type="application/ld+json" slot="head">
-    {JSON.stringify(structuredData)}
-  </script>
 </BaseLayout>
-
