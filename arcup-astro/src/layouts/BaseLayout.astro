@@ -64,7 +64,7 @@ const bodyClasses = ["site-body", bodyClass].filter(Boolean).join(" ");
   </head>
   <body class={bodyClasses}>
     <slot />
-    <ScrollToTop />
     <slot name="scripts" />
+    <ScrollToTop />
   </body>
 </html>

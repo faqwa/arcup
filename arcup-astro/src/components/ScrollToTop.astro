@@ -1,7 +1,14 @@
 ---
+// src/components/ScrollToTop.astro
 const threshold = 240;
 ---
-<button class="scroll-to-top" aria-label="Scroll back to top">
+
+<button 
+  class="scroll-to-top" 
+  id="scrollToTopBtn"
+  type="button"
+  aria-label="Scroll back to top"
+>
   <svg
     aria-hidden="true"
     viewBox="0 0 24 24"
@@ -17,25 +24,50 @@ const threshold = 240;
     <polyline points="5 12 12 5 19 12" />
   </svg>
 </button>
-<script is:inline>
-  const button = document.currentScript?.previousElementSibling;
-  if (button) {
-    const toggle = () => {
+
+<script define:vars={{ threshold }}>
+  // Wait for DOM to be ready
+  function initScrollToTop() {
+    const button = document.getElementById('scrollToTopBtn');
+    
+    if (!button) {
+      console.warn('Scroll to top button not found');
+      return;
+    }
+
+    // Toggle visibility based on scroll position
+    const toggleVisibility = () => {
       if (window.scrollY > threshold) {
-        button.classList.add("is-visible");
+        button.classList.add('is-visible');
       } else {
-        button.classList.remove("is-visible");
+        button.classList.remove('is-visible');
       }
     };
 
-    window.addEventListener("scroll", toggle, { passive: true });
-    toggle();
+    // Scroll to top smoothly
+    const scrollToTop = () => {
+      window.scrollTo({ 
+        top: 0, 
+        behavior: 'smooth' 
+      });
+    };
 
-    button.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    // Add event listeners
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
+    button.addEventListener('click', scrollToTop);
+
+    // Initial check
+    toggleVisibility();
+  }
+
+  // Run when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initScrollToTop);
+  } else {
+    initScrollToTop();
   }
 </script>
+
 <style>
   .scroll-to-top {
     position: fixed;
@@ -76,6 +108,11 @@ const threshold = 240;
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+  }
+
+  .scroll-to-top:focus-visible {
+    outline: 2px solid var(--color-primary-bright);
+    outline-offset: 3px;
   }
 
   @media (prefers-reduced-motion: reduce) {
