@@ -1,37 +1,63 @@
 ---
-const withBase = (path: string) => {
-  const base = '/arcup';
-  if (path === '/') return `${base}/`;
-  return `${base}${path}`;
-};
+const normalizedBase = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "");
+const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normalizedBase}/` : "/") : `${normalizedBase}${path}`);
 ---
 
 <main id="main-content" class="page-shell page-projects" aria-labelledby="projects-title">
   
-  <!-- HERO -->
+  <!-- ========================================
+       HERO SECTION
+       ======================================== -->
   <header class="projects-hero" aria-labelledby="projects-title">
     <p class="hero-eyebrow">active research</p>
     <h1 id="projects-title">Projects</h1>
     <p class="projects-lede">Each project applies RE:TECH principles — open, safe, iterative — and follows Arc^'s licensing and governance. Find an entry point below, then contribute through replication, documentation, or design.</p>
   </header>
 
-  <!-- HOW TO PICK -->
+  <!-- ========================================
+       EARLY STAGE INFO - Getting Started
+       ======================================== -->
   <section class="projects-guide surface-panel">
-    <h2>How to Pick a Project</h2>
-    <ol class="guide-steps">
-      <li>Skim the clusters below and choose a focus area.</li>
-      <li>Expand a project to view methods, status, and contribution opportunities.</li>
-      <li>Start with replication or low-risk tasks — log your work early.</li>
-      <li>Contact Ali to coordinate: <a href="mailto:ali@xbyali.page">ali@xbyali.page</a></li>
-    </ol>
+    <h2>Getting Involved</h2>
+    
+    <div style="margin-bottom: 1.5rem;">
+      <h3 style="margin: 0 0 0.8rem 0; color: var(--color-primary-bright); font-size: 1.1rem; font-weight: 600;">For Students</h3>
+      <p style="margin: 0; color: var(--color-text-muted); line-height: 1.7;">
+        If you're working on a final year project, honours thesis, or PhD, you can reach out to discuss ideas—but you'll need to find supervisors at your own institution who are willing to work within Arc^'s research framework.
+      </p>
+    </div>
+
+    <div style="margin-bottom: 1.5rem;">
+      <h3 style="margin: 0 0 0.8rem 0; color: var(--color-primary-bright); font-size: 1.1rem; font-weight: 600;">For Independent Researchers</h3>
+      <p style="margin: 0; color: var(--color-text-muted); line-height: 1.7;">
+        Independent researchers are welcome too, but fair warning: there aren't any public designs or protocols yet. I'm working on it, but we're not quite there!
+      </p>
+    </div>
+
+    <p style="margin: 0 0 1.5rem 0; color: var(--color-text-muted); line-height: 1.7; font-style: italic;">
+      Arc^ is super early right now. For now, the best way to get involved is to contact me directly and we can figure it out together.
+    </p>
+    
+    <a href="mailto:ali@xbyali.page?subject=Getting%20Involved%20with%20Arc^" class="button">Contact Ali</a>
   </section>
 
-  <!-- PROJECT CLUSTERS -->
+  <!-- ========================================
+       PROJECT CLUSTERS DIVIDER
+       ======================================== -->
   <div class="section-divider" aria-hidden="true">
     <span class="divider-label">project clusters</span>
   </div>
 
-  <!-- CLUSTER 1: WATER & SOILS -->
+  <!-- ========================================
+       CLUSTER 1: WATER & SOILS
+       
+       HOW TO ADD A NEW PROJECT:
+       1. Copy the entire <article class="project-item"> block
+       2. Change data-project="your-project-id" (must be unique!)
+       3. Change data-project-content="your-project-id" (must match!)
+       4. Update the title, summary, and all content sections
+       5. Update the email subject in the mailto link
+       ======================================== -->
   <section class="project-cluster" aria-labelledby="cluster-water">
     <header class="cluster-header">
       <h2 id="cluster-water">Water & Soils</h2>
@@ -43,207 +69,20 @@ const withBase = (path: string) => {
     </header>
 
     <div class="projects-list">
-      <!-- Project 1 -->
+      
+      <!-- PROJECT 1: Saltwater Irrigation -->
       <article class="project-item">
         <button class="project-toggle" aria-expanded="false" data-project="saltwater">
           <div class="project-header-content">
-            <h3>Saltwater Irrigation</h3>
+            <div style="display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;">
+              <h3 style="margin: 0;">Saltwater Irrigation</h3>
+              <span class="status-badge status-early-idea">Early Idea</span>
+            </div>
             <p class="project-summary">Exploring strategies for salinity-tolerant cultivation and soil recovery.</p>
           </div>
           <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-        </button>
-        <div class="project-details" data-project-content="hardware" hidden>
-          <div class="detail-section">
-            <h4>Why It Matters</h4>
-            <p>Open hardware designs enable independent replication and accelerate collaborative learning across contexts.</p>
-          </div>
-          <div class="detail-section">
-            <h4>Status</h4>
-            <p><strong>Designing CERN OHL-S reference builds.</strong> CAD files and BOMs in progress.</p>
-          </div>
-          <div class="detail-section">
-            <h4>How to Contribute</h4>
-            <ul>
-              <li>CAD design and optimization</li>
-              <li>Bill of materials (BOM) validation</li>
-              <li>Assembly documentation</li>
-              <li>Safety interlock design</li>
-            </ul>
-          </div>
-          <div class="detail-section">
-            <h4>Project Resources</h4>
-            <div class="project-links">
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Wiki <span class="coming-soon">(Coming Soon)</span>
-              </span>
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                GitHub Repository <span class="coming-soon">(Coming Soon)</span>
-              </span>
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Documentation <span class="coming-soon">(Coming Soon)</span>
-              </span>
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Discussion Forum <span class="coming-soon">(Coming Soon)</span>
-              </span>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 7 -->
-      <article class="project-item">
-        <button class="project-toggle" aria-expanded="false" data-project="data">
-          <div class="project-header-content">
-            <h3>Open Data & Methods</h3>
-            <p class="project-summary">Standardized datasets and attribution for comparable results across sites.</p>
-          </div>
-          <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <div class="project-details" data-project-content="data" hidden>
-          <div class="detail-section">
-            <h4>Why It Matters</h4>
-            <p>Comparable, well-documented data enables meta-analysis and accelerates collective learning.</p>
-          </div>
-          <div class="detail-section">
-            <h4>Status</h4>
-            <p><strong>Schema and attribution ledger in progress.</strong> Seeking data stewards and analysts.</p>
-          </div>
-          <div class="detail-section">
-            <h4>How to Contribute</h4>
-            <ul>
-              <li>Create dataset templates</li>
-              <li>Build analysis pipelines</li>
-              <li>Design replication badges</li>
-              <li>Develop attribution systems</li>
-            </ul>
-          </div>
-          <div class="detail-section">
-            <h4>Project Resources</h4>
-            <div class="project-links">
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Wiki <span class="coming-soon">(Coming Soon)</span>
-              </span>
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                GitHub Repository <span class="coming-soon">(Coming Soon)</span>
-              </span>
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Documentation <span class="coming-soon">(Coming Soon)</span>
-              </span>
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Discussion Forum <span class="coming-soon">(Coming Soon)</span>
-              </span>
-            </div>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- PROPOSE A PROJECT -->
-  <section class="propose-section surface-panel">
-    <h2>Propose a Project</h2>
-    <p>Have a use case or idea aligned with RE:TECH? Start by reaching out with:</p>
-    <ul class="proposal-checklist">
-      <li>Problem statement and context</li>
-      <li>Safety considerations and legal compliance</li>
-      <li>Method outline and success metrics</li>
-      <li>Licensing alignment (see below)</li>
-      <li>Needed roles and timeline</li>
-    </ul>
-    <a href="mailto:ali@xbyali.page?subject=Project%20Proposal" class="button">Propose a Project</a>
-  </section>
-
-  <!-- SAFETY & LICENSING -->
-  <section class="legal-section surface-panel">
-    <h2>Safety & Licensing</h2>
-    <p class="legal-intro">These requirements apply to all Arc^ projects:</p>
-    
-    <div class="legal-grid">
-      <div class="legal-item">
-        <h3>Safety</h3>
-        <p>Follow Arc^'s safety framework. High-voltage plasma is dangerous and requires proper protocols. If a project path trends toward weaponization, surveillance, or ecocide — we stop.</p>
-      </div>
-      
-      <div class="legal-item">
-        <h3>Licensing</h3>
-        <ul>
-          <li><strong>Documentation:</strong> CC BY-NC-SA</li>
-          <li><strong>Hardware:</strong> CERN OHL-S</li>
-          <li><strong>Software:</strong> AGPL-3.0</li>
-          <li><strong>Data:</strong> ODC-BY / CC BY-SA</li>
-        </ul>
-        <p class="legal-note">Proprietary integrations require a Contributor Assignment Agreement (CAA).</p>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="footer-content">
-    <p class="footer-text">
-      arc^ by ali · open research for planetary repair
-    </p>
-    <p class="footer-license">
-      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA</a> · 
-      <a href="https://ohwr.org/cern_ohl_s_v2.txt" target="_blank" rel="noopener noreferrer">CERN OHL-S</a> · 
-      <a href="https://www.gnu.org/licenses/agpl-3.0.en.html" target="_blank" rel="noopener noreferrer">AGPL-3.0</a>
-    </p>
-  </div>
-  <button type="button" data-motion-toggle class="button button-muted">Disable Motion</button>
-</footer>
-
-<script>
-  // Accordion functionality for project items
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggleButtons = document.querySelectorAll('.project-toggle');
-    
-    toggleButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const projectId = button.dataset.project;
-        const content = document.querySelector(`[data-project-content="${projectId}"]`);
-        const isExpanded = button.getAttribute('aria-expanded') === 'true';
-        
-        // Toggle this item
-        button.setAttribute('aria-expanded', !isExpanded);
-        content.hidden = isExpanded;
-        
-        // Add rotation to icon
-        button.classList.toggle('is-expanded', !isExpanded);
-      });
-    });
-  });
-</script></svg>
         </button>
         <div class="project-details" data-project-content="saltwater" hidden>
           <div class="detail-section">
@@ -265,42 +104,43 @@ const withBase = (path: string) => {
           </div>
           <div class="detail-section">
             <h4>Project Resources</h4>
-            <div class="project-links">
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Wiki <span class="coming-soon">(Coming Soon)</span>
-              </span>
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                GitHub Repository <span class="coming-soon">(Coming Soon)</span>
-              </span>
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Documentation <span class="coming-soon">(Coming Soon)</span>
-              </span>
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Discussion Forum <span class="coming-soon">(Coming Soon)</span>
-              </span>
+            <div class="resources-grid">
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">📚</span>
+                <span class="resource-label">Wiki</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">💻</span>
+                <span class="resource-label">GitHub Repository</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">📖</span>
+                <span class="resource-label">Documentation</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">💬</span>
+                <span class="resource-label">Discussion Forum</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
             </div>
+          </div>
+          <div class="project-cta">
+            <a href="https://forms.gle/BZMEtQuMgNgkyvVV7" target="_blank" rel="noopener noreferrer" class="button button-outline">Express Interest →</a>
           </div>
         </div>
       </article>
 
-      <!-- Project 2 -->
+      <!-- PROJECT 2: PAW for Pathogens & Nutrients -->
       <article class="project-item">
         <button class="project-toggle" aria-expanded="false" data-project="paw-pathogens">
           <div class="project-header-content">
-            <h3>Plasma-Activated Water for Pathogens & Nutrients</h3>
+            <div style="display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;">
+              <h3 style="margin: 0;">Plasma-Activated Water for Pathogens & Nutrients</h3>
+              <span class="status-badge status-early-idea">Early Idea</span>
+            </div>
             <p class="project-summary">Reduce chemical inputs through PAW applications for water treatment and crop health.</p>
           </div>
           <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -327,40 +167,41 @@ const withBase = (path: string) => {
           </div>
           <div class="detail-section">
             <h4>Project Resources</h4>
-            <div class="project-links">
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Wiki <span class="coming-soon">(Coming Soon)</span>
-              </span>
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                GitHub Repository <span class="coming-soon">(Coming Soon)</span>
-              </span>
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Documentation <span class="coming-soon">(Coming Soon)</span>
-              </span>
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Discussion Forum <span class="coming-soon">(Coming Soon)</span>
-              </span>
+            <div class="resources-grid">
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">📚</span>
+                <span class="resource-label">Wiki</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">💻</span>
+                <span class="resource-label">GitHub Repository</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">📖</span>
+                <span class="resource-label">Documentation</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">💬</span>
+                <span class="resource-label">Discussion Forum</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
             </div>
+          </div>
+          <div class="project-cta">
+            <a href="https://forms.gle/BZMEtQuMgNgkyvVV7" target="_blank" rel="noopener noreferrer" class="button button-outline">Express Interest →</a>
           </div>
         </div>
       </article>
+
     </div>
   </section>
 
-  <!-- CLUSTER 2: AIR & SURFACES -->
+  <!-- ========================================
+       CLUSTER 2: AIR & SURFACES
+       ======================================== -->
   <section class="project-cluster" aria-labelledby="cluster-air">
     <header class="cluster-header">
       <h2 id="cluster-air">Air & Surfaces</h2>
@@ -372,11 +213,15 @@ const withBase = (path: string) => {
     </header>
 
     <div class="projects-list">
-      <!-- Project 3 -->
+      
+      <!-- PROJECT 3: Airborne Pathogens -->
       <article class="project-item">
         <button class="project-toggle" aria-expanded="false" data-project="airborne">
           <div class="project-header-content">
-            <h3>Low-Energy Plasma for Airborne Pathogens</h3>
+            <div style="display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;">
+              <h3 style="margin: 0;">Low-Energy Plasma for Airborne Pathogens</h3>
+              <span class="status-badge status-early-idea">Early Idea</span>
+            </div>
             <p class="project-summary">Scalable sanitation without harsh chemicals for indoor air quality.</p>
           </div>
           <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -403,42 +248,43 @@ const withBase = (path: string) => {
           </div>
           <div class="detail-section">
             <h4>Project Resources</h4>
-            <div class="project-links">
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Wiki <span class="coming-soon">(Coming Soon)</span>
-              </span>
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                GitHub Repository <span class="coming-soon">(Coming Soon)</span>
-              </span>
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Documentation <span class="coming-soon">(Coming Soon)</span>
-              </span>
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Discussion Forum <span class="coming-soon">(Coming Soon)</span>
-              </span>
+            <div class="resources-grid">
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">📚</span>
+                <span class="resource-label">Wiki</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">💻</span>
+                <span class="resource-label">GitHub Repository</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">📖</span>
+                <span class="resource-label">Documentation</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">💬</span>
+                <span class="resource-label">Discussion Forum</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
             </div>
+          </div>
+          <div class="project-cta">
+            <a href="https://forms.gle/BZMEtQuMgNgkyvVV7" target="_blank" rel="noopener noreferrer" class="button button-outline">Express Interest →</a>
           </div>
         </div>
       </article>
 
-      <!-- Project 4 -->
+      <!-- PROJECT 4: Surface Biofilm Disruption -->
       <article class="project-item">
         <button class="project-toggle" aria-expanded="false" data-project="biofilm">
           <div class="project-header-content">
-            <h3>Surface Biofilm Disruption</h3>
+            <div style="display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;">
+              <h3 style="margin: 0;">Surface Biofilm Disruption</h3>
+              <span class="status-badge status-early-idea">Early Idea</span>
+            </div>
             <p class="project-summary">Reduce hospital-acquired infections through plasma-based surface treatment.</p>
           </div>
           <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -465,40 +311,41 @@ const withBase = (path: string) => {
           </div>
           <div class="detail-section">
             <h4>Project Resources</h4>
-            <div class="project-links">
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Wiki <span class="coming-soon">(Coming Soon)</span>
-              </span>
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                GitHub Repository <span class="coming-soon">(Coming Soon)</span>
-              </span>
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Documentation <span class="coming-soon">(Coming Soon)</span>
-              </span>
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Discussion Forum <span class="coming-soon">(Coming Soon)</span>
-              </span>
+            <div class="resources-grid">
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">📚</span>
+                <span class="resource-label">Wiki</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">💻</span>
+                <span class="resource-label">GitHub Repository</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">📖</span>
+                <span class="resource-label">Documentation</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">💬</span>
+                <span class="resource-label">Discussion Forum</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
             </div>
+          </div>
+          <div class="project-cta">
+            <a href="https://forms.gle/BZMEtQuMgNgkyvVV7" target="_blank" rel="noopener noreferrer" class="button button-outline">Express Interest →</a>
           </div>
         </div>
       </article>
+
     </div>
   </section>
 
-  <!-- CLUSTER 3: ECOSYSTEM REPAIR -->
+  <!-- ========================================
+       CLUSTER 3: ECOSYSTEM REPAIR
+       ======================================== -->
   <section class="project-cluster" aria-labelledby="cluster-ecosystem">
     <header class="cluster-header">
       <h2 id="cluster-ecosystem">Ecosystem Repair</h2>
@@ -510,11 +357,15 @@ const withBase = (path: string) => {
     </header>
 
     <div class="projects-list">
-      <!-- Project 5 -->
+      
+      <!-- PROJECT 5: Wetland & Riparian Support -->
       <article class="project-item">
         <button class="project-toggle" aria-expanded="false" data-project="wetland">
           <div class="project-header-content">
-            <h3>Wetland & Riparian Support</h3>
+            <div style="display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;">
+              <h3 style="margin: 0;">Wetland & Riparian Support</h3>
+              <span class="status-badge status-early-idea">Early Idea</span>
+            </div>
             <p class="project-summary">PAW variants for water quality and species resilience in wetland ecosystems.</p>
           </div>
           <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -541,40 +392,41 @@ const withBase = (path: string) => {
           </div>
           <div class="detail-section">
             <h4>Project Resources</h4>
-            <div class="project-links">
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Wiki <span class="coming-soon">(Coming Soon)</span>
-              </span>
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                GitHub Repository <span class="coming-soon">(Coming Soon)</span>
-              </span>
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Documentation <span class="coming-soon">(Coming Soon)</span>
-              </span>
-              <span class="link-placeholder">
-                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Discussion Forum <span class="coming-soon">(Coming Soon)</span>
-              </span>
+            <div class="resources-grid">
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">📚</span>
+                <span class="resource-label">Wiki</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">💻</span>
+                <span class="resource-label">GitHub Repository</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">📖</span>
+                <span class="resource-label">Documentation</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">💬</span>
+                <span class="resource-label">Discussion Forum</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
             </div>
+          </div>
+          <div class="project-cta">
+            <a href="https://forms.gle/BZMEtQuMgNgkyvVV7" target="_blank" rel="noopener noreferrer" class="button button-outline">Express Interest →</a>
           </div>
         </div>
       </article>
+
     </div>
   </section>
 
-  <!-- CLUSTER 4: TOOLING & INFRASTRUCTURE -->
+  <!-- ========================================
+       CLUSTER 4: TOOLING & INFRASTRUCTURE
+       ======================================== -->
   <section class="project-cluster" aria-labelledby="cluster-tooling">
     <header class="cluster-header">
       <h2 id="cluster-tooling">Tooling & Infrastructure</h2>
@@ -586,12 +438,415 @@ const withBase = (path: string) => {
     </header>
 
     <div class="projects-list">
-      <!-- Project 6 -->
+      
+      <!-- PROJECT 6: Open PAW Rigs & Safety Kits -->
       <article class="project-item">
         <button class="project-toggle" aria-expanded="false" data-project="hardware">
           <div class="project-header-content">
-            <h3>Open PAW Rigs & Safety Kits</h3>
+            <div style="display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;">
+              <h3 style="margin: 0;">Open PAW Rigs & Safety Kits</h3>
+              <span class="status-badge status-early-idea">Early Idea</span>
+            </div>
             <p class="project-summary">Reproducible hardware to accelerate learning and ensure safety.</p>
           </div>
           <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="project-details" data-project-content="hardware" hidden>
+          <div class="detail-section">
+            <h4>Why It Matters</h4>
+            <p>Open hardware designs enable independent replication and accelerate collaborative learning across contexts.</p>
+          </div>
+          <div class="detail-section">
+            <h4>Status</h4>
+            <p><strong>Designing CERN OHL-S reference builds.</strong> CAD files and BOMs in progress.</p>
+          </div>
+          <div class="detail-section">
+            <h4>How to Contribute</h4>
+            <ul>
+              <li>CAD design and optimization</li>
+              <li>Bill of materials (BOM) validation</li>
+              <li>Assembly documentation</li>
+              <li>Safety interlock design</li>
+            </ul>
+          </div>
+          <div class="detail-section">
+            <h4>Project Resources</h4>
+            <div class="resources-grid">
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">📚</span>
+                <span class="resource-label">Wiki</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">💻</span>
+                <span class="resource-label">GitHub Repository</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">📖</span>
+                <span class="resource-label">Documentation</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">💬</span>
+                <span class="resource-label">Discussion Forum</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
+            </div>
+          </div>
+          <div class="project-cta">
+            <a href="https://forms.gle/BZMEtQuMgNgkyvVV7" target="_blank" rel="noopener noreferrer" class="button button-outline">Express Interest →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 7: Open Data & Methods -->
+      <article class="project-item">
+        <button class="project-toggle" aria-expanded="false" data-project="data">
+          <div class="project-header-content">
+            <div style="display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;">
+              <h3 style="margin: 0;">Open Data & Methods</h3>
+              <span class="status-badge status-early-idea">Early Idea</span>
+            </div>
+            <p class="project-summary">Standardized datasets and attribution for comparable results across sites.</p>
+          </div>
+          <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="project-details" data-project-content="data" hidden>
+          <div class="detail-section">
+            <h4>Why It Matters</h4>
+            <p>Comparable, well-documented data enables meta-analysis and accelerates collective learning.</p>
+          </div>
+          <div class="detail-section">
+            <h4>Status</h4>
+            <p><strong>Schema and attribution ledger in progress.</strong> Seeking data stewards and analysts.</p>
+          </div>
+          <div class="detail-section">
+            <h4>How to Contribute</h4>
+            <ul>
+              <li>Create dataset templates</li>
+              <li>Build analysis pipelines</li>
+              <li>Design replication badges</li>
+              <li>Develop attribution systems</li>
+            </ul>
+          </div>
+          <div class="detail-section">
+            <h4>Project Resources</h4>
+            <div class="resources-grid">
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">📚</span>
+                <span class="resource-label">Wiki</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">💻</span>
+                <span class="resource-label">GitHub Repository</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">📖</span>
+                <span class="resource-label">Documentation</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
+              <a href="#" class="resource-link disabled">
+                <span class="resource-icon">💬</span>
+                <span class="resource-label">Discussion Forum</span>
+                <span class="resource-status">(Coming Soon)</span>
+              </a>
+            </div>
+          </div>
+          <div class="project-cta">
+            <a href="https://forms.gle/BZMEtQuMgNgkyvVV7" target="_blank" rel="noopener noreferrer" class="button button-outline">Express Interest →</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ========================================
+       PROPOSE A PROJECT SECTION
+       ======================================== -->
+  <section class="propose-section surface-panel">
+    <h2>Propose a Project</h2>
+    <p>Have a use case or idea aligned with RE:TECH? Start by reaching out with:</p>
+    <ul class="proposal-checklist">
+      <li>Problem statement and context</li>
+      <li>Safety considerations and legal compliance</li>
+      <li>Method outline and success metrics</li>
+      <li>Licensing alignment (see below)</li>
+      <li>Needed roles and timeline</li>
+    </ul>
+    <a href="mailto:ali@xbyali.page?subject=Project%20Proposal" class="button">Propose a Project</a>
+  </section>
+
+  <!-- ========================================
+       SAFETY & LICENSING SECTION
+       ======================================== -->
+  <section class="legal-section surface-panel">
+    <h2>Safety & Licensing</h2>
+    <p class="legal-intro">These requirements apply to all Arc^ projects:</p>
+    
+    <div class="legal-grid">
+      <div class="legal-item">
+        <h3>Safety</h3>
+        <p>Follow Arc^'s safety framework. High-voltage plasma is dangerous and requires proper protocols. If a project path trends toward weaponization, surveillance, or ecocide — we stop.</p>
+      </div>
+      
+      <div class="legal-item">
+        <h3>Licensing</h3>
+        <ul>
+          <li><strong>Documentation:</strong> CC BY-NC-SA</li>
+          <li><strong>Hardware:</strong> CERN OHL-S</li>
+          <li><strong>Software:</strong> AGPL-3.0</li>
+          <li><strong>Data:</strong> ODC-BY / CC BY-SA</li>
+        </ul>
+        <p class="legal-note">Proprietary integrations require a Contributor Assignment Agreement (CAA).</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ========================================
+     ABOUT XBYALI
+     ======================================== -->
+<section class="xbyali-note surface-panel" style="max-width: 70ch; margin: clamp(2rem, 5vw, 3rem) auto; padding: clamp(2rem, 5vw, 2.5rem); text-align: center;">
+  <p style="margin: 0; color: var(--color-text-muted); line-height: 1.7; font-size: 1.05rem;">
+    Arc^ by Ali is part of a larger project called <strong style="color: var(--color-text);">xbyali</strong> — where I'm trying to build a future where the world is better, doing things differently from the past. If you're curious about the bigger picture, check out <a href="https://www.xbyali.page" target="_blank" rel="noopener noreferrer">www.xbyali.page</a>
+  </p>
+</section>
+
+<!-- ========================================
+     FOOTER
+     ======================================== -->
+<footer class="site-footer">
+  <span>arc^ by ali — open research for planetary repair</span>
+  <button type="button" data-motion-toggle class="button button-muted">Disable Motion</button>
+</footer>
+
+<!-- ========================================
+     BACK TO TOP BUTTON
+     ======================================== -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</button>
+
+<!-- ========================================
+     JAVASCRIPT FOR ACCORDION FUNCTIONALITY
+     ======================================== -->
+<script>
+  // Accordion functionality for project items
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleButtons = document.querySelectorAll('.project-toggle');
+    
+    toggleButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const projectId = button.dataset.project;
+        const content = document.querySelector(`[data-project-content="${projectId}"]`);
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        
+        // Toggle this item
+        button.setAttribute('aria-expanded', !isExpanded);
+        content.hidden = isExpanded;
+        
+        // Add rotation to icon
+        button.classList.toggle('is-expanded', !isExpanded);
+      });
+    });
+
+    // Back to Top functionality
+    const backToTop = document.getElementById('backToTop');
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    // Scroll to top when clicked
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+
+<style>
+  /* ==========================================
+     STATUS BADGES
+     HOW TO USE: Change the class name to update status
+     - status-early-idea (blue)
+     - status-testing (orange)
+     - status-writing (teal)
+     - status-published (green)
+     ========================================== */
+  .status-badge {
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* Early Idea - Blue/Purple */
+  .status-early-idea {
+    background: rgba(96, 165, 250, 0.15);
+    color: #93c5fd;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+  }
+
+  /* Testing & Exploring - Orange/Yellow */
+  .status-testing {
+    background: rgba(251, 146, 60, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(251, 146, 60, 0.3);
+  }
+
+  /* Writing Findings - Teal/Cyan */
+  .status-writing {
+    background: rgba(20, 184, 166, 0.15);
+    color: #5eead4;
+    border: 1px solid rgba(20, 184, 166, 0.3);
+  }
+
+  /* Results Available - Green */
+  .status-published {
+    background: rgba(34, 197, 94, 0.15);
+    color: #86efac;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+  }
+
+  /* Project Resources Grid Styling */
+  .resources-grid {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .resource-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.8rem 1rem;
+    background: rgba(6, 12, 22, 0.4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    color: var(--color-text-muted);
+    transition: all var(--transition-base);
+  }
+
+  .resource-link.disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+
+  .resource-link:not(.disabled):hover {
+    background: rgba(10, 147, 150, 0.08);
+    border-color: rgba(93, 225, 228, 0.3);
+  }
+
+  .resource-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .resource-label {
+    flex: 1;
+    font-size: 0.95rem;
+    color: var(--color-text);
+  }
+
+  .resource-status {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--color-text-muted);
+  }
+
+  /* Project CTA (Express Interest Button) */
+  .project-cta {
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .project-cta .button {
+    min-width: 180px;
+  }
+
+  /* Back to Top Button */
+  .back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    background: var(--color-primary);
+    border: 1px solid var(--color-primary-bright);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-base);
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(10, 147, 150, 0.4);
+  }
+
+  .back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .back-to-top:hover {
+    background: var(--color-primary-bright);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(10, 147, 150, 0.5);
+  }
+
+  .back-to-top svg {
+    color: var(--color-bg);
+    width: 24px;
+    height: 24px;
+  }
+
+  @media (max-width: 640px) {
+    .project-cta {
+      justify-content: stretch;
+    }
+    
+    .project-cta .button {
+      width: 100%;
+    }
+
+    .back-to-top {
+      bottom: 1.5rem;
+      right: 1.5rem;
+      width: 44px;
+      height: 44px;
+    }
+
+    .status-badge {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.7rem;
+    }
+  }
+</style>

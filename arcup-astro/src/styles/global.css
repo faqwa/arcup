@@ -412,7 +412,7 @@ button:focus-visible {
   justify-items: center;
   text-align: center;
   padding: clamp(3rem, 6vw, 4rem) 0;
-  max-width: 68ch;
+  max-width: 100ch;
   margin: 0 auto;
 }
 
@@ -427,9 +427,9 @@ button:focus-visible {
 
 .why-hero-subtitle {
   margin: 0;
-  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
   color: var(--color-text-muted);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.01em;
 }
 
