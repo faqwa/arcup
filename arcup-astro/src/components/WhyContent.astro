@@ -278,27 +278,4 @@ const withBase = (path: string) => {
     </div>
   </section>
 
-  <!-- Back to Top -->
-  <button class="back-to-top-page" id="backToPageTop" aria-label="Scroll to top of page">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 19V5M5 12l7-7 7 7"/>
-    </svg>
-  </button>
-
 </main>
-
-<script>
-  const backToPageTop = document.getElementById('backToPageTop');
-  if (backToPageTop) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) {
-        backToPageTop.classList.add('visible');
-      } else {
-        backToPageTop.classList.remove('visible');
-      }
-    });
-    backToPageTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-</script>
