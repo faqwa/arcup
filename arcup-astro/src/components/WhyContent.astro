@@ -11,14 +11,15 @@ const withBase = (path: string) => {
   <!-- HERO - Stark and Direct -->
   <header class="why-hero-v2" aria-labelledby="why-title">
     <h1 id="why-title">
-      what if everyone made the same choices as you?
+      what if everyone<br />made the same choices as you?
     </h1>
     <p class="why-hero-subtitle">what world would we create?</p>
   </header>
 
   <!-- THE CHAT - Now the Star -->
   <section class="why-chat-v2" aria-labelledby="chat-heading">
-    <h2 id="chat-heading" class="visually-hidden">Conversation about innovation</h2>
+    <!-- Chat heading moved above the window -->
+    <h2 id="chat-heading" class="chat-section-heading">Conversation about innovation</h2>
     
     <div class="chat-window-v2" role="article" aria-label="Conversation about innovation patterns">
       <!-- Chat Header -->
@@ -31,7 +32,7 @@ const withBase = (path: string) => {
       </header>
 
       <!-- Chat Messages -->
-      <div class="chat-body-v2">
+      <div class="chat-body-v2" id="chatBody">
         <p class="chat-timestamp-v2">SUN, 28 SEP at 22:03</p>
 
         <div class="chat-bubble-v2 bubble-left-v2">
@@ -139,6 +140,13 @@ const withBase = (path: string) => {
         <p class="chat-status-v2">delivered</p>
       </div>
     </div>
+
+    <!-- Back to Top Button for Chat -->
+    <button class="back-to-top-chat" id="backToChatTop" aria-label="Scroll to top of conversation">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 19V5M5 12l7-7 7 7"/>
+      </svg>
+    </button>
   </section>
 
   <!-- VISUAL BREAK -->
@@ -166,50 +174,43 @@ const withBase = (path: string) => {
       </article>
 
       <article class="principle-card-v2">
-        <h3>health-measured</h3>
-        <p>not profit-obsessed at any cost</p>
+        <h3>regenerative</h3>
+        <p>not extractive and destructive</p>
       </article>
     </div>
 
     <div class="answer-closing">
       <p class="answer-statement">
-        <strong>arc^ byali</strong> is my framework for collaboration<br />
-        and an open invitation to anyone ready to work differently
+        arc^ builds <strong>open infrastructure for collective repair</strong> — 
+        tools, knowledge, and networks that reject the extractive paradigm.
       </p>
-
-      <div class="cta-group">
-        <a class="button" href={withBase("/how")}>See How We Work Differently →</a>
-        <a class="button button-outline" href={withBase("/join")}>Get Involved</a>
-      </div>
+      <p class="answer-statement">
+        Because the systems that got us here <strong>won't get us out</strong>.
+      </p>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="footer-content">
-    <p class="footer-text">
-      arc^ by ali · open research and safety-first plasma tech
-    </p>
-    <p class="footer-license">
-      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA</a> · 
-      <a href="https://ohwr.org/cern_ohl_s_v2.txt" target="_blank" rel="noopener noreferrer">CERN OHL-S</a> · 
-      <a href="https://www.gnu.org/licenses/agpl-3.0.en.html" target="_blank" rel="noopener noreferrer">AGPL-3.0</a>
-    </p>
-  </div>
-  <button type="button" data-motion-toggle class="button button-muted">Disable Motion</button>
-</footer>
-
 <script>
-  // Typing indicator animation
-  document.addEventListener('DOMContentLoaded', () => {
-    const typingIndicator = document.querySelector('[data-typing-indicator]');
-    
-    if (typingIndicator) {
-      // Show typing indicator after 2 seconds
-      setTimeout(() => {
-        typingIndicator.classList.add('is-visible');
-      }, 2000);
-    }
-  });
+  // Back to top functionality for chat
+  const chatBody = document.getElementById('chatBody');
+  const backToChatTop = document.getElementById('backToChatTop');
+
+  if (chatBody && backToChatTop) {
+    chatBody.addEventListener('scroll', () => {
+      if (chatBody.scrollTop > 200) {
+        backToChatTop.classList.add('visible');
+      } else {
+        backToChatTop.classList.remove('visible');
+      }
+    });
+
+    backToChatTop.addEventListener('click', () => {
+      chatBody.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
 </script>
