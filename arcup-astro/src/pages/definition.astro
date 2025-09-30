@@ -2,7 +2,9 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ArcCanvas from "../components/ArcCanvas.astro";
 import SiteHeader from "../components/SiteHeader.astro";
-import DefinitionContent from "../components/DefinitionContent.astro";
+import DefinitionContent from "../components/DefinitionContent.astro"
+import '../styles/home-definition-page.css';  // ADD THIS
+;
 
 const description = "arc^ is a regenerative research and stewardship collective exploring plasma-activated water and community-powered repair.";
 const canonical = Astro.site ? new URL("/", Astro.site).toString() : undefined;
