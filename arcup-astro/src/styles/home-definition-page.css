@@ -396,3 +396,106 @@
     padding-top: 2rem;
   }
 }
+
+/* Tighten overall page spacing */
+.definition-page {
+  text-align: center;
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem); /* Reduced from 2.5rem/6vw/4rem */
+}
+
+/* Tighten header spacing significantly */
+.definition-header {
+  display: grid;
+  gap: clamp(0.75rem, 2vw, 1rem); /* Reduced from 1.5rem/4vw/2rem */
+  justify-items: center;
+}
+
+/* Reduce title row gap */
+.definition-title-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(0.5rem, 1.5vw, 0.75rem); /* Reduced from 1rem/2.5vw/1.5rem */
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+}
+
+/* Tighten lede section spacing */
+.definition-lede-section {
+  margin: clamp(1rem, 3vw, 1.5rem) 0; /* Reduced from 2rem/5vw/3rem */
+}
+
+/* Reduce definitions section margin */
+.definitions-section {
+  margin: clamp(1.5rem, 4vw, 2.5rem) 0; /* Reduced from 3rem/6vw/4rem */
+}
+
+/* Tighter card stack padding */
+.definition-card-stack {
+  display: grid;
+  gap: clamp(1rem, 2.5vw, 1.5rem); /* Reduced from 1.25rem/3vw/1.75rem */
+  padding: clamp(1.5rem, 4vw, 2rem) 0; /* Reduced from 2rem/5vw/3rem */
+  list-style: none;
+  margin: 0;
+}
+
+/* Reduce personal intro margin */
+.personal-intro {
+  margin: clamp(1.5rem, 4vw, 2rem) auto; /* Reduced from 2.5rem/6vw/3.5rem */
+  max-width: 65ch;
+  padding: clamp(2rem, 5vw, 2.5rem) clamp(1.5rem, 4vw, 2.5rem); /* Reduced padding */
+  background: linear-gradient(135deg, rgba(93, 225, 228, 0.06), rgba(93, 225, 228, 0.02));
+  border: 1px solid rgba(93, 225, 228, 0.25);
+  border-radius: 16px;
+  text-align: center;
+  display: grid;
+  gap: clamp(0.75rem, 2vw, 1rem); /* Reduced from 1rem/2.5vw/1.5rem */
+}
+
+/* Tighter intro statement spacing */
+.definition-intro {
+  margin: clamp(1.5rem, 4vw, 2rem) auto 0; /* Reduced from 2rem/5vw/3rem */
+  max-width: 68ch;
+  padding: clamp(1.5rem, 4vw, 2rem) clamp(1.25rem, 3vw, 1.75rem); /* Reduced */
+  background: rgba(6, 12, 22, 0.5);
+  border: 1px solid rgba(93, 225, 228, 0.2);
+  border-radius: 12px;
+  text-align: left;
+  display: grid;
+  gap: clamp(1rem, 2.5vw, 1.5rem); /* Reduced from 1.25rem/3vw/1.75rem */
+}
+
+/* Tighter CTA section */
+.definition-cta-section {
+  margin-top: clamp(2rem, 5vw, 3rem); /* Reduced from 3rem/6vw/4rem */
+  padding: clamp(2rem, 4vw, 2.5rem) clamp(1.25rem, 3vw, 1.75rem); /* Reduced */
+  background: linear-gradient(135deg, rgba(93, 225, 228, 0.08), rgba(93, 225, 228, 0.03));
+  border: 1px solid rgba(93, 225, 228, 0.3);
+  border-radius: 16px;
+  text-align: center;
+}
+
+/* Tighter footer spacing */
+.definition-footer {
+  margin-top: clamp(2rem, 5vw, 3rem); /* Reduced from 3rem/6vw/4rem */
+  padding-top: clamp(1.5rem, 3vw, 2rem); /* Reduced from 2rem/4vw/3rem */
+  border-top: 1px solid rgba(93, 225, 228, 0.15);
+  text-align: center;
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .definition-page {
+    gap: clamp(1.25rem, 3vw, 1.75rem); /* Tighter on mobile */
+  }
+
+  .definition-header {
+    gap: clamp(0.5rem, 2vw, 0.75rem); /* Very tight on mobile */
+    padding: 0 0.5rem;
+  }
+
+  .definition-title-row {
+    gap: 0.5rem; /* Minimal gap on mobile */
+  }
+}

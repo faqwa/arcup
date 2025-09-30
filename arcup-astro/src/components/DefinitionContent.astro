@@ -6,148 +6,382 @@ const withBase = (path: string) => {
 };
 ---
 
-<main id="main-content" class="page-shell" aria-labelledby="definition-title">
+<main id="main-content" class="page-shell definition-page" aria-labelledby="definition-title">
 
-  <!-- HEADER with proper hierarchy -->
+  <!-- TITLE & PRONUNCIATION -->
   <header class="definition-header">
-    <p class="hero-eyebrow">
-      a regenerative research and stewardship collective
-    </p>
-    
-    <!-- H1 is the main title -->
-    <h1 id="definition-title">
-      what if we did science that created a better world?
-    </h1>
-  </header>
-
-  <!-- arc^ with pronunciation - H2 -->
-  <div class="definition-title-row">
-    <h2>
-      <span></span>arc^
-      <span class="pronunciation-inline">
+    <div class="definition-title-row">
+      <h1 id="definition-title">
+        arc<span class="caret-symbol">^</span>
+      </h1>
+      <div class="pronunciation-inline">
         <span class="pronunciation-text">/ark-up/</span>
         <button class="audio-button" aria-label="Play pronunciation" type="button">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polygon points="5 3 19 12 5 21 5 3"></polygon>
           </svg>
         </button>
-      </span>
+      </div>
+    </div>
+    <p class="definition-eyebrow">noun · verb · movement</p>
+    <p class="definition-subheading">
+      a regenerative research and stewardship collective
+    </p>
+  </header>
+
+  <!-- COMPELLING LEDE -->
+  <section class="definition-lede-section">
+    <h2 class="definition-lede">
+      what if we did science that created a better world?
     </h2>
-    <p class="definition-eyebrow">(noun, verb, movement)</p>
-  </div>
+  </section>
 
-  <!-- Definition Cards -->
-  <ul class="definition-card-stack">
-    <li>
-      <div class="definition-emoji">🗣️</div>
-      <p>
-        <strong>"to arc up"</strong> (Australian slang) — to rise loudly in defense of people and planet. 
-        To take action when it matters most.
-      </p>
-    </li>
-    <li>
-      <div class="definition-emoji">🔬</div>
-      <p>
-        <strong>a framework</strong> for doing plasma research that refuses extractive, profit-driven science
-      </p>
-    </li>
-    <li>
-      <div class="definition-emoji">🌱</div>
-      <p>
-        <strong>a practice</strong> of building tools and protocols in the open, designed for repair and restoration
-      </p>
-    </li>
-    <li>
-      <div class="definition-emoji">🤝</div>
-      <p>
-        <strong>a community</strong> of researchers, makers, and stewards working toward regenerative futures
-      </p>
-    </li>
-  </ul>
+  <!-- DEFINITION CARDS -->
+  <section class="definitions-section">
+    <ul class="definition-card-stack">
+      <li>
+        <div class="definition-emoji">🗣️</div>
+        <div class="definition-card-content">
+          <strong>"to arc up"</strong>
+          <p>
+            (Australian slang) — to rise loudly in defense of people and planet. To take action when it matters most.
+          </p>
+        </div>
+      </li>
+      
+      <li>
+        <div class="definition-emoji">🔬</div>
+        <div class="definition-card-content">
+          <strong>a framework</strong>
+          <p>
+            for doing plasma research that refuses extractive, profit-driven science
+          </p>
+        </div>
+      </li>
+      
+      <li>
+        <div class="definition-emoji">🌱</div>
+        <div class="definition-card-content">
+          <strong>a practice</strong>
+          <p>
+            of building tools and protocols in the open, designed for repair and restoration
+          </p>
+        </div>
+      </li>
+      
+      <li>
+        <div class="definition-emoji">🤝</div>
+        <div class="definition-card-content">
+          <strong>a community</strong>
+          <p>
+            of researchers, makers, and stewards working toward regenerative futures
+          </p>
+        </div>
+      </li>
+    </ul>
+  </section>
 
-  <!-- Personal Introduction -->
+  <!-- PERSONAL INTRO -->
   <section class="personal-intro">
     <p class="intro-greeting">I'm Ali.</p>
     <p>
-      Arc^ started as my response to a question: if I make the same choices as the good people before me, 
-      what world would it create?
+      Arc^ started from a question: if I make the same choices as the good people before me, what world would it create?
     </p>
     <p>
-      Right now, arc^ is just one person, and it's a framework that refuses the old processes of innovation.
-    </p>
-  </section>
-
-  <!-- Technical intro with WIP notice -->
-  <section class="definition-intro">
-    <p>
-      <strong>arc^ is an experiment in doing science differently.</strong> It's plasma research guided by RE:TECH: 
-      Refuse Extractive Technology. That means transparent protocols, collaborative methods, and regenerative goals.
-    </p>
-    <p>
-      We're exploring plasma-activated water (PAW) for agriculture, remediation, and ecological restoration. 
-      Instead of locking discoveries behind patents, we publish early, document openly, and share freely.
+      Right now, arc^ is just me—one person building a framework that refuses the old processes of innovation.
     </p>
     <p class="intro-hope">
-      My hope? Arc^ will flourish into a global community of future-conscious development, changemakers, and pioneers.
-    </p>
-    <p class="wip-notice">
-      <strong>This is a living project.</strong> We're building in public, iterating constantly, and learning as we go. 
-      More experiments, protocols, and community tools are coming soon.
+      But it's designed to grow into something bigger: a collective working toward regenerative futures.
     </p>
   </section>
 
-  <!-- Primary CTA Section -->
+  <!-- WHAT IS IT -->
+  <section class="definition-intro">
+    <p>
+      <strong>Arc^ is an experiment in doing science differently.</strong> It's plasma research guided by RE:TECH—Refuse Extractive Technology. That means transparent protocols, collaborative methods, and regenerative goals.
+    </p>
+    <p>
+      We're exploring plasma-activated water for agriculture, remediation, and ecological repair. Everything is published openly, from day zero.
+    </p>
+    <p class="wip-notice">
+      <strong>Fair warning:</strong> Arc^ is in early stages. Public protocols are still being developed. Most value right now comes from dialogue, co-design, and building the infrastructure together.
+    </p>
+  </section>
+
+  <!-- PRIMARY CTA -->
   <section class="definition-cta-section">
-    <h3 class="cta-heading">where to start?</h3>
+    <h2 class="cta-heading">Where to Start</h2>
     <p class="cta-description">
-      Choose your entry point based on what you're curious about.
+      Explore the framework, see what we're building, or reach out to get involved.
     </p>
     <div class="definition-cta-group">
-      <a href={withBase('/why')} class="button">
-        <span>Why arc^ exists</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <a href={withBase("/why")} class="button button-primary">
+        <span>Read Why</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
       </a>
-      <a href={withBase('/how')} class="button button-outline">
-        <span>How we work</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
+      <a href={withBase("/how")} class="button button-secondary">
+        <span>See How It Works</span>
       </a>
-      <a href={withBase('/projects')} class="button button-outline">
-        <span>See the work</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
+      <a href={withBase("/projects")} class="button button-secondary">
+        <span>Browse Projects</span>
       </a>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER NOTE -->
   <footer class="definition-footer">
     <p class="definition-note">
-      built by <a href="https://xbyali.page" target="_blank" rel="noopener noreferrer">ali</a> · 
-      all research <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA</a>
+      Want the full story? Visit <a href="https://www.xbyali.page" target="_blank" rel="noopener noreferrer">www.xbyali.page</a>
     </p>
   </footer>
 
 </main>
 
-<script>
-  // Audio pronunciation
-  const audioButton = document.querySelector('.audio-button');
-  if (audioButton) {
-    const audio = new Audio('/arcup/audio/arcup-pronounce.ogg');
-    
-    audioButton.addEventListener('click', () => {
-      audio.currentTime = 0;
-      audio.play().catch(err => {
-        console.warn('Audio playback failed:', err);
-        // Fallback to mp3 if ogg fails
-        const audioMp3 = new Audio('/arcup/audio/EN-AU_dc1_arc_up.mp3');
-        audioMp3.play().catch(e => console.warn('MP3 playback also failed:', e));
-      });
-    });
+<footer class="site-footer">
+  <div class="footer-content">
+    <p class="footer-text">
+      arc^ by ali · collaborative research for planetary repair
+    </p>
+    <p class="footer-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA</a> · 
+      <a href="https://ohwr.org/cern_ohl_s_v2.txt" target="_blank" rel="noopener noreferrer">CERN OHL-S</a> · 
+      <a href="https://www.gnu.org/licenses/agpl-3.0.en.html" target="_blank" rel="noopener noreferrer">AGPL-3.0</a>
+    </p>
+  </div>
+  <button type="button" data-motion-toggle class="button button-muted">Disable Motion</button>
+</footer>
+
+<style>
+  /* TIGHTER SPACING OVERRIDES */
+  
+  /* Reduce overall page spacing */
+  .definition-page {
+    gap: clamp(1.5rem, 4vw, 2.5rem); /* Reduced from 2.5rem/6vw/4rem */
   }
+
+  /* Tighten header spacing significantly */
+  .definition-header {
+    gap: clamp(0.75rem, 2vw, 1rem); /* Reduced from 1.5rem/4vw/2rem */
+  }
+
+  /* Reduce title row gap */
+  .definition-title-row {
+    gap: clamp(0.5rem, 1.5vw, 0.75rem); /* Reduced from 1rem/2.5vw/1.5rem */
+  }
+
+  /* Tighten lede section */
+  .definition-lede-section {
+    margin: clamp(1rem, 3vw, 1.5rem) 0; /* Reduced from 2rem/5vw/3rem */
+  }
+
+  /* Reduce definitions section margin */
+  .definitions-section {
+    margin: clamp(1.5rem, 4vw, 2.5rem) 0; /* Reduced from 3rem/6vw/4rem */
+  }
+
+  /* Tighter card stack */
+  .definition-card-stack {
+    gap: clamp(1rem, 2.5vw, 1.5rem);
+    padding: clamp(1.5rem, 4vw, 2rem) 0;
+  }
+
+  /* Reduce personal intro margin and padding */
+  .personal-intro {
+    margin: clamp(1.5rem, 4vw, 2rem) auto;
+    padding: clamp(2rem, 5vw, 2.5rem) clamp(1.5rem, 4vw, 2.5rem);
+    gap: clamp(0.75rem, 2vw, 1rem);
+  }
+
+  /* Tighter intro statement */
+  .definition-intro {
+    margin: clamp(1.5rem, 4vw, 2rem) auto 0;
+    padding: clamp(1.5rem, 4vw, 2rem) clamp(1.25rem, 3vw, 1.75rem);
+    gap: clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  /* Tighter CTA section */
+  .definition-cta-section {
+    margin-top: clamp(2rem, 5vw, 3rem);
+    padding: clamp(2rem, 4vw, 2.5rem) clamp(1.25rem, 3vw, 1.75rem);
+  }
+
+  /* Tighter footer */
+  .definition-footer {
+    margin-top: clamp(2rem, 5vw, 3rem);
+    padding-top: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  /* Additional styles for elements */
+  .caret-symbol {
+    font-size: clamp(3rem, 8vw, 5rem);
+    color: var(--color-primary-bright);
+  }
+
+  .definition-card-content {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .definition-card-content strong {
+    font-size: clamp(1.1rem, 2.8vw, 1.25rem);
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .definition-card-content p {
+    margin: 0;
+    font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+    color: var(--color-text-muted);
+    line-height: 1.65;
+  }
+
+  .intro-hope {
+    font-style: italic;
+    color: var(--color-text);
+  }
+
+  @media (max-width: 640px) {
+    .definition-page {
+      gap: clamp(1.25rem, 3vw, 1.75rem); /* Even tighter on mobile */
+    }
+
+    .definition-header {
+      gap: clamp(0.5rem, 2vw, 0.75rem);
+      padding: 0 0.5rem;
+    }
+
+    .definition-title-row {
+      gap: 0.5rem;
+    }
+
+    .definition-title-row h1 {
+      font-size: clamp(3rem, 12vw, 4rem);
+    }
+
+    .caret-symbol {
+      font-size: clamp(2.5rem, 10vw, 3.5rem);
+    }
+  }
+</style>
+
+<script>
+  // AUDIO PRONUNCIATION - CORRECTED FILE PATHS
+  document.addEventListener('DOMContentLoaded', () => {
+    const audioButton = document.querySelector('.audio-button');
+    
+    if (!audioButton) return;
+
+    let audio = null;
+    let usingSpeechSynthesis = false;
+
+    // CORRECTED: Files in public/audio/ are served from /arcup/audio/
+    const oggPath = '/arcup/audio/arcup-pronounce.ogg';
+    const mp3Path = '/arcup/audio/pronunciation.mp3';
+
+    // Try MP3 first (more universal)
+    const testAudio = new Audio(mp3Path);
+    
+    testAudio.addEventListener('canplaythrough', () => {
+      audio = new Audio(mp3Path);
+      console.info('✅ Audio loaded: pronunciation.mp3');
+    }, { once: true });
+
+    testAudio.addEventListener('error', () => {
+      console.info('MP3 not found, trying OGG...');
+      const testOgg = new Audio(oggPath);
+      
+      testOgg.addEventListener('canplaythrough', () => {
+        audio = new Audio(oggPath);
+        console.info('✅ Audio loaded: arcup-pronounce.ogg');
+      }, { once: true });
+      
+      testOgg.addEventListener('error', () => {
+        console.info('⚠️ No audio files found, using Web Speech API');
+        usingSpeechSynthesis = true;
+      }, { once: true });
+      
+      testOgg.load();
+    }, { once: true });
+
+    testAudio.load();
+
+    // Click handler
+    audioButton.addEventListener('click', async () => {
+      try {
+        if (audio && !usingSpeechSynthesis) {
+          audio.currentTime = 0;
+          const playPromise = audio.play();
+          
+          if (playPromise !== undefined) {
+            playPromise.catch(err => {
+              console.warn('Audio playback failed, using speech synthesis:', err);
+              playWithSpeechSynthesis();
+            });
+          }
+        } else {
+          playWithSpeechSynthesis();
+        }
+        
+        // Visual feedback
+        audioButton.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          audioButton.style.transform = 'scale(1)';
+        }, 150);
+        
+      } catch (err) {
+        console.error('Pronunciation error:', err);
+        playWithSpeechSynthesis();
+      }
+    });
+
+    // Speech synthesis fallback
+    function playWithSpeechSynthesis() {
+      if (!('speechSynthesis' in window)) {
+        console.error('Speech synthesis not supported');
+        showErrorFeedback();
+        return;
+      }
+
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance('arc up');
+      
+      const voices = window.speechSynthesis.getVoices();
+      const australianVoice = voices.find(voice => 
+        voice.lang.includes('en-AU') || voice.name.includes('Australian')
+      );
+      
+      if (australianVoice) {
+        utterance.voice = australianVoice;
+        console.info('🔊 Using Australian voice:', australianVoice.name);
+      } else {
+        const englishVoice = voices.find(voice => voice.lang.startsWith('en'));
+        if (englishVoice) {
+          utterance.voice = englishVoice;
+          console.info('🔊 Using English voice:', englishVoice.name);
+        }
+      }
+      
+      utterance.rate = 0.9;
+      utterance.pitch = 1.0;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    // Load voices asynchronously
+    if ('speechSynthesis' in window && speechSynthesis.getVoices().length === 0) {
+      speechSynthesis.addEventListener('voiceschanged', () => {
+        console.info('Voices loaded');
+      }, { once: true });
+    }
+
+    function showErrorFeedback() {
+      audioButton.style.color = '#ff6b6b';
+      setTimeout(() => {
+        audioButton.style.color = '';
+      }, 1000);
+    }
+
+    audioButton.style.transition = 'transform 0.15s ease, color 0.3s ease';
+  });
 </script>
