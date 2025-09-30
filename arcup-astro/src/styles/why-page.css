@@ -139,6 +139,29 @@
   font-style: italic;
 }
 
+.arrow-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .arrow-desktop {
+    display: none;
+  }
+  
+  .arrow-mobile {
+    display: inline;
+  }
+  
+  .pattern-simple {
+    flex-direction: column;
+  }
+  
+  .pattern-word {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
 /* Today's Loop - Similar to .surface-panel */
 .today-block {
   margin: clamp(2rem, 4vw, 3rem) 0;
