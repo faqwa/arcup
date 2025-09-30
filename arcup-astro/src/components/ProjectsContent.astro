@@ -1,6 +1,9 @@
 ---
-const normalizedBase = (import.meta.env.BASE_URL ?? "").replace(/\/$/, "");
-const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normalizedBase}/` : "/") : `${normalizedBase}${path}`);
+const withBase = (path: string) => {
+  const base = '/arcup';
+  if (path === '/') return `${base}/`;
+  return `${base}${path}`;
+};
 ---
 
 <main id="main-content" class="page-shell page-projects" aria-labelledby="projects-title">
@@ -51,213 +54,6 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
             <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
-        <div class="project-details" data-project-content="saltwater" hidden>
-          <div class="detail-section">
-            <h4>Why It Matters</h4>
-            <p>Saline encroachment threatens food security globally. Understanding tolerance thresholds and recovery pathways is critical for coastal and arid regions.</p>
-          </div>
-          <div class="detail-section">
-            <h4>Status</h4>
-            <p><strong>Hypothesis & early trials.</strong> Seeking agronomy partners and data analysts.</p>
-          </div>
-          <div class="detail-section">
-            <h4>How to Contribute</h4>
-            <ul>
-              <li>Run field plot trials</li>
-              <li>Deploy sensor kits for soil monitoring</li>
-              <li>Analyze salinity/yield datasets</li>
-              <li>Document replication protocols</li>
-            </ul>
-            <a href="mailto:ali@xbyali.page?subject=Saltwater%20Irrigation%20Project" class="button button-outline">Express Interest</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 2 -->
-      <article class="project-item">
-        <button class="project-toggle" aria-expanded="false" data-project="paw-pathogens">
-          <div class="project-header-content">
-            <h3>Plasma-Activated Water for Pathogens & Nutrients</h3>
-            <p class="project-summary">Reduce chemical inputs through PAW applications for water treatment and crop health.</p>
-          </div>
-          <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <div class="project-details" data-project-content="paw-pathogens" hidden>
-          <div class="detail-section">
-            <h4>Why It Matters</h4>
-            <p>Safer water for crops and communities while reducing reliance on harsh chemicals. PAW shows promise for pathogen reduction and nutrient availability.</p>
-          </div>
-          <div class="detail-section">
-            <h4>Status</h4>
-            <p><strong>Lab protocols maturing.</strong> Need replication across different contexts and climates.</p>
-          </div>
-          <div class="detail-section">
-            <h4>How to Contribute</h4>
-            <ul>
-              <li>Design or build PAW rigs (open hardware)</li>
-              <li>Run dose-response experiments</li>
-              <li>Share raw data from trials</li>
-              <li>Test pathogen reduction claims</li>
-            </ul>
-            <a href="mailto:ali@xbyali.page?subject=PAW%20Pathogens%20Project" class="button button-outline">Express Interest</a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- CLUSTER 2: AIR & SURFACES -->
-  <section class="project-cluster" aria-labelledby="cluster-air">
-    <header class="cluster-header">
-      <h2 id="cluster-air">Air & Surfaces</h2>
-      <div class="cluster-tags">
-        <span class="tag">air</span>
-        <span class="tag">decontamination</span>
-        <span class="tag">public health</span>
-      </div>
-    </header>
-
-    <div class="projects-list">
-      <!-- Project 3 -->
-      <article class="project-item">
-        <button class="project-toggle" aria-expanded="false" data-project="airborne">
-          <div class="project-header-content">
-            <h3>Low-Energy Plasma for Airborne Pathogens</h3>
-            <p class="project-summary">Scalable sanitation without harsh chemicals for indoor air quality.</p>
-          </div>
-          <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <div class="project-details" data-project-content="airborne" hidden>
-          <div class="detail-section">
-            <h4>Why It Matters</h4>
-            <p>Chemical-free air sanitation could transform indoor public health, especially in high-density or vulnerable settings.</p>
-          </div>
-          <div class="detail-section">
-            <h4>Status</h4>
-            <p><strong>Benchtop prototypes.</strong> Validation and safety monitoring needed.</p>
-          </div>
-          <div class="detail-section">
-            <h4>How to Contribute</h4>
-            <ul>
-              <li>CFD modeling of airflow patterns</li>
-              <li>Ozone and NOx monitoring protocols</li>
-              <li>Document safety parameters</li>
-              <li>Test in controlled environments</li>
-            </ul>
-            <a href="mailto:ali@xbyali.page?subject=Airborne%20Pathogens%20Project" class="button button-outline">Express Interest</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 4 -->
-      <article class="project-item">
-        <button class="project-toggle" aria-expanded="false" data-project="biofilm">
-          <div class="project-header-content">
-            <h3>Surface Biofilm Disruption</h3>
-            <p class="project-summary">Reduce hospital-acquired infections through plasma-based surface treatment.</p>
-          </div>
-          <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <div class="project-details" data-project-content="biofilm" hidden>
-          <div class="detail-section">
-            <h4>Why It Matters</h4>
-            <p>Biofilms on medical surfaces contribute to persistent infections. Non-toxic disruption methods could save lives.</p>
-          </div>
-          <div class="detail-section">
-            <h4>Status</h4>
-            <p><strong>Method exploration.</strong> Safety review open for community input.</p>
-          </div>
-          <div class="detail-section">
-            <h4>How to Contribute</h4>
-            <ul>
-              <li>Material compatibility testing</li>
-              <li>Microscopy image sets</li>
-              <li>Safety protocol review</li>
-              <li>Replication across surface types</li>
-            </ul>
-            <a href="mailto:ali@xbyali.page?subject=Biofilm%20Disruption%20Project" class="button button-outline">Express Interest</a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- CLUSTER 3: ECOSYSTEM REPAIR -->
-  <section class="project-cluster" aria-labelledby="cluster-ecosystem">
-    <header class="cluster-header">
-      <h2 id="cluster-ecosystem">Ecosystem Repair</h2>
-      <div class="cluster-tags">
-        <span class="tag">restoration</span>
-        <span class="tag">biodiversity</span>
-        <span class="tag">communities</span>
-      </div>
-    </header>
-
-    <div class="projects-list">
-      <!-- Project 5 -->
-      <article class="project-item">
-        <button class="project-toggle" aria-expanded="false" data-project="wetland">
-          <div class="project-header-content">
-            <h3>Wetland & Riparian Support</h3>
-            <p class="project-summary">PAW variants for water quality and species resilience in wetland ecosystems.</p>
-          </div>
-          <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <div class="project-details" data-project-content="wetland" hidden>
-          <div class="detail-section">
-            <h4>Why It Matters</h4>
-            <p>Water quality impacts biodiversity and ecosystem resilience. Wetlands are critical buffers that need protection and restoration.</p>
-          </div>
-          <div class="detail-section">
-            <h4>Status</h4>
-            <p><strong>Scoping with community partners.</strong> Early stage, seeking local knowledge and monitoring capacity.</p>
-          </div>
-          <div class="detail-section">
-            <h4>How to Contribute</h4>
-            <ul>
-              <li>Local water quality monitoring</li>
-              <li>Non-invasive sampling (eDNA, epigenetic markers)</li>
-              <li>Co-design protocols with traditional knowledge</li>
-              <li>Document ecological baselines</li>
-            </ul>
-            <a href="mailto:ali@xbyali.page?subject=Wetland%20Support%20Project" class="button button-outline">Express Interest</a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- CLUSTER 4: TOOLING & INFRASTRUCTURE -->
-  <section class="project-cluster" aria-labelledby="cluster-tooling">
-    <header class="cluster-header">
-      <h2 id="cluster-tooling">Tooling & Infrastructure</h2>
-      <div class="cluster-tags">
-        <span class="tag">open hardware</span>
-        <span class="tag">data</span>
-        <span class="tag">documentation</span>
-      </div>
-    </header>
-
-    <div class="projects-list">
-      <!-- Project 6 -->
-      <article class="project-item">
-        <button class="project-toggle" aria-expanded="false" data-project="hardware">
-          <div class="project-header-content">
-            <h3>Open PAW Rigs & Safety Kits</h3>
-            <p class="project-summary">Reproducible hardware to accelerate learning and ensure safety.</p>
-          </div>
-          <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
         <div class="project-details" data-project-content="hardware" hidden>
           <div class="detail-section">
             <h4>Why It Matters</h4>
@@ -275,7 +71,36 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
               <li>Assembly documentation</li>
               <li>Safety interlock design</li>
             </ul>
-            <a href="mailto:ali@xbyali.page?subject=Open%20Hardware%20Project" class="button button-outline">Express Interest</a>
+          </div>
+          <div class="detail-section">
+            <h4>Project Resources</h4>
+            <div class="project-links">
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Wiki <span class="coming-soon">(Coming Soon)</span>
+              </span>
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                GitHub Repository <span class="coming-soon">(Coming Soon)</span>
+              </span>
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Documentation <span class="coming-soon">(Coming Soon)</span>
+              </span>
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Discussion Forum <span class="coming-soon">(Coming Soon)</span>
+              </span>
+            </div>
           </div>
         </div>
       </article>
@@ -308,7 +133,36 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
               <li>Design replication badges</li>
               <li>Develop attribution systems</li>
             </ul>
-            <a href="mailto:ali@xbyali.page?subject=Open%20Data%20Project" class="button button-outline">Express Interest</a>
+          </div>
+          <div class="detail-section">
+            <h4>Project Resources</h4>
+            <div class="project-links">
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Wiki <span class="coming-soon">(Coming Soon)</span>
+              </span>
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                GitHub Repository <span class="coming-soon">(Coming Soon)</span>
+              </span>
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Documentation <span class="coming-soon">(Coming Soon)</span>
+              </span>
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Discussion Forum <span class="coming-soon">(Coming Soon)</span>
+              </span>
+            </div>
           </div>
         </div>
       </article>
@@ -356,7 +210,16 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
 </main>
 
 <footer class="site-footer">
-  <span>arc^ by ali — open research for planetary repair</span>
+  <div class="footer-content">
+    <p class="footer-text">
+      arc^ by ali · open research for planetary repair
+    </p>
+    <p class="footer-license">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA</a> · 
+      <a href="https://ohwr.org/cern_ohl_s_v2.txt" target="_blank" rel="noopener noreferrer">CERN OHL-S</a> · 
+      <a href="https://www.gnu.org/licenses/agpl-3.0.en.html" target="_blank" rel="noopener noreferrer">AGPL-3.0</a>
+    </p>
+  </div>
   <button type="button" data-motion-toggle class="button button-muted">Disable Motion</button>
 </footer>
 
@@ -380,4 +243,355 @@ const withBase = (path: string) => (path === "/" ? (normalizedBase ? `${normaliz
       });
     });
   });
-</script>
+</script></svg>
+        </button>
+        <div class="project-details" data-project-content="saltwater" hidden>
+          <div class="detail-section">
+            <h4>Why It Matters</h4>
+            <p>Saline encroachment threatens food security globally. Understanding tolerance thresholds and recovery pathways is critical for coastal and arid regions.</p>
+          </div>
+          <div class="detail-section">
+            <h4>Status</h4>
+            <p><strong>Hypothesis & early trials.</strong> Seeking agronomy partners and data analysts.</p>
+          </div>
+          <div class="detail-section">
+            <h4>How to Contribute</h4>
+            <ul>
+              <li>Run field plot trials</li>
+              <li>Deploy sensor kits for soil monitoring</li>
+              <li>Analyze salinity/yield datasets</li>
+              <li>Document replication protocols</li>
+            </ul>
+          </div>
+          <div class="detail-section">
+            <h4>Project Resources</h4>
+            <div class="project-links">
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Wiki <span class="coming-soon">(Coming Soon)</span>
+              </span>
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                GitHub Repository <span class="coming-soon">(Coming Soon)</span>
+              </span>
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Documentation <span class="coming-soon">(Coming Soon)</span>
+              </span>
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Discussion Forum <span class="coming-soon">(Coming Soon)</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project-item">
+        <button class="project-toggle" aria-expanded="false" data-project="paw-pathogens">
+          <div class="project-header-content">
+            <h3>Plasma-Activated Water for Pathogens & Nutrients</h3>
+            <p class="project-summary">Reduce chemical inputs through PAW applications for water treatment and crop health.</p>
+          </div>
+          <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="project-details" data-project-content="paw-pathogens" hidden>
+          <div class="detail-section">
+            <h4>Why It Matters</h4>
+            <p>Safer water for crops and communities while reducing reliance on harsh chemicals. PAW shows promise for pathogen reduction and nutrient availability.</p>
+          </div>
+          <div class="detail-section">
+            <h4>Status</h4>
+            <p><strong>Lab protocols maturing.</strong> Need replication across different contexts and climates.</p>
+          </div>
+          <div class="detail-section">
+            <h4>How to Contribute</h4>
+            <ul>
+              <li>Design or build PAW rigs (open hardware)</li>
+              <li>Run dose-response experiments</li>
+              <li>Share raw data from trials</li>
+              <li>Test pathogen reduction claims</li>
+            </ul>
+          </div>
+          <div class="detail-section">
+            <h4>Project Resources</h4>
+            <div class="project-links">
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Wiki <span class="coming-soon">(Coming Soon)</span>
+              </span>
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                GitHub Repository <span class="coming-soon">(Coming Soon)</span>
+              </span>
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Documentation <span class="coming-soon">(Coming Soon)</span>
+              </span>
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Discussion Forum <span class="coming-soon">(Coming Soon)</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CLUSTER 2: AIR & SURFACES -->
+  <section class="project-cluster" aria-labelledby="cluster-air">
+    <header class="cluster-header">
+      <h2 id="cluster-air">Air & Surfaces</h2>
+      <div class="cluster-tags">
+        <span class="tag">air</span>
+        <span class="tag">decontamination</span>
+        <span class="tag">public health</span>
+      </div>
+    </header>
+
+    <div class="projects-list">
+      <!-- Project 3 -->
+      <article class="project-item">
+        <button class="project-toggle" aria-expanded="false" data-project="airborne">
+          <div class="project-header-content">
+            <h3>Low-Energy Plasma for Airborne Pathogens</h3>
+            <p class="project-summary">Scalable sanitation without harsh chemicals for indoor air quality.</p>
+          </div>
+          <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="project-details" data-project-content="airborne" hidden>
+          <div class="detail-section">
+            <h4>Why It Matters</h4>
+            <p>Chemical-free air sanitation could transform indoor public health, especially in high-density or vulnerable settings.</p>
+          </div>
+          <div class="detail-section">
+            <h4>Status</h4>
+            <p><strong>Benchtop prototypes.</strong> Validation and safety monitoring needed.</p>
+          </div>
+          <div class="detail-section">
+            <h4>How to Contribute</h4>
+            <ul>
+              <li>CFD modeling of airflow patterns</li>
+              <li>Ozone and NOx monitoring protocols</li>
+              <li>Document safety parameters</li>
+              <li>Test in controlled environments</li>
+            </ul>
+          </div>
+          <div class="detail-section">
+            <h4>Project Resources</h4>
+            <div class="project-links">
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Wiki <span class="coming-soon">(Coming Soon)</span>
+              </span>
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                GitHub Repository <span class="coming-soon">(Coming Soon)</span>
+              </span>
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Documentation <span class="coming-soon">(Coming Soon)</span>
+              </span>
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Discussion Forum <span class="coming-soon">(Coming Soon)</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="project-item">
+        <button class="project-toggle" aria-expanded="false" data-project="biofilm">
+          <div class="project-header-content">
+            <h3>Surface Biofilm Disruption</h3>
+            <p class="project-summary">Reduce hospital-acquired infections through plasma-based surface treatment.</p>
+          </div>
+          <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="project-details" data-project-content="biofilm" hidden>
+          <div class="detail-section">
+            <h4>Why It Matters</h4>
+            <p>Biofilms on medical surfaces contribute to persistent infections. Non-toxic disruption methods could save lives.</p>
+          </div>
+          <div class="detail-section">
+            <h4>Status</h4>
+            <p><strong>Method exploration.</strong> Safety review open for community input.</p>
+          </div>
+          <div class="detail-section">
+            <h4>How to Contribute</h4>
+            <ul>
+              <li>Material compatibility testing</li>
+              <li>Microscopy image sets</li>
+              <li>Safety protocol review</li>
+              <li>Replication across surface types</li>
+            </ul>
+          </div>
+          <div class="detail-section">
+            <h4>Project Resources</h4>
+            <div class="project-links">
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Wiki <span class="coming-soon">(Coming Soon)</span>
+              </span>
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                GitHub Repository <span class="coming-soon">(Coming Soon)</span>
+              </span>
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Documentation <span class="coming-soon">(Coming Soon)</span>
+              </span>
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Discussion Forum <span class="coming-soon">(Coming Soon)</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CLUSTER 3: ECOSYSTEM REPAIR -->
+  <section class="project-cluster" aria-labelledby="cluster-ecosystem">
+    <header class="cluster-header">
+      <h2 id="cluster-ecosystem">Ecosystem Repair</h2>
+      <div class="cluster-tags">
+        <span class="tag">restoration</span>
+        <span class="tag">biodiversity</span>
+        <span class="tag">communities</span>
+      </div>
+    </header>
+
+    <div class="projects-list">
+      <!-- Project 5 -->
+      <article class="project-item">
+        <button class="project-toggle" aria-expanded="false" data-project="wetland">
+          <div class="project-header-content">
+            <h3>Wetland & Riparian Support</h3>
+            <p class="project-summary">PAW variants for water quality and species resilience in wetland ecosystems.</p>
+          </div>
+          <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="project-details" data-project-content="wetland" hidden>
+          <div class="detail-section">
+            <h4>Why It Matters</h4>
+            <p>Water quality impacts biodiversity and ecosystem resilience. Wetlands are critical buffers that need protection and restoration.</p>
+          </div>
+          <div class="detail-section">
+            <h4>Status</h4>
+            <p><strong>Scoping with community partners.</strong> Early stage, seeking local knowledge and monitoring capacity.</p>
+          </div>
+          <div class="detail-section">
+            <h4>How to Contribute</h4>
+            <ul>
+              <li>Local water quality monitoring</li>
+              <li>Non-invasive sampling (eDNA, epigenetic markers)</li>
+              <li>Co-design protocols with traditional knowledge</li>
+              <li>Document ecological baselines</li>
+            </ul>
+          </div>
+          <div class="detail-section">
+            <h4>Project Resources</h4>
+            <div class="project-links">
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Wiki <span class="coming-soon">(Coming Soon)</span>
+              </span>
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                GitHub Repository <span class="coming-soon">(Coming Soon)</span>
+              </span>
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Documentation <span class="coming-soon">(Coming Soon)</span>
+              </span>
+              <span class="link-placeholder">
+                <svg class="link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Discussion Forum <span class="coming-soon">(Coming Soon)</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CLUSTER 4: TOOLING & INFRASTRUCTURE -->
+  <section class="project-cluster" aria-labelledby="cluster-tooling">
+    <header class="cluster-header">
+      <h2 id="cluster-tooling">Tooling & Infrastructure</h2>
+      <div class="cluster-tags">
+        <span class="tag">open hardware</span>
+        <span class="tag">data</span>
+        <span class="tag">documentation</span>
+      </div>
+    </header>
+
+    <div class="projects-list">
+      <!-- Project 6 -->
+      <article class="project-item">
+        <button class="project-toggle" aria-expanded="false" data-project="hardware">
+          <div class="project-header-content">
+            <h3>Open PAW Rigs & Safety Kits</h3>
+            <p class="project-summary">Reproducible hardware to accelerate learning and ensure safety.</p>
+          </div>
+          <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
