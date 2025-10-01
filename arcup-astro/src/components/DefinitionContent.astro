@@ -10,35 +10,47 @@ const withBase = (path: string) => {
 
   <!-- HERO SECTION -->
   <header class="definition-header" role="banner">
-    <p class="hero-eyebrow" role="text">
-      a regenerative research and stewardship collective
+    <p class="hero-eyebrow">
+      introducing an open scientific framework for exploring plasma technology and real-world applications
     </p>
 
     <!-- COMPELLING LEDE -->
     <section class="definition-lede-section" aria-labelledby="lede-heading">
       <h2 id="lede-heading" class="definition-lede">
-        what if we did science that created a better world?
+        What if open science could help us build a better tomorrow for everyone?
       </h2>
     </section>
-    
-    <!-- VALUE PROPOSITION -->
-    <section class="value-proposition-section" aria-labelledby="value-prop-heading">
-      <div class="value-proposition">
-        <h3 id="value-prop-heading" class="visually-hidden">Value Proposition</h3>
-        <p class="value-proposition-text">
-          Open plasma research for ecological restoration — building technology that serves life, not profit
-        </p>
-        <a href="https://www.xbyali.page" target="_blank" rel="noopener noreferrer" class="value-proposition-author" aria-label="Visit xbyali's main website">
-          <strong>xbyali</strong>
+
+    <!-- EXPLORATION INTRO -->
+    <section class="explore-section">
+      <h3 class="lede-heading">
+        Researching plasma (ionized gas) for ecological restoration<br>
+        Building open, non-extractive technologies and solutions<br>
+        Starting small, designing responsibly, and collaborating across barriers towards a better future — not profit
+      </h3>
+      <p><br></p>
+      <p class="explore-subtitle">Jump to the sections that matter to you:</p>
+      
+      <div class="question-cards">
+        <a href={withBase("/why#problem-heading")} class="question-card">
+          <h3>Why does research need to change?</h3>
+        </a>
+        
+        <a href={withBase("/how#retech")} class="question-card">
+          <h3>How are we different?</h3>
+        </a>
+        
+        <a href={withBase("/join")} class="question-card">
+          <h3>How can I contribute?</h3>
         </a>
       </div>
     </section>
-
+  </header>
 
   <!-- DEFINITION CARDS -->
   <section class="definitions-section" aria-labelledby="definition-title">
     <!-- DICTIONARY-STYLE ENTRY -->
-    <p class="definition-intro-text">This is how I have defined arc^:</p>
+    <h3 class="definition-intro-text">Arc^ — My Definition:</h3>
     <div class="definition-title-row">
       <h1 id="definition-title">
         arc<span class="caret-symbol" aria-label="superscript caret">^</span>
@@ -62,7 +74,7 @@ const withBase = (path: string) => {
         <div class="definition-card-content">
           <strong>"to arc up"</strong>
           <p>
-            (Australian slang) — to rise loudly in defense of people and planet. To take action when it matters most.
+            (Australian slang) — to rise in defense of people and planet; to act when it matters
           </p>
         </div>
       </li>
@@ -72,7 +84,7 @@ const withBase = (path: string) => {
         <div class="definition-card-content">
           <strong>a framework</strong>
           <p>
-            for doing plasma research that refuses extractive, profit-driven science
+            of open methods for plasma research that refuse extractive, profit-driven ideologies
           </p>
         </div>
       </li>
@@ -82,7 +94,7 @@ const withBase = (path: string) => {
         <div class="definition-card-content">
           <strong>a practice</strong>
           <p>
-            of building tools and protocols in the open, designed for repair and restoration
+            of building open tools, technologies, and solutions for the benefit of humans and non-humans alike
           </p>
         </div>
       </li>
@@ -92,7 +104,7 @@ const withBase = (path: string) => {
         <div class="definition-card-content">
           <strong>a community</strong>
           <p>
-            of researchers, makers, and stewards working toward regenerative futures
+            of researchers, makers, and driven people working toward regenerative futures
           </p>
         </div>
       </li>
@@ -102,15 +114,15 @@ const withBase = (path: string) => {
   <!-- PERSONAL INTRO -->
   <section class="personal-intro" aria-labelledby="intro-heading">
     <h2 id="intro-heading" class="visually-hidden">Personal Introduction</h2>
-    <p class="intro-greeting">I'm Ali.</p>
+    <p class="intro-greeting">Hello, I'm Ali :)</p>
     <p>
-      Arc^ started from a question: if I make the same choices as the good people before me, what world would it create?
+      Arc^ began with a question: if I make the same choices as the people before me, what world does that create?
     </p>
     <p>
-      Right now, arc^ is just me—one person building a framework that refuses the old processes of innovation.
+      Right now, arc^ is just me and the framework I'm building—a framework that refuses the old processes of innovation.
     </p>
     <p class="intro-hope">
-      But it's designed to grow into something bigger: a collective working toward regenerative futures.
+      I'm hoping it grows beyond my idea into something bigger: a collective group of independent individuals working together towards sustainable futures.
     </p>
   </section>
 
@@ -118,13 +130,13 @@ const withBase = (path: string) => {
   <section class="definition-intro" aria-labelledby="what-is-heading">
     <h2 id="what-is-heading" class="visually-hidden">What is Arc^</h2>
     <p>
-      <strong>Arc^ is an experiment in doing science differently.</strong> It's plasma research guided by RE:TECH—Refuse Extractive Technology. That means transparent protocols, collaborative methods, and regenerative goals.
+      <strong>Arc^ is doing science differently.</strong> It's plasma research guided by philosophy, principles, ethics, and accountability—interdisciplinary collaboration and a shared drive for a different future.
     </p>
     <p>
-      We're exploring plasma-activated water for agriculture, remediation, and ecological repair. Everything is published openly, from day zero.
+      We're exploring plasma-activated water for agriculture, remediation, ecological repair, water treatment, ecologically resilient responses, and human sanitation and health. Everything is published openly, from day zero.
     </p>
     <p class="wip-notice">
-      <strong>Fair warning:</strong> Arc^ is in early stages. Public protocols are still being developed. Most value right now comes from dialogue, co-design, and building the infrastructure together.
+      <strong>Note:</strong> Arc^ is in early stages. Everything is still being developed, and you're early! The most useful contributions are conversation, co-design, and helping us build the lab and methods together.
     </p>
   </section>
 
@@ -153,245 +165,15 @@ const withBase = (path: string) => {
     </nav>
   </section>
 
-  <!-- FOOTER NOTE -->
-  <footer class="definition-footer" role="contentinfo">
+  <!-- FOOTER NOTE (non-landmark to avoid duplicate footers) -->
+  <section class="definition-footer" aria-label="Definition notes">
     <p class="definition-note">
       Want the full story? Visit <a href="https://www.xbyali.page" target="_blank" rel="noopener noreferrer" aria-label="Visit xbyali's main website for the complete story">www.xbyali.page</a>
     </p>
-  </footer>
+  </section>
 
 </main>
 
-<style>
-  /* TIGHTER SPACING OVERRIDES */
-  
-  /* Reduce overall page spacing */
-  .definition-page {
-    gap: clamp(1.5rem, 4vw, 2.5rem); /* Reduced from 2.5rem/6vw/4rem */
-  }
+ 
 
-  /* Tighten header spacing significantly */
-  .definition-header {
-    gap: clamp(0.75rem, 2vw, 1rem); /* Reduced from 1.5rem/4vw/2rem */
-  }
-
-  /* Reduce title row gap */
-  .definition-title-row {
-    gap: clamp(0.5rem, 1.5vw, 0.75rem); /* Reduced from 1rem/2.5vw/1.5rem */
-  }
-
-  /* Tighten lede section */
-  .definition-lede-section {
-    margin: clamp(1rem, 3vw, 1.5rem) 0; /* Reduced from 2rem/5vw/3rem */
-  }
-
-  /* Reduce definitions section margin */
-  .definitions-section {
-    margin: clamp(1.5rem, 4vw, 2.5rem) 0; /* Reduced from 3rem/6vw/4rem */
-  }
-
-  /* Tighter card stack */
-  .definition-card-stack {
-    gap: clamp(1rem, 2.5vw, 1.5rem);
-    padding: clamp(1.5rem, 4vw, 2rem) 0;
-  }
-
-  /* Reduce personal intro margin and padding */
-  .personal-intro {
-    margin: clamp(1.5rem, 4vw, 2rem) auto;
-    padding: clamp(2rem, 5vw, 2.5rem) clamp(1.5rem, 4vw, 2.5rem);
-    gap: clamp(0.75rem, 2vw, 1rem);
-  }
-
-  /* Tighter intro statement */
-  .definition-intro {
-    margin: clamp(1.5rem, 4vw, 2rem) auto 0;
-    padding: clamp(1.5rem, 4vw, 2rem) clamp(1.25rem, 3vw, 1.75rem);
-    gap: clamp(1rem, 2.5vw, 1.5rem);
-  }
-
-  /* Tighter CTA section */
-  .definition-cta-section {
-    margin-top: clamp(2rem, 5vw, 3rem);
-    padding: clamp(2rem, 4vw, 2.5rem) clamp(1.25rem, 3vw, 1.75rem);
-  }
-
-  /* Tighter footer */
-  .definition-footer {
-    margin-top: clamp(2rem, 5vw, 3rem);
-    padding-top: clamp(1.5rem, 3vw, 2rem);
-  }
-
-  /* Additional styles for elements */
-  .caret-symbol {
-    font-size: clamp(3rem, 8vw, 5rem);
-    color: var(--color-primary-bright);
-  }
-
-  .definition-card-content {
-    display: grid;
-    gap: 0.5rem;
-  }
-
-  .definition-card-content strong {
-    font-size: clamp(1.1rem, 2.8vw, 1.25rem);
-    color: var(--color-text);
-    font-weight: 600;
-  }
-
-  .definition-card-content p {
-    margin: 0;
-    font-size: clamp(1.05rem, 2.5vw, 1.15rem);
-    color: var(--color-text-muted);
-    line-height: 1.65;
-  }
-
-  .intro-hope {
-    font-style: italic;
-    color: var(--color-text);
-  }
-
-  @media (max-width: 640px) {
-    .definition-page {
-      gap: clamp(1.25rem, 3vw, 1.75rem); /* Even tighter on mobile */
-    }
-
-    .definition-header {
-      gap: clamp(0.5rem, 2vw, 0.75rem);
-      padding: 0 0.5rem;
-    }
-
-    .definition-title-row {
-      gap: 0.5rem;
-    }
-
-    .definition-title-row h1 {
-      font-size: clamp(3rem, 12vw, 4rem);
-    }
-
-    .caret-symbol {
-      font-size: clamp(2.5rem, 10vw, 3.5rem);
-    }
-  }
-</style>
-
-<script>
-  // AUDIO PRONUNCIATION - CORRECTED FILE PATHS
-  document.addEventListener('DOMContentLoaded', () => {
-    const audioButton = document.querySelector('.audio-button');
-    
-    if (!audioButton) return;
-
-    let audio = null;
-    let usingSpeechSynthesis = false;
-
-    // CORRECTED: Files in public/audio/ are served from base URL
-    const baseUrl = import.meta.env.BASE_URL || '/';
-    const oggPath = `${baseUrl}audio/arcup-pronounce.ogg`;
-    const mp3Path = `${baseUrl}audio/EN-AU_ck1_arc_up.mp3`;
-
-    // Try MP3 first (more universal)
-    const testAudio = new Audio(mp3Path);
-    
-    testAudio.addEventListener('canplaythrough', () => {
-      audio = new Audio(mp3Path);
-      console.info('✅ Audio loaded: pronunciation.mp3');
-    }, { once: true });
-
-    testAudio.addEventListener('error', () => {
-      console.info('MP3 not found, trying OGG...');
-      const testOgg = new Audio(oggPath);
-      
-      testOgg.addEventListener('canplaythrough', () => {
-        audio = new Audio(oggPath);
-        console.info('✅ Audio loaded: arcup-pronounce.ogg');
-      }, { once: true });
-      
-      testOgg.addEventListener('error', () => {
-        console.info('⚠️ No audio files found, using Web Speech API');
-        usingSpeechSynthesis = true;
-      }, { once: true });
-      
-      testOgg.load();
-    }, { once: true });
-
-    testAudio.load();
-
-    // Click handler
-    audioButton.addEventListener('click', async () => {
-      try {
-        if (audio && !usingSpeechSynthesis) {
-          audio.currentTime = 0;
-          const playPromise = audio.play();
-          
-          if (playPromise !== undefined) {
-            playPromise.catch(err => {
-              console.warn('Audio playback failed, using speech synthesis:', err);
-              playWithSpeechSynthesis();
-            });
-          }
-        } else {
-          playWithSpeechSynthesis();
-        }
-        
-        // Visual feedback
-        audioButton.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-          audioButton.style.transform = 'scale(1)';
-        }, 150);
-        
-      } catch (err) {
-        console.error('Pronunciation error:', err);
-        playWithSpeechSynthesis();
-      }
-    });
-
-    // Speech synthesis fallback
-    function playWithSpeechSynthesis() {
-      if (!('speechSynthesis' in window)) {
-        console.error('Speech synthesis not supported');
-        showErrorFeedback();
-        return;
-      }
-
-      window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance('arc up');
-      
-      const voices = window.speechSynthesis.getVoices();
-      const australianVoice = voices.find(voice => 
-        voice.lang.includes('en-AU') || voice.name.includes('Australian')
-      );
-      
-      if (australianVoice) {
-        utterance.voice = australianVoice;
-        console.info('🔊 Using Australian voice:', australianVoice.name);
-      } else {
-        const englishVoice = voices.find(voice => voice.lang.startsWith('en'));
-        if (englishVoice) {
-          utterance.voice = englishVoice;
-          console.info('🔊 Using English voice:', englishVoice.name);
-        }
-      }
-      
-      utterance.rate = 0.9;
-      utterance.pitch = 1.0;
-      window.speechSynthesis.speak(utterance);
-    }
-
-    // Load voices asynchronously
-    if ('speechSynthesis' in window && speechSynthesis.getVoices().length === 0) {
-      speechSynthesis.addEventListener('voiceschanged', () => {
-        console.info('Voices loaded');
-      }, { once: true });
-    }
-
-    function showErrorFeedback() {
-      audioButton.style.color = '#ff6b6b';
-      setTimeout(() => {
-        audioButton.style.color = '';
-      }, 1000);
-    }
-
-    audioButton.style.transition = 'transform 0.15s ease, color 0.3s ease';
-  });
-</script>
+ 

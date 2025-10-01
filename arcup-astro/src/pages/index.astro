@@ -18,11 +18,13 @@ const seo = {
     description,
     url: siteUrl,
     type: "website",
+    image: `${import.meta.env.BASE_URL}favicon.svg`,
   },
   twitter: {
     title,
     description,
     card: "summary_large_image",
+    image: `${import.meta.env.BASE_URL}favicon.svg`,
   },
 };
 
@@ -40,8 +42,8 @@ const structuredData = {
     url: "https://www.xbyali.page"
   },
   sameAs: [
-    "https://youtube.com/@arcupbyali",
-    "https://discord.gg/arcup",
+    "https://www.youtube.com/@arc-arcup",
+    "https://discord.gg/DA8BPA3VsN",
     "https://github.com/arcup"
   ],
   keywords: "plasma research, open science, regenerative technology, plasma activated water, ecological restoration, community science, RE:TECH, sustainable agriculture, environmental remediation",
@@ -83,6 +85,7 @@ const structuredData = {
   <meta slot="head" name="keywords" content="plasma research, open science, regenerative agriculture, plasma activated water, ecological restoration, RE:TECH, community research, sustainable technology, environmental science, open source research" />
   <meta slot="head" name="author" content="ali" />
   <meta slot="head" property="og:locale" content="en_US" />
+  <meta slot="head" property="og:image:alt" content="arc^ — Open plasma research for ecological restoration" />
   <meta slot="head" name="geo.region" content="AU" />
   <meta slot="head" name="geo.placename" content="Australia" />
   <meta slot="head" name="language" content="en" />
@@ -103,6 +106,13 @@ const structuredData = {
         "@type": "SearchAction",
         "target": "https://arcup.xbyali.page/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1#definition-title",
+          ".definition-lede"
+        ]
       }
     }
   </script>
@@ -111,4 +121,24 @@ const structuredData = {
   <SiteHeader active="home" />
   <DefinitionContent />
   <PageNavigation currentPage="home" />
+  
+  <!-- Page-scoped script: lightweight pronunciation fallback using Web Speech API -->
+  <script slot="scripts" is:inline>
+    (() => {
+      const btn = document.querySelector('.audio-button');
+      if (!btn || !('speechSynthesis' in window)) return;
+      btn.addEventListener('click', () => {
+        try {
+          window.speechSynthesis.cancel();
+          const u = new SpeechSynthesisUtterance('arc up');
+          const vs = window.speechSynthesis.getVoices();
+          const au = vs.find(v => v.lang?.toLowerCase().includes('en-au') || v.name?.toLowerCase().includes('australian'))
+            || vs.find(v => v.lang?.toLowerCase().startsWith('en'));
+          if (au) u.voice = au;
+          u.rate = 0.9; u.pitch = 1.0;
+          window.speechSynthesis.speak(u);
+        } catch {}
+      });
+    })();
+  </script>
 </BaseLayout>
