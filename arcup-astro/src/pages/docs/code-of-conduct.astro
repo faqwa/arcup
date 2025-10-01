@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArcCanvas from "../../components/ArcCanvas.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import DocumentViewer from "../../components/DocumentViewer.astro";
+import '../../styles/base-global.css';
+
+const title = "Code of Conduct - Arc^";
+const description = "Code of Conduct for Arc^ open plasma research community and collaborative platform.";
+const siteUrl = Astro.site ? new URL("/docs/code-of-conduct", Astro.site).toString() : undefined;
+
+const seo = {
+  canonical: siteUrl,
+  openGraph: {
+    title: "Code of Conduct - Arc^",
+    description,
+    url: siteUrl,
+  },
+  twitter: {
+    title: "Code of Conduct - Arc^",
+    description,
+  },
+};
+---
+
+<BaseLayout title={title} description={description} bodyClass="page-docs" seo={seo}>
+  <ArcCanvas />
+  <SiteHeader active="docs" />
+  
+  <main class="page-shell docs-page">
+    <DocumentViewer
+      title="Code of Conduct"
+      date="January 10, 2025"
+      description="Our community guidelines for respectful, inclusive, and collaborative participation in Arc^'s open research community. These standards ensure a safe and welcoming environment for all contributors."
+      filePath="/arcup/documents/code-of-conduct.pdf"
+      fileName="arc-code-of-conduct.pdf"
+      fileSize="1.5 MB"
+      fileType="PDF"
+    />
+  </main>
+</BaseLayout>
+

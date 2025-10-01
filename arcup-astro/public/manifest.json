@@ -1,0 +1,36 @@
+{
+  "name": "arc^ by ali - Open Plasma Research",
+  "short_name": "arc^",
+  "description": "Open plasma research for regenerative futures. Building technology that serves life, not profit.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#04050a",
+  "theme_color": "#0a9396",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["science", "research", "education", "environment"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshot-narrow.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}
+

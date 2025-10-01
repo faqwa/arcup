@@ -29,13 +29,43 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "arc^ byali",
+  alternateName: "arcup",
   description,
   url: siteUrl,
+  logo: `${siteUrl}favicon.svg`,
   founder: {
     "@type": "Person",
-    name: "ali"
+    name: "ali",
+    url: "https://www.xbyali.page"
   },
-  keywords: "plasma research, open science, regenerative technology, plasma activated water, ecological restoration, community science"
+  sameAs: [
+    "https://youtube.com/@arcupbyali",
+    "https://discord.gg/arcup",
+    "https://github.com/arcup"
+  ],
+  keywords: "plasma research, open science, regenerative technology, plasma activated water, ecological restoration, community science, RE:TECH, sustainable agriculture, environmental remediation",
+  areaServed: "Global",
+  knowsAbout: [
+    "Plasma Technology",
+    "Regenerative Agriculture", 
+    "Open Science",
+    "Environmental Restoration",
+    "Community Research"
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Research Protocols",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Plasma Research Protocols",
+          description: "Open-source plasma research methods for ecological restoration"
+        }
+      }
+    ]
+  }
 };
 ---
 
@@ -49,9 +79,32 @@ const structuredData = {
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(structuredData)} />
   
   <!-- Additional SEO meta tags -->
-  <meta slot="head" name="keywords" content="plasma research, open science, regenerative agriculture, plasma activated water, ecological restoration, RE:TECH, community research" />
+  <meta slot="head" name="keywords" content="plasma research, open science, regenerative agriculture, plasma activated water, ecological restoration, RE:TECH, community research, sustainable technology, environmental science, open source research" />
   <meta slot="head" name="author" content="ali" />
   <meta slot="head" property="og:locale" content="en_US" />
+  <meta slot="head" name="geo.region" content="AU" />
+  <meta slot="head" name="geo.placename" content="Australia" />
+  <meta slot="head" name="language" content="en" />
+  <meta slot="head" name="revisit-after" content="7 days" />
+  <meta slot="head" name="distribution" content="global" />
+  <meta slot="head" name="rating" content="general" />
+  <meta slot="head" name="category" content="Science and Technology" />
+  
+  <!-- Additional structured data for better AI understanding -->
+  <script slot="head" type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "arc^ byali",
+      "url": "https://arcup.xbyali.page",
+      "description": "Open plasma research for regenerative futures",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://arcup.xbyali.page/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
   
   <ArcCanvas />
   <SiteHeader active="home" />

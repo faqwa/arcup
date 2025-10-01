@@ -1,457 +1,334 @@
+/* WHY PAGE CSS - USES GLOBAL STYLES */
+/* Imports: base-global.css provides .surface-panel, .section-divider, .divider-label, .section-header, .lead, .button, etc. */
+
 /* ============================================
-   WHY PAGE - REFACTORED
-   Uses design system from base-global.css
-   Only unique page-specific styles remain
+   PAGE LAYOUT
    ============================================ */
 
-/* Page uses .page-shell from base-global */
-.page-why-clean {
-  /* Additional spacing override for why page */
-  gap: clamp(3rem, 6vw, 5rem);
-}
-
-/* Section spacing adjustments for dividers */
-.section-problem-clean,
-.section-approach-clean,
-.section-build-clean {
-  display: grid;
-  gap: clamp(2rem, 4vw, 3rem);
-}
-
-.section-container {
-  max-width: 75ch;
-  margin: 0 auto;
-  padding: 0 clamp(1rem, 3vw, 2rem);
+.page-why {
+  /* Uses .page-shell from base-global.css */
+  /* No additional layout needed */
 }
 
 /* ============================================
    HERO SECTION
    ============================================ */
 
-.why-hero-clean {
-  max-width: 70ch;
-  margin: 0 auto;
-  padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 3vw, 2rem);
+.why-hero {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.2rem);
+  justify-items: center;
+  text-align: center;
+  padding: clamp(3rem, 6vw, 4rem) 0;
+}
+
+.why-hero h1 {
+  margin: 0;
+  font-size: clamp(2.8rem, 7vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: var(--color-text);
+  max-width: 20ch;
+}
+
+.hero-subtitle {
+  display: grid;
+  gap: 0.6rem;
+  max-width: 50ch;
+  margin-top: 0.5rem;
+}
+
+.hero-subtitle p {
+  margin: 0;
+  font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* ============================================
+   PROBLEM SECTION
+   ============================================ */
+
+.problem-reflection {
+  margin: clamp(2rem, 4vw, 3rem) 0 clamp(1.5rem, 3.5vw, 2rem) 0;
   text-align: center;
 }
 
-.hero-question {
-  /* Uses h1 from base-global, just adds specifics */
-  margin: 0 0 clamp(1.25rem, 3vw, 1.75rem) 0;
-  line-height: 1.25;
-}
-
-.hero-subquestion {
-  margin: 0 0 clamp(1.5rem, 3.5vw, 2rem) 0;
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
-  line-height: 1.5;
-  font-weight: 300;
+.reflection-text {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.8vw, 1.3rem);
   color: var(--color-text-muted);
   font-style: italic;
 }
 
-.hero-origin {
-  /* Uses .lead from base-global style */
-  margin: 0;
-  font-size: clamp(1.05rem, 2.5vw, 1.2rem);
-  line-height: 1.6;
-  color: var(--color-text-muted);
-}
-
-/* ============================================
-   SECTION HEADERS - Use base-global h2
-   ============================================ */
-
-.section-title {
-  /* Inherits from h2 in base-global, just adds color */
-  margin: 0 0 clamp(2rem, 4vw, 3rem) 0;
-  color: var(--color-primary-bright);
-}
-
-/* ============================================
-   UNIQUE WHY PAGE PATTERNS
-   ============================================ */
-
-/* Question Lists */
-.problem-questions,
-.approach-questions {
-  display: grid;
-  gap: clamp(0.75rem, 2vw, 1rem);
-  margin-bottom: clamp(2rem, 4vw, 3rem);
-}
-
-.question-italic {
-  margin: 0;
-  font-size: clamp(1.15rem, 3vw, 1.35rem);
-  line-height: 1.6;
-  color: var(--color-text);
-  font-style: italic;
-  font-weight: 300;
-}
-
-.narrative-lead {
-  margin: clamp(2rem, 4vw, 3rem) 0 clamp(1.5rem, 3vw, 2rem) 0;
-  font-size: clamp(1.05rem, 2.5vw, 1.2rem);
-  color: var(--color-text-muted);
-}
-
-/* Pattern Visualization - UNIQUE */
-.pattern-simple {
+/* Pattern Flow - Uses .surface-panel from global */
+.pattern-flow {
   display: flex;
-  flex-wrap: wrap;
-  gap: clamp(0.5rem, 1.5vw, 0.75rem);
   align-items: center;
   justify-content: center;
-  padding: clamp(1.5rem, 3vw, 2rem) 0;
-  margin: clamp(1.5rem, 3vw, 2rem) 0;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  padding: clamp(2rem, 4vw, 2.5rem);
+  margin: clamp(2rem, 4vw, 2.5rem) 0;
+  flex-wrap: wrap;
 }
 
-.pattern-word {
-  font-size: clamp(1.1rem, 2.8vw, 1.35rem);
-  color: var(--color-text);
+.flow-item {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   font-weight: 500;
-  letter-spacing: 0.02em;
-  text-transform: lowercase;
-}
-
-.pattern-word-harm {
-  color: #FF6B6B;
-  font-weight: 600;
-}
-
-.pattern-arrow {
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
-  color: var(--color-primary-bright);
-  opacity: 0.5;
-}
-
-.pattern-arrow-harm {
-  color: #FF6B6B;
-  opacity: 0.8;
-}
-
-.pattern-caption {
-  margin: clamp(1rem, 2.5vw, 1.5rem) 0;
-  font-size: clamp(1rem, 2.3vw, 1.1rem);
-  line-height: 1.6;
-  color: var(--color-text-muted);
-  text-align: center;
-  font-style: italic;
-}
-
-.arrow-mobile {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .arrow-desktop {
-    display: none;
-  }
-  
-  .arrow-mobile {
-    display: inline;
-  }
-  
-  .pattern-simple {
-    flex-direction: column;
-  }
-  
-  .pattern-word {
-    width: 100%;
-    max-width: 280px;
-  }
-}
-
-/* Today's Loop - Similar to .surface-panel */
-.today-block {
-  margin: clamp(2rem, 4vw, 3rem) 0;
-  padding: clamp(1.75rem, 4vw, 2.25rem);
-  background: rgba(6, 12, 22, 0.4);
+  color: var(--color-text);
+  padding: 0.5rem 1rem;
+  background: rgba(6, 12, 22, 0.6);
   border: 1px solid rgba(93, 225, 228, 0.2);
-  border-radius: 12px;
+  border-radius: 6px;
+  white-space: nowrap;
 }
 
-.today-label {
-  margin: 0 0 clamp(1rem, 2.5vw, 1.5rem) 0;
-  font-size: clamp(1.1rem, 2.8vw, 1.25rem);
-  color: var(--color-text);
-  font-weight: 500;
+.flow-item-harm {
+  color: #ff6b6b;
+  border-color: rgba(255, 107, 107, 0.3);
 }
 
-.today-list {
-  /* Similar to .styled-list from base-global */
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: clamp(0.75rem, 2vw, 0.9rem);
-}
-
-.today-list li {
-  font-size: clamp(1rem, 2.3vw, 1.1rem);
-  color: var(--color-text-muted);
-  line-height: 1.6;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.today-list li::before {
-  content: '→';
-  position: absolute;
-  left: 0;
+.flow-arrow {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
   color: var(--color-primary-bright);
   opacity: 0.6;
 }
 
-/* T-Shaped Layout - UNIQUE to Why page */
-.cost-block-t-shape {
-  margin: clamp(2.5rem, 5vw, 3.5rem) 0;
-  display: grid;
-  gap: clamp(2rem, 4vw, 3rem);
+.flow-arrow-harm {
+  color: #ff6b6b;
+  opacity: 0.8;
 }
 
-.t-shape-top {
-  display: grid;
-  grid-template-columns: 1fr 0.7fr;
-  gap: clamp(2rem, 5vw, 4rem);
-  align-items: center;
-}
-
-.t-left,
-.t-right {
+.pattern-caption {
+  margin: clamp(1.5rem, 3vw, 2rem) 0 0 0;
+  font-size: clamp(1.02rem, 2.5vw, 1.15rem);
+  color: var(--color-text-muted);
   text-align: center;
-  padding: clamp(1.5rem, 3vw, 2rem);
-}
-
-.t-right {
-  display: grid;
-  gap: clamp(0.4rem, 1.2vw, 0.6rem);
-}
-
-.t-bottom {
-  text-align: center;
-  padding: clamp(1.5rem, 4vw, 2rem) clamp(2rem, 5vw, 3rem);
-  background: rgba(6, 12, 22, 0.4);
-  border: 1px solid rgba(93, 225, 228, 0.2);
-  border-radius: 12px;
-}
-
-.wait-line {
-  margin: 0;
-  font-size: clamp(1.3rem, 3.5vw, 1.7rem);
-  font-weight: 500;
-  color: var(--color-text);
-  letter-spacing: 0.02em;
-  text-transform: lowercase;
-}
-
-.consequence-text {
-  margin: 0;
-  font-size: clamp(1.2rem, 3.2vw, 1.5rem);
-  line-height: 1.5;
-  color: var(--color-text);
   font-style: italic;
 }
 
-.cost-text {
-  margin: 0;
-  font-size: clamp(1.05rem, 2.5vw, 1.2rem);
-  line-height: 1.7;
-  color: var(--color-text-muted);
+/* Today Card - Uses .surface-panel from global */
+.today-card {
+  margin: clamp(2rem, 4vw, 2.5rem) 0;
+  padding: clamp(2rem, 4.5vw, 2.5rem);
 }
 
-/* Mobile: T-shape becomes vertical */
-@media (max-width: 768px) {
-  .t-shape-top {
-    grid-template-columns: 1fr;
-    gap: clamp(1.5rem, 4vw, 2rem);
-  }
-}
-
-/* Refusal Block - Highlighted panel */
-.refusal-block {
-  margin: clamp(2.5rem, 5vw, 3.5rem) 0;
-  padding: clamp(2rem, 4vw, 2.5rem);
-  background: linear-gradient(135deg, rgba(93, 225, 228, 0.1), rgba(93, 225, 228, 0.05));
-  border: 1px solid rgba(93, 225, 228, 0.3);
-  border-radius: 12px;
-  text-align: center;
-}
-
-.refusal-statement {
-  margin: 0;
-  font-size: clamp(1.2rem, 3.2vw, 1.5rem);
-  line-height: 1.5;
-  color: var(--color-text);
-  font-weight: 500;
-}
-
-/* Success Vision */
-.success-vision {
-  margin: clamp(3rem, 6vw, 4rem) 0 0 0;
-  padding: clamp(2rem, 4vw, 2.5rem);
-  background: rgba(10, 147, 150, 0.08);
-  border: 1px solid rgba(93, 225, 228, 0.25);
-  border-radius: 12px;
-}
-
-.success-vision h3 {
-  /* Uses h3 from base-global */
-  margin: 0 0 clamp(1rem, 2.5vw, 1.5rem) 0;
+.today-card h3 {
+  margin: 0 0 clamp(1.25rem, 3vw, 1.5rem) 0;
+  font-size: clamp(1.35rem, 3.5vw, 1.6rem);
   color: var(--color-primary-bright);
+  font-weight: 600;
 }
 
-.success-vision p {
-  margin: 0 0 clamp(1rem, 2.5vw, 1.25rem) 0;
-  font-size: clamp(1.05rem, 2.5vw, 1.15rem);
-  line-height: 1.7;
+.pattern-list {
+  list-style: none;
+  padding: 0;
+  margin: clamp(1rem, 2.5vw, 1.5rem) 0 0 0;
+  display: grid;
+  gap: clamp(0.75rem, 2vw, 1rem);
+}
+
+.pattern-list li {
+  font-size: clamp(1.02rem, 2.4vw, 1.12rem);
   color: var(--color-text-muted);
+  line-height: 1.65;
+  position: relative;
+  padding-left: 1.75rem;
 }
 
-.success-vision p:last-child {
-  margin-bottom: 0;
+.pattern-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary-bright);
+  opacity: 0.7;
+  font-weight: 600;
 }
 
-/* ============================================
-   SECTION 2: APPROACH
-   ============================================ */
-
-.approach-definition-block {
-  margin: clamp(2rem, 4vw, 3rem) 0;
-  padding: clamp(1.75rem, 4vw, 2.25rem);
-  background: rgba(6, 12, 22, 0.5);
-  border-left: 3px solid var(--color-primary-bright);
-  border-radius: 8px;
+/* Cost Insight - Uses .surface-panel from global */
+.cost-insight {
+  margin: clamp(2rem, 4vw, 2.5rem) 0;
+  padding: clamp(2rem, 4.5vw, 2.5rem);
 }
 
-.approach-definition-block p {
-  margin: 0 0 clamp(1rem, 2.5vw, 1.25rem) 0;
-  font-size: clamp(1.05rem, 2.5vw, 1.15rem);
-  line-height: 1.7;
-  color: var(--color-text-muted);
+.cost-insight h3 {
+  margin: 0 0 clamp(1.25rem, 3vw, 1.5rem) 0;
+  font-size: clamp(1.35rem, 3.5vw, 1.6rem);
+  color: var(--color-primary-bright);
+  font-weight: 600;
 }
 
-.approach-definition-block p:last-child {
-  margin-bottom: 0;
-}
-
-.approach-text-block {
-  margin: clamp(2rem, 4vw, 3rem) 0;
+.insight-grid {
   display: grid;
   gap: clamp(1.25rem, 3vw, 1.75rem);
+  margin: clamp(1.5rem, 3.5vw, 2rem) 0;
 }
 
-.approach-text-block p {
-  margin: 0;
-  font-size: clamp(1.05rem, 2.5vw, 1.15rem);
-  line-height: 1.7;
-  color: var(--color-text-muted);
-}
-
-/* RE:TECH Block - Uses .surface-panel style */
-.retech-block {
-  margin: clamp(3rem, 6vw, 4rem) 0;
-  padding: clamp(2rem, 4vw, 2.5rem);
-  background: rgba(6, 12, 22, 0.4);
-  border: 1px solid rgba(93, 225, 228, 0.2);
-  border-radius: 12px;
-}
-
-.retech-block h3 {
-  /* Uses h3 from base-global */
-  margin: 0 0 clamp(0.75rem, 2vw, 1rem) 0;
-  color: var(--color-primary-bright);
-}
-
-.retech-tagline {
-  margin: 0 0 clamp(1rem, 2.5vw, 1.5rem) 0;
-  font-size: clamp(1.1rem, 2.8vw, 1.3rem);
-  color: var(--color-text);
-  font-weight: 500;
-  font-style: italic;
-}
-
-.retech-description {
-  margin: 0 0 clamp(1.5rem, 3.5vw, 2rem) 0;
-  font-size: clamp(1.05rem, 2.5vw, 1.15rem);
-  line-height: 1.7;
-  color: var(--color-text-muted);
-}
-
-/* RE:TECH Grid - Similar to .card-grid-3 */
-.retech-grid {
-  display: grid;
-  gap: clamp(1.25rem, 3vw, 1.5rem);
-  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
-}
-
-@media (min-width: 640px) {
-  .retech-grid {
+@media (min-width: 768px) {
+  .insight-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.retech-item {
-  /* Similar to .surface-panel */
-  padding: clamp(1.5rem, 3.5vw, 1.75rem);
-  background: rgba(8, 15, 27, 0.6);
-  border: 1px solid rgba(93, 225, 228, 0.2);
-  border-radius: 10px;
-  transition: all 0.3s ease;
+.insight-point {
+  padding: clamp(1.25rem, 3vw, 1.5rem);
+  background: rgba(10, 147, 150, 0.08);
+  border: 1px solid rgba(93, 225, 228, 0.15);
+  border-radius: var(--radius-md);
 }
 
-.retech-item:hover {
+.insight-point p {
+  margin: 0;
+  font-size: clamp(1rem, 2.3vw, 1.1rem);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+.insight-question {
+  margin: clamp(1.5rem, 3.5vw, 2rem) 0 0 0;
+  font-size: clamp(1.15rem, 2.8vw, 1.3rem);
+  color: var(--color-text);
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* ============================================
+   APPROACH SECTION
+   ============================================ */
+
+/* Refusal Statement - Uses .surface-panel from global */
+.refusal-statement {
+  margin: clamp(2rem, 4vw, 2.5rem) 0;
+  padding: clamp(2rem, 4.5vw, 2.5rem);
+}
+
+.refusal-statement h3 {
+  margin: 0 0 clamp(1.25rem, 3vw, 1.5rem) 0;
+  font-size: clamp(1.35rem, 3.5vw, 1.6rem);
+  color: var(--color-primary-bright);
+  font-weight: 600;
+}
+
+.refusal-main,
+.refusal-core,
+.refusal-action {
+  margin: 0 0 clamp(1rem, 2.5vw, 1.5rem) 0;
+  font-size: clamp(1.05rem, 2.5vw, 1.18rem);
+  line-height: 1.75;
+  color: var(--color-text-muted);
+}
+
+.refusal-main:last-child,
+.refusal-core:last-child,
+.refusal-action:last-child {
+  margin-bottom: 0;
+}
+
+.refusal-core {
+  font-size: clamp(1.15rem, 2.8vw, 1.3rem);
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.refusal-core strong {
+  color: var(--color-primary-bright);
+}
+
+/* RE:TECH Section */
+.retech-intro {
+  margin: clamp(2.5rem, 5vw, 3.5rem) 0 clamp(1.5rem, 3.5vw, 2rem) 0;
+}
+
+.retech-intro h3 {
+  margin: 0 0 clamp(0.75rem, 2vw, 1rem) 0;
+  font-size: clamp(1.5rem, 4vw, 1.9rem);
+  color: var(--color-primary-bright);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.retech-intro p {
+  margin: 0;
+  font-size: clamp(1.05rem, 2.5vw, 1.18rem);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.retech-commitments {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 1.5rem);
+  margin: clamp(2rem, 4vw, 2.5rem) 0;
+}
+
+@media (min-width: 768px) {
+  .retech-commitments {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* RE:TECH Cards - Uses .surface-panel from global */
+.retech-card {
+  padding: clamp(1.75rem, 4vw, 2rem);
+  transition: all var(--transition-base);
+}
+
+.retech-card:hover {
   border-color: rgba(93, 225, 228, 0.4);
   transform: translateY(-3px);
 }
 
-.retech-item h4 {
-  /* Uses h4 from base-global */
-  margin: 0 0 clamp(0.5rem, 1.5vw, 0.75rem) 0;
+.retech-card h4 {
+  margin: 0 0 clamp(0.75rem, 2vw, 1rem) 0;
+  font-size: clamp(1.15rem, 2.8vw, 1.3rem);
   color: var(--color-primary-bright);
+  font-weight: 600;
 }
 
-.retech-item p {
+.retech-card p {
   margin: 0;
-  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
-  line-height: 1.6;
+  font-size: clamp(1rem, 2.3vw, 1.1rem);
+  line-height: 1.65;
   color: var(--color-text-muted);
 }
 
-/* Accountability Block */
-.accountability-block {
+/* Accountability Card - Uses .surface-panel from global */
+.accountability-card {
   margin: clamp(2.5rem, 5vw, 3.5rem) 0;
-  padding: clamp(1.75rem, 4vw, 2.25rem);
-  background: rgba(6, 12, 22, 0.4);
-  border-left: 3px solid var(--color-primary-bright);
-  border-radius: 8px;
+  padding: clamp(2rem, 4.5vw, 2.5rem);
 }
 
-.block-label {
-  margin: 0 0 clamp(1rem, 2.5vw, 1.5rem) 0;
-  font-size: clamp(1.1rem, 2.8vw, 1.25rem);
-  font-weight: 500;
-  color: var(--color-text);
+.accountability-card h3 {
+  margin: 0 0 clamp(1.25rem, 3vw, 1.5rem) 0;
+  font-size: clamp(1.35rem, 3.5vw, 1.6rem);
+  color: var(--color-primary-bright);
+  font-weight: 600;
 }
 
-.accountability-list {
-  /* Similar to .styled-list */
+.accountability-intro {
+  margin: 0 0 clamp(1.25rem, 3vw, 1.5rem) 0;
+  font-size: clamp(1.05rem, 2.5vw, 1.18rem);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+.accountability-principles {
   list-style: none;
   padding: 0;
   margin: clamp(1rem, 2.5vw, 1.5rem) 0;
   display: grid;
-  gap: clamp(0.75rem, 2vw, 0.9rem);
+  gap: clamp(0.75rem, 2vw, 1rem);
 }
 
-.accountability-list li {
-  font-size: clamp(1rem, 2.3vw, 1.1rem);
+.accountability-principles li {
+  font-size: clamp(1.02rem, 2.4vw, 1.12rem);
   color: var(--color-text-muted);
-  line-height: 1.6;
+  line-height: 1.65;
   position: relative;
-  padding-left: 1.5rem;
+  padding-left: 1.75rem;
 }
 
-.accountability-list li::before {
+.accountability-principles li::before {
   content: '✓';
   position: absolute;
   left: 0;
@@ -460,21 +337,56 @@
 }
 
 .accountability-close {
-  margin: clamp(1.25rem, 3vw, 1.75rem) 0 0 0;
-  font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+  margin: clamp(1.5rem, 3.5vw, 2rem) 0 0 0;
+  font-size: clamp(1.08rem, 2.6vw, 1.2rem);
   color: var(--color-text);
-  font-weight: 500;
+  line-height: 1.7;
+}
+
+.accountability-close strong {
+  color: var(--color-primary-bright);
+  font-weight: 600;
 }
 
 /* ============================================
-   SECTION 3: WHAT WE BUILD
+   BUILD SECTION
    ============================================ */
 
-.build-intro-block {
-  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+/* Build Philosophy - Uses .surface-panel from global */
+.build-philosophy {
+  margin: clamp(2rem, 4vw, 2.5rem) 0;
+  padding: clamp(2rem, 4.5vw, 2.5rem);
 }
 
-.build-subtitle {
+.build-philosophy h3 {
+  margin: 0 0 clamp(1.25rem, 3vw, 1.5rem) 0;
+  font-size: clamp(1.35rem, 3.5vw, 1.6rem);
+  color: var(--color-primary-bright);
+  font-weight: 600;
+}
+
+.build-philosophy p {
+  margin: 0 0 clamp(1rem, 2.5vw, 1.25rem) 0;
+  font-size: clamp(1.05rem, 2.5vw, 1.18rem);
+  line-height: 1.75;
+  color: var(--color-text-muted);
+}
+
+.build-philosophy p:last-child {
+  margin-bottom: 0;
+}
+
+.build-philosophy strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* Research Focus */
+.research-focus {
+  margin: clamp(3rem, 6vw, 4rem) 0;
+}
+
+.research-focus h3 {
   margin: 0 0 clamp(1rem, 2.5vw, 1.5rem) 0;
   font-size: clamp(1.5rem, 4vw, 1.9rem);
   color: var(--color-primary-bright);
@@ -482,237 +394,232 @@
   letter-spacing: -0.01em;
 }
 
-.build-intro-block p {
-  margin: 0;
-  font-size: clamp(1.05rem, 2.5vw, 1.15rem);
-  line-height: 1.7;
-  color: var(--color-text-muted);
-}
-
-/* Content Blocks */
-.content-block {
-  margin: clamp(2.5rem, 5vw, 3.5rem) 0;
-}
-
-.content-block h4 {
-  /* Uses h4 from base-global */
-  margin: 0 0 clamp(1rem, 2.5vw, 1.25rem) 0;
-}
-
-.content-block p {
-  margin: 0;
-  font-size: clamp(1.05rem, 2.5vw, 1.15rem);
-  line-height: 1.7;
-  color: var(--color-text-muted);
-}
-
-.goals-list {
-  /* Similar to .styled-list */
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: clamp(0.75rem, 2vw, 0.9rem);
-}
-
-.goals-list li {
-  font-size: clamp(1rem, 2.3vw, 1.1rem);
-  color: var(--color-text-muted);
-  line-height: 1.6;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.goals-list li::before {
-  content: '→';
-  position: absolute;
-  left: 0;
-  color: var(--color-primary-bright);
-  opacity: 0.6;
-}
-
-/* Research Block & Grid */
-.research-block {
-  margin: clamp(3rem, 6vw, 4rem) 0;
-}
-
-.research-block h4 {
-  /* Uses h4 from base-global */
+.focus-intro {
   margin: 0 0 clamp(1.5rem, 3.5vw, 2rem) 0;
+  font-size: clamp(1.05rem, 2.5vw, 1.18rem);
+  color: var(--color-text-muted);
+  line-height: 1.7;
 }
 
-.research-grid-clean {
-  /* Similar to .card-grid-3 */
+.focus-grid {
   display: grid;
   gap: clamp(1.25rem, 3vw, 1.5rem);
-  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  margin: clamp(1.5rem, 3.5vw, 2rem) 0;
 }
 
 @media (min-width: 640px) {
-  .research-grid-clean {
+  .focus-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1024px) {
-  .research-grid-clean {
+  .focus-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.research-item {
-  /* Similar to .surface-panel */
-  padding: clamp(1.5rem, 3.5vw, 1.75rem);
-  background: rgba(6, 12, 22, 0.4);
-  border: 1px solid rgba(93, 225, 228, 0.2);
-  border-radius: 10px;
-  transition: all 0.3s ease;
+/* Focus Cards - Uses .surface-panel from global */
+.focus-card {
+  padding: clamp(1.75rem, 4vw, 2rem);
+  transition: all var(--transition-base);
+  margin: 0;
 }
 
-.research-item:hover {
+.focus-card:hover {
   border-color: rgba(93, 225, 228, 0.4);
   transform: translateY(-3px);
 }
 
-.research-item h5 {
-  margin: 0 0 clamp(0.6rem, 1.8vw, 0.85rem) 0;
-  font-size: clamp(1.1rem, 2.8vw, 1.25rem);
+.focus-card h4 {
+  margin: 0 0 clamp(0.75rem, 2vw, 1rem) 0;
+  font-size: clamp(1.15rem, 2.8vw, 1.3rem);
   color: var(--color-primary-bright);
   font-weight: 600;
   line-height: 1.3;
 }
 
-.research-item p {
+.focus-card p {
   margin: 0;
-  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+  font-size: clamp(1rem, 2.3vw, 1.1rem);
   line-height: 1.65;
   color: var(--color-text-muted);
 }
 
-/* ============================================
-   CTA LINKS - Similar to .external-link
-   ============================================ */
-
-.section-cta {
-  margin-top: clamp(2rem, 4vw, 3rem);
-  text-align: center;
+/* Success Vision - Uses .surface-panel from global */
+.success-vision {
+  margin: clamp(2rem, 4vw, 2.5rem) 0;
+  padding: clamp(2rem, 4.5vw, 2.5rem);
 }
 
-.cta-link {
-  display: inline-block;
-  font-size: clamp(1.05rem, 2.5vw, 1.15rem);
-  color: var(--color-primary-bright);
-  text-decoration: none;
-  font-weight: 500;
-  padding: clamp(0.6rem, 1.8vw, 0.85rem) clamp(1.25rem, 3vw, 1.75rem);
-  border: 1px solid rgba(93, 225, 228, 0.3);
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.cta-link:hover {
-  background: rgba(93, 225, 228, 0.1);
-  border-color: rgba(93, 225, 228, 0.5);
-  transform: translateX(4px);
-}
-
-/* ============================================
-   CLOSING SECTION
-   ============================================ */
-
-.closing-clean {
-  padding-top: clamp(2rem, 4vw, 3rem);
-  display: grid;
-  gap: clamp(2rem, 4vw, 3rem);
-}
-
-.closing-clean .section-container {
-  text-align: center;
-}
-
-.closing-statement {
-  margin: 0 0 clamp(1.25rem, 3vw, 1.75rem) 0;
-  font-size: clamp(1.2rem, 3.2vw, 1.5rem);
-  line-height: 1.6;
-  color: var(--color-text);
-}
-
-.closing-statement strong {
+.success-vision h3 {
+  margin: 0 0 clamp(1.25rem, 3vw, 1.5rem) 0;
+  font-size: clamp(1.35rem, 3.5vw, 1.6rem);
   color: var(--color-primary-bright);
   font-weight: 600;
 }
 
-.closing-emphasis {
-  margin: 0 0 clamp(2rem, 4vw, 2.5rem) 0;
-  font-size: clamp(1.35rem, 3.8vw, 1.8rem);
-  line-height: 1.5;
-  color: var(--color-text);
-  font-weight: 500;
+.success-vision p {
+  margin: 0 0 clamp(1rem, 2.5vw, 1.25rem) 0;
+  font-size: clamp(1.05rem, 2.5vw, 1.18rem);
+  line-height: 1.75;
+  color: var(--color-text-muted);
 }
 
-.closing-emphasis strong {
+.success-vision p:last-child {
+  margin-bottom: 0;
+}
+
+.vision-close strong {
   color: var(--color-primary-bright);
-  font-weight: 700;
+  font-weight: 600;
 }
 
-.closing-ctas {
-  /* Uses .cta-group from base-global */
+/* ============================================
+   CTA SECTION
+   ============================================ */
+
+.why-cta-section {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+/* CTA Wrapper - Uses .surface-panel from global */
+.why-cta-wrapper {
+  max-width: 55ch;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 5vw, 3rem);
+  text-align: center;
+}
+
+.why-cta-wrapper h2 {
+  margin: 0 0 clamp(1rem, 2.5vw, 1.5rem) 0;
+  font-size: clamp(1.8rem, 4.5vw, 2.4rem);
+  color: var(--color-text);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.cta-description {
+  margin: 0 0 clamp(1.75rem, 4vw, 2.25rem) 0;
+  font-size: clamp(1.05rem, 2.5vw, 1.18rem);
+  color: var(--color-text-muted);
+  line-height: 1.75;
+}
+
+.cta-buttons {
   display: flex;
-  gap: clamp(1rem, 2.5vw, 1.5rem);
-  justify-content: center;
   flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 0.5rem;
 }
 
-/* Buttons use .button and .button-outline from base-global */
+.cta-buttons .button {
+  min-width: 200px;
+}
+
+/* ============================================
+   BACK TO TOP BUTTON
+   ============================================ */
+
+.back-to-top-page {
+  position: fixed;
+  bottom: clamp(1.5rem, 3vw, 2rem);
+  right: clamp(1.5rem, 3vw, 2rem);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-primary-bright);
+  border: none;
+  box-shadow: 0 8px 24px rgba(93, 225, 228, 0.3);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all var(--transition-base);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #031115;
+}
+
+.back-to-top-page.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.back-to-top-page:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(93, 225, 228, 0.45);
+}
+
+.back-to-top-page svg {
+  width: clamp(22px, 5vw, 26px);
+  height: clamp(22px, 5vw, 26px);
+  stroke-width: 2.5;
+}
 
 /* ============================================
    MOBILE RESPONSIVE
    ============================================ */
 
 @media (max-width: 640px) {
-  .page-why-clean {
-    gap: clamp(3rem, 7vw, 4rem);
+  .why-hero {
+    padding: clamp(2rem, 5vw, 2.5rem) 0;
   }
 
-  .section-container {
-    padding: 0 1rem;
+  .why-hero h1 {
+    font-size: 2.2rem;
   }
 
-  .why-hero-clean {
-    padding: clamp(1.5rem, 4vw, 2rem) 1rem;
+  .hero-subtitle {
+    gap: 0.5rem;
+    padding: 0 0.5rem;
   }
 
-  .pattern-simple {
+  .hero-subtitle p {
+    font-size: 1.05rem;
+  }
+
+  .pattern-flow {
     flex-direction: column;
     align-items: stretch;
+    padding: 1.5rem;
   }
 
-  .pattern-word {
+  .flow-item {
     text-align: center;
     width: 100%;
   }
 
-  .pattern-arrow {
+  .flow-arrow {
     transform: rotate(90deg);
   }
 
-  .research-grid-clean {
+  .insight-grid {
     grid-template-columns: 1fr;
   }
 
-  .closing-ctas {
-    flex-direction: column;
-    align-items: stretch;
+  .retech-commitments,
+  .focus-grid {
+    grid-template-columns: 1fr;
   }
 
-  .closing-ctas .button {
+  .cta-buttons {
+    flex-direction: column;
     width: 100%;
   }
 
-  /* Remove line breaks on mobile */
-  .hero-question br,
-  .refusal-statement br {
-    display: none;
+  .cta-buttons .button {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .back-to-top-page {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 50px;
+    height: 50px;
   }
 }
 
@@ -721,9 +628,11 @@
    ============================================ */
 
 @media (prefers-reduced-motion: reduce) {
-  .retech-item:hover,
-  .research-item:hover,
-  .cta-link:hover {
+  .retech-card:hover,
+  .focus-card:hover,
+  .back-to-top-page:hover {
     transform: none;
   }
 }
+
+/* WHY PAGE CSS */

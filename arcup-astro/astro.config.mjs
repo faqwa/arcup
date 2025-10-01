@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://faqwa.github.io/arcup',
-  base: '/arcup',
+  site: 'https://arcup.xbyali.page',
+  base: '/',
+  output: 'static'
 });

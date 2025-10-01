@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArcCanvas from "../../components/ArcCanvas.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import DocumentViewer from "../../components/DocumentViewer.astro";
+import '../../styles/base-global.css';
+
+const title = "Research Log - Arc^";
+const description = "Research Log documenting Arc^'s open plasma research progress, experiments, and findings.";
+const siteUrl = Astro.site ? new URL("/docs/research-log", Astro.site).toString() : undefined;
+
+const seo = {
+  canonical: siteUrl,
+  openGraph: {
+    title: "Research Log - Arc^",
+    description,
+    url: siteUrl,
+  },
+  twitter: {
+    title: "Research Log - Arc^",
+    description,
+  },
+};
+---
+
+<BaseLayout title={title} description={description} bodyClass="page-docs" seo={seo}>
+  <ArcCanvas />
+  <SiteHeader active="docs" />
+  
+  <main class="page-shell docs-page">
+    <DocumentViewer
+      title="Research Log"
+      date="January 10, 2025"
+      description="A comprehensive log of Arc^'s research activities, experimental protocols, data collection, and findings. This document is updated regularly to maintain transparency in our open research process."
+      filePath="/arcup/documents/research-log.pdf"
+      fileName="arc-research-log.pdf"
+      fileSize="4.2 MB"
+      fileType="PDF"
+    />
+  </main>
+</BaseLayout>
+
