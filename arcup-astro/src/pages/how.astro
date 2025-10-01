@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ArcCanvas from "../components/ArcCanvas.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import HowContent from "../components/HowContent.astro";
+import PageNavigation from "../components/PageNavigation.astro";
 import '../styles/how-page.css';  // ADD THIS
 
 const description = "How arc^ teams listen, prototype, and steward projects with community partners.";
@@ -25,5 +26,6 @@ const seo = {
   <ArcCanvas />
   <SiteHeader active="how" />
   <HowContent />
+  <PageNavigation currentPage="how" />
 </BaseLayout>
 

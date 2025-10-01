@@ -2,6 +2,7 @@
 import '../styles/base-global.css';
 import ScrollToTop from "../components/ScrollToTop.astro";
 import UniversalFooter from "../components/UniversalFooter.astro";
+import MobileBanner from "../components/MobileBanner.astro";
 
 const {
   title = "arc^ byali",
@@ -96,6 +97,9 @@ const bodyClasses = ["site-body", bodyClass].filter(Boolean).join(" ");
     <slot name="head" />
   </head>
   <body class={bodyClasses}>
+    <!-- Mobile device recommendation banner -->
+    <MobileBanner />
+    
     <!-- Skip to main content link for screen readers -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
     

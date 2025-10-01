@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ArcCanvas from "../components/ArcCanvas.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import DefinitionContent from "../components/DefinitionContent.astro";
+import PageNavigation from "../components/PageNavigation.astro";
 import '../styles/home-definition-page.css';
 
 // IMPROVED SEO
@@ -109,4 +110,5 @@ const structuredData = {
   <ArcCanvas />
   <SiteHeader active="home" />
   <DefinitionContent />
+  <PageNavigation currentPage="home" />
 </BaseLayout>

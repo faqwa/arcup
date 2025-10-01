@@ -1,0 +1,164 @@
+---
+// Mobile device recommendation banner
+// Shows a friendly message suggesting desktop/larger screen for better experience
+---
+
+<div id="mobile-banner" class="mobile-banner" role="banner" aria-live="polite">
+  <div class="mobile-banner-content">
+    <div class="mobile-banner-icon">📱</div>
+    <div class="mobile-banner-text">
+      <strong>Mobile detected!</strong> For the best experience exploring Arc^ research, we recommend using a device with a larger screen.
+    </div>
+    <button 
+      class="mobile-banner-close" 
+      aria-label="Dismiss mobile recommendation"
+      type="button"
+    >
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<style>
+  .mobile-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    background: linear-gradient(135deg, rgba(10, 147, 150, 0.95), rgba(93, 225, 228, 0.9));
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(93, 225, 228, 0.3);
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .mobile-banner.show {
+    transform: translateY(0);
+  }
+
+  .mobile-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .mobile-banner-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .mobile-banner-text {
+    flex: 1;
+    font-size: 0.9rem;
+    color: #031115;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  .mobile-banner-text strong {
+    font-weight: 700;
+  }
+
+  .mobile-banner-close {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    color: #031115;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+  }
+
+  .mobile-banner-close:hover {
+    background: rgba(3, 17, 21, 0.1);
+  }
+
+  .mobile-banner-close:focus-visible {
+    outline: 2px solid #031115;
+    outline-offset: 2px;
+  }
+
+  /* Only show on mobile devices */
+  @media (min-width: 768px) {
+    .mobile-banner {
+      display: none;
+    }
+  }
+
+  /* Adjust body padding when banner is shown */
+  body.banner-shown {
+    padding-top: 60px;
+  }
+
+  /* Animation for banner appearance */
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .mobile-banner.show {
+    animation: slideDown 0.4s ease-out;
+  }
+</style>
+
+<script>
+  // Mobile banner functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const banner = document.getElementById('mobile-banner');
+    const closeButton = banner?.querySelector('.mobile-banner-close');
+    
+    if (!banner || !closeButton) return;
+
+    // Check if user is on mobile and hasn't dismissed the banner
+    const isMobile = window.innerWidth < 768;
+    const hasDismissed = localStorage.getItem('mobile-banner-dismissed') === 'true';
+    
+    if (isMobile && !hasDismissed) {
+      // Show banner after a short delay
+      setTimeout(() => {
+        banner.classList.add('show');
+        document.body.classList.add('banner-shown');
+      }, 1500);
+    }
+
+    // Close button functionality
+    closeButton.addEventListener('click', () => {
+      banner.classList.remove('show');
+      document.body.classList.remove('banner-shown');
+      localStorage.setItem('mobile-banner-dismissed', 'true');
+    });
+
+    // Auto-hide after 8 seconds if not dismissed
+    if (isMobile && !hasDismissed) {
+      setTimeout(() => {
+        if (banner.classList.contains('show')) {
+          banner.classList.remove('show');
+          document.body.classList.remove('banner-shown');
+        }
+      }, 8000);
+    }
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        banner.classList.remove('show');
+        document.body.classList.remove('banner-shown');
+      }
+    });
+  });
+</script>

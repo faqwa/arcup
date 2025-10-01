@@ -1,7 +1,7 @@
 // JOIN PAGE - MODAL SYSTEM FOR CONTRIBUTE CARDS
 // Place this in: arcup-astro/src/scripts/join-modals.js
 
-const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSeaIq1c0a9zu0R5Z0_GHP73HxKKjDr2vcjgjoiV2L3PxSv-ww/viewform?usp=dialog";
+const formURL = "https://docs.google.com/forms/d/e/1FAIpQLScyVWKDifYxaVWOhdW-SPEXXDVEjBmVezv7W668lizvRCQuaQ/viewform?usp=header";
 
 // Modal content for each contribution type
 const modalContent = {

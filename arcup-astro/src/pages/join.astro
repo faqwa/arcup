@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ArcCanvas from "../components/ArcCanvas.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import JoinContent from "../components/JoinContent.astro";
+import PageNavigation from "../components/PageNavigation.astro";
 import '../styles/join-page.css';  // ADD THIS
 
 const description = "Join Arc^ to contribute to open plasma research, community partnerships, and regenerative technology development.";
@@ -25,5 +26,6 @@ const seo = {
   <ArcCanvas />
   <SiteHeader active="join" />
   <JoinContent />
+  <PageNavigation currentPage="join" />
 </BaseLayout>
 <script src="../scripts/join-modals.js"></script>
