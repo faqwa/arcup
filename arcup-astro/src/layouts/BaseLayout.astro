@@ -1,7 +1,7 @@
 ---
 import '../styles/base-global.css';
 import ScrollToTop from "../components/ScrollToTop.astro";
-
+import UniversalFooter from "../components/UniversalFooter.astro";
 
 const {
   title = "arc^ byali",
@@ -41,30 +41,70 @@ const bodyClasses = ["site-body", bodyClass].filter(Boolean).join(" ");
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <link rel="manifest" href={`${import.meta.env.BASE_URL}manifest.json`} />
+    <meta name="theme-color" content="#0a9396" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="arc^" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    
+    <!-- SEO Meta Tags -->
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="author" content="ali" />
+    <meta name="keywords" content="plasma research, open science, regenerative agriculture, plasma activated water, ecological restoration, RE:TECH, community research, sustainable technology" />
+    <meta name="robots" content={robots || "index, follow"} />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    
+    <!-- Canonical URL -->
     {canonical && <link rel="canonical" href={canonical} />}
+    
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content={og.title} />
     <meta property="og:description" content={og.description} />
-    {og.url && <meta property="og:url" content={og.url} />}
     <meta property="og:type" content={og.type} />
+    <meta property="og:locale" content="en_US" />
+    {og.url && <meta property="og:url" content={og.url} />}
     {og.image && <meta property="og:image" content={og.image} />}
+    <meta property="og:site_name" content="arc^ by ali" />
+    
+    <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content={twitterMeta.card} />
     <meta name="twitter:title" content={twitterMeta.title} />
     <meta name="twitter:description" content={twitterMeta.description} />
     {twitterMeta.image && <meta name="twitter:image" content={twitterMeta.image} />}
-    {robots && <meta name="robots" content={robots} />}
+    <meta name="twitter:site" content="@arcupbyali" />
+    <meta name="twitter:creator" content="@arcupbyali" />
+    
+    <!-- Additional SEO -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="arc^" />
+    
+    <!-- Structured Data will be added by individual pages -->
     <slot name="head" />
   </head>
   <body class={bodyClasses}>
+    <!-- Skip to main content link for screen readers -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <slot />
+    <UniversalFooter />
     <slot name="scripts" />
     <ScrollToTop />
+    
+    <!-- Error handling script -->
+    <script src={`${import.meta.env.BASE_URL}src/scripts/error-handler.js`}></script>
   </body>
 </html>

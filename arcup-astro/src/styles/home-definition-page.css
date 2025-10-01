@@ -310,46 +310,66 @@
 }
 
 /* ============================================
-   MOBILE RESPONSIVE
+   RESPONSIVE DESIGN IMPROVEMENTS
    ============================================ */
 
+/* Tablet and small desktop */
+@media (max-width: 1024px) {
+  .definition-card-stack li {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .definition-emoji {
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+  }
+}
+
+/* Mobile landscape */
+@media (max-width: 768px) {
+  .pronunciation-inline {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  .definition-cta-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .definition-cta-group .button {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+/* Mobile portrait */
 @media (max-width: 640px) {
   .definition-header {
-    gap: clamp(1.25rem, 3.5vw, 1.75rem);
+    gap: clamp(1rem, 3vw, 1.5rem);
     padding: 0 0.5rem;
-  }
-
-  .definition-subheading {
-    font-size: 0.95rem;
   }
 
   .definition-title-row {
     gap: 0.75rem;
   }
 
-  .definition-title-row h2 {
-    font-size: 3rem;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .definition-title-row h2 span:first-of-type {
-    font-size: 1rem;
+  .definition-title-row h1 {
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+    line-height: 1.1;
   }
 
   .pronunciation-inline {
     padding: 0.5rem 0.9rem;
     font-size: 0.85rem;
+    flex-direction: row;
+    justify-content: center;
   }
 
   .definition-eyebrow {
     font-size: 0.8rem;
-  }
-
-  .definition-header h1 {
-    font-size: 1.4rem;
-    max-width: 100%;
-    padding: 0 0.5rem;
   }
 
   .definition-card-stack {
@@ -362,6 +382,7 @@
     align-items: center;
     text-align: center;
     padding: 1.5rem 1.25rem;
+    gap: 1rem;
   }
 
   .definition-emoji {
@@ -381,121 +402,39 @@
     padding: 2rem 1.25rem;
   }
 
-  .definition-cta-group {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .definition-cta-group .button {
-    width: 100%;
-    min-width: auto;
-    justify-content: center;
-  }
-
   .definition-footer {
     padding-top: 2rem;
   }
-}
-
-/* Tighten overall page spacing */
-.definition-page {
-  text-align: center;
-  display: grid;
-  gap: clamp(1.5rem, 4vw, 2.5rem); /* Reduced from 2.5rem/6vw/4rem */
-}
-
-/* Tighten header spacing significantly */
-.definition-header {
-  display: grid;
-  gap: clamp(0.75rem, 2vw, 1rem); /* Reduced from 1.5rem/4vw/2rem */
-  justify-items: center;
-}
-
-/* Reduce title row gap */
-.definition-title-row {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(0.5rem, 1.5vw, 0.75rem); /* Reduced from 1rem/2.5vw/1.5rem */
-  align-items: center;
-  justify-items: center;
-  width: 100%;
-}
-
-/* Tighten lede section spacing */
-.definition-lede-section {
-  margin: clamp(1rem, 3vw, 1.5rem) 0; /* Reduced from 2rem/5vw/3rem */
-}
-
-/* Reduce definitions section margin */
-.definitions-section {
-  margin: clamp(1.5rem, 4vw, 2.5rem) 0; /* Reduced from 3rem/6vw/4rem */
-}
-
-/* Tighter card stack padding */
-.definition-card-stack {
-  display: grid;
-  gap: clamp(1rem, 2.5vw, 1.5rem); /* Reduced from 1.25rem/3vw/1.75rem */
-  padding: clamp(1.5rem, 4vw, 2rem) 0; /* Reduced from 2rem/5vw/3rem */
-  list-style: none;
-  margin: 0;
-}
-
-/* Reduce personal intro margin */
-.personal-intro {
-  margin: clamp(1.5rem, 4vw, 2rem) auto; /* Reduced from 2.5rem/6vw/3.5rem */
-  max-width: 65ch;
-  padding: clamp(2rem, 5vw, 2.5rem) clamp(1.5rem, 4vw, 2.5rem); /* Reduced padding */
-  background: linear-gradient(135deg, rgba(93, 225, 228, 0.06), rgba(93, 225, 228, 0.02));
-  border: 1px solid rgba(93, 225, 228, 0.25);
-  border-radius: 16px;
-  text-align: center;
-  display: grid;
-  gap: clamp(0.75rem, 2vw, 1rem); /* Reduced from 1rem/2.5vw/1.5rem */
-}
-
-/* Tighter intro statement spacing */
-.definition-intro {
-  margin: clamp(1.5rem, 4vw, 2rem) auto 0; /* Reduced from 2rem/5vw/3rem */
-  max-width: 68ch;
-  padding: clamp(1.5rem, 4vw, 2rem) clamp(1.25rem, 3vw, 1.75rem); /* Reduced */
-  background: rgba(6, 12, 22, 0.5);
-  border: 1px solid rgba(93, 225, 228, 0.2);
-  border-radius: 12px;
-  text-align: left;
-  display: grid;
-  gap: clamp(1rem, 2.5vw, 1.5rem); /* Reduced from 1.25rem/3vw/1.75rem */
-}
-
-/* Tighter CTA section */
-.definition-cta-section {
-  margin-top: clamp(2rem, 5vw, 3rem); /* Reduced from 3rem/6vw/4rem */
-  padding: clamp(2rem, 4vw, 2.5rem) clamp(1.25rem, 3vw, 1.75rem); /* Reduced */
-  background: linear-gradient(135deg, rgba(93, 225, 228, 0.08), rgba(93, 225, 228, 0.03));
-  border: 1px solid rgba(93, 225, 228, 0.3);
-  border-radius: 16px;
-  text-align: center;
-}
-
-/* Tighter footer spacing */
-.definition-footer {
-  margin-top: clamp(2rem, 5vw, 3rem); /* Reduced from 3rem/6vw/4rem */
-  padding-top: clamp(1.5rem, 3vw, 2rem); /* Reduced from 2rem/4vw/3rem */
-  border-top: 1px solid rgba(93, 225, 228, 0.15);
-  text-align: center;
-}
-
-/* Mobile adjustments */
-@media (max-width: 640px) {
-  .definition-page {
-    gap: clamp(1.25rem, 3vw, 1.75rem); /* Tighter on mobile */
+  
+  .value-proposition {
+    padding: 1rem;
   }
-
-  .definition-header {
-    gap: clamp(0.5rem, 2vw, 0.75rem); /* Very tight on mobile */
-    padding: 0 0.5rem;
+  
+  .value-proposition-text {
+    font-size: 1.05rem;
   }
+}
 
-  .definition-title-row {
-    gap: 0.5rem; /* Minimal gap on mobile */
+/* Very small screens */
+@media (max-width: 480px) {
+  .definition-title-row h1 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+  
+  .pronunciation-inline {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .definition-card-stack li {
+    padding: 1.25rem 1rem;
+  }
+  
+  .personal-intro {
+    padding: 1.5rem 1rem;
+  }
+  
+  .definition-intro {
+    padding: 1.5rem 1rem;
   }
 }

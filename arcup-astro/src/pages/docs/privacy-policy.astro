@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArcCanvas from "../../components/ArcCanvas.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import DocumentViewer from "../../components/DocumentViewer.astro";
+import '../../styles/base-global.css';
+
+const title = "Privacy Policy - Arc^";
+const description = "Privacy Policy for Arc^ open plasma research platform and community.";
+const siteUrl = Astro.site ? new URL("/docs/privacy-policy", Astro.site).toString() : undefined;
+
+const seo = {
+  canonical: siteUrl,
+  openGraph: {
+    title: "Privacy Policy - Arc^",
+    description,
+    url: siteUrl,
+  },
+  twitter: {
+    title: "Privacy Policy - Arc^",
+    description,
+  },
+};
+---
+
+<BaseLayout title={title} description={description} bodyClass="page-docs" seo={seo}>
+  <ArcCanvas />
+  <SiteHeader active="docs" />
+  
+  <main class="page-shell docs-page">
+    <DocumentViewer
+      title="Privacy Policy"
+      date="January 10, 2025"
+      description="This privacy policy explains how Arc^ collects, uses, and protects your personal information when you participate in our open research community and use our platform."
+      filePath="/arcup/documents/privacy-policy.pdf"
+      fileName="arc-privacy-policy.pdf"
+      fileSize="1.8 MB"
+      fileType="PDF"
+    />
+  </main>
+</BaseLayout>
+

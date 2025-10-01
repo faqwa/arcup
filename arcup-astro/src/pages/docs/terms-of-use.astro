@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArcCanvas from "../../components/ArcCanvas.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import DocumentViewer from "../../components/DocumentViewer.astro";
+import '../../styles/base-global.css';
+
+const title = "Terms of Use - Arc^";
+const description = "Terms of Use for Arc^ open plasma research platform and community.";
+const siteUrl = Astro.site ? new URL("/docs/terms-of-use", Astro.site).toString() : undefined;
+
+const seo = {
+  canonical: siteUrl,
+  openGraph: {
+    title: "Terms of Use - Arc^",
+    description,
+    url: siteUrl,
+  },
+  twitter: {
+    title: "Terms of Use - Arc^",
+    description,
+  },
+};
+---
+
+<BaseLayout title={title} description={description} bodyClass="page-docs" seo={seo}>
+  <ArcCanvas />
+  <SiteHeader active="docs" />
+  
+  <main class="page-shell docs-page">
+    <DocumentViewer
+      title="Terms of Use"
+      date="January 10, 2025"
+      description="These terms govern your use of Arc^'s open research platform, community resources, and collaborative tools. By participating in Arc^ activities, you agree to these terms."
+      filePath="/arcup/documents/terms-of-use.pdf"
+      fileName="arc-terms-of-use.pdf"
+      fileSize="2.3 MB"
+      fileType="PDF"
+    />
+  </main>
+</BaseLayout>
+

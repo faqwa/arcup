@@ -1,46 +1,64 @@
 ---
 const withBase = (path: string) => {
-  const base = '/arcup';
-  if (path === '/') return `${base}/`;
-  return `${base}${path}`;
+  const base = import.meta.env.BASE_URL || '/';
+  if (path === '/') return base;
+  return `${base}${path.replace(/^\//, '')}`;
 };
 ---
 
-<main id="main-content" class="page-shell definition-page" aria-labelledby="definition-title">
+<main id="main-content" class="page-shell definition-page" aria-labelledby="definition-title" role="main">
 
-  <!-- TITLE & PRONUNCIATION -->
-  <header class="definition-header">
+  <!-- HERO SECTION -->
+  <header class="definition-header" role="banner">
+    <p class="hero-eyebrow" role="text">
+      a regenerative research and stewardship collective
+    </p>
+
+    <!-- COMPELLING LEDE -->
+    <section class="definition-lede-section" aria-labelledby="lede-heading">
+      <h2 id="lede-heading" class="definition-lede">
+        what if we did science that created a better world?
+      </h2>
+    </section>
+    
+    <!-- VALUE PROPOSITION -->
+    <section class="value-proposition-section" aria-labelledby="value-prop-heading">
+      <div class="value-proposition">
+        <h3 id="value-prop-heading" class="visually-hidden">Value Proposition</h3>
+        <p class="value-proposition-text">
+          Open plasma research for ecological restoration — building technology that serves life, not profit
+        </p>
+        <a href="https://www.xbyali.page" target="_blank" rel="noopener noreferrer" class="value-proposition-author" aria-label="Visit xbyali's main website">
+          <strong>xbyali</strong>
+        </a>
+      </div>
+    </section>
+
+
+  <!-- DEFINITION CARDS -->
+  <section class="definitions-section" aria-labelledby="definition-title">
+    <!-- DICTIONARY-STYLE ENTRY -->
+    <p class="definition-intro-text">This is how I have defined arc^:</p>
     <div class="definition-title-row">
       <h1 id="definition-title">
-        arc<span class="caret-symbol">^</span>
+        arc<span class="caret-symbol" aria-label="superscript caret">^</span>
       </h1>
       <div class="pronunciation-inline">
-        <span class="pronunciation-text">/ark-up/</span>
-        <button class="audio-button" aria-label="Play pronunciation" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <span class="pronunciation-text" aria-label="Pronunciation">/ark-up/</span>
+        <button class="audio-button" aria-label="Play pronunciation of arc up" type="button" aria-describedby="pronunciation-help">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <polygon points="5 3 19 12 5 21 5 3"></polygon>
           </svg>
+          <span class="visually-hidden">Play audio</span>
         </button>
+        <div id="pronunciation-help" class="visually-hidden">Click to hear the pronunciation of arc up</div>
       </div>
     </div>
     <p class="definition-eyebrow">noun · verb · movement</p>
-    <p class="definition-subheading">
-      a regenerative research and stewardship collective
-    </p>
-  </header>
-
-  <!-- COMPELLING LEDE -->
-  <section class="definition-lede-section">
-    <h2 class="definition-lede">
-      what if we did science that created a better world?
-    </h2>
-  </section>
-
-  <!-- DEFINITION CARDS -->
-  <section class="definitions-section">
-    <ul class="definition-card-stack">
-      <li>
-        <div class="definition-emoji">🗣️</div>
+    
+    <ul class="definition-card-stack" role="list" aria-label="Definitions of arc^">
+      <li role="listitem">
+        <div class="definition-emoji" aria-label="Speaking emoji">🗣️</div>
         <div class="definition-card-content">
           <strong>"to arc up"</strong>
           <p>
@@ -49,8 +67,8 @@ const withBase = (path: string) => {
         </div>
       </li>
       
-      <li>
-        <div class="definition-emoji">🔬</div>
+      <li role="listitem">
+        <div class="definition-emoji" aria-label="Microscope emoji">🔬</div>
         <div class="definition-card-content">
           <strong>a framework</strong>
           <p>
@@ -59,8 +77,8 @@ const withBase = (path: string) => {
         </div>
       </li>
       
-      <li>
-        <div class="definition-emoji">🌱</div>
+      <li role="listitem">
+        <div class="definition-emoji" aria-label="Seedling emoji">🌱</div>
         <div class="definition-card-content">
           <strong>a practice</strong>
           <p>
@@ -69,8 +87,8 @@ const withBase = (path: string) => {
         </div>
       </li>
       
-      <li>
-        <div class="definition-emoji">🤝</div>
+      <li role="listitem">
+        <div class="definition-emoji" aria-label="Handshake emoji">🤝</div>
         <div class="definition-card-content">
           <strong>a community</strong>
           <p>
@@ -82,7 +100,8 @@ const withBase = (path: string) => {
   </section>
 
   <!-- PERSONAL INTRO -->
-  <section class="personal-intro">
+  <section class="personal-intro" aria-labelledby="intro-heading">
+    <h2 id="intro-heading" class="visually-hidden">Personal Introduction</h2>
     <p class="intro-greeting">I'm Ali.</p>
     <p>
       Arc^ started from a question: if I make the same choices as the good people before me, what world would it create?
@@ -96,7 +115,8 @@ const withBase = (path: string) => {
   </section>
 
   <!-- WHAT IS IT -->
-  <section class="definition-intro">
+  <section class="definition-intro" aria-labelledby="what-is-heading">
+    <h2 id="what-is-heading" class="visually-hidden">What is Arc^</h2>
     <p>
       <strong>Arc^ is an experiment in doing science differently.</strong> It's plasma research guided by RE:TECH—Refuse Extractive Technology. That means transparent protocols, collaborative methods, and regenerative goals.
     </p>
@@ -109,49 +129,38 @@ const withBase = (path: string) => {
   </section>
 
   <!-- PRIMARY CTA -->
-  <section class="definition-cta-section">
-    <h2 class="cta-heading">Where to Start</h2>
+  <section class="definition-cta-section" aria-labelledby="cta-heading">
+    <h2 id="cta-heading" class="cta-heading">Where to Start</h2>
     <p class="cta-description">
       Explore the framework, see what we're building, or reach out to get involved.
     </p>
-    <div class="definition-cta-group">
-      <a href={withBase("/why")} class="button button-primary">
+    <nav class="definition-cta-group" aria-label="Main navigation">
+      <a href={withBase("/why")} class="button button-primary" aria-describedby="why-desc">
         <span>Read Why</span>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
+        <span id="why-desc" class="visually-hidden">Learn about the philosophy and worldview behind arc^</span>
       </a>
-      <a href={withBase("/how")} class="button button-secondary">
+      <a href={withBase("/how")} class="button button-secondary" aria-describedby="how-desc">
         <span>See How It Works</span>
+        <span id="how-desc" class="visually-hidden">Understand the principles and methods of RE:TECH</span>
       </a>
-      <a href={withBase("/projects")} class="button button-secondary">
+      <a href={withBase("/projects")} class="button button-secondary" aria-describedby="projects-desc">
         <span>Browse Projects</span>
+        <span id="projects-desc" class="visually-hidden">Explore current research projects and protocols</span>
       </a>
-    </div>
+    </nav>
   </section>
 
   <!-- FOOTER NOTE -->
-  <footer class="definition-footer">
+  <footer class="definition-footer" role="contentinfo">
     <p class="definition-note">
-      Want the full story? Visit <a href="https://www.xbyali.page" target="_blank" rel="noopener noreferrer">www.xbyali.page</a>
+      Want the full story? Visit <a href="https://www.xbyali.page" target="_blank" rel="noopener noreferrer" aria-label="Visit xbyali's main website for the complete story">www.xbyali.page</a>
     </p>
   </footer>
 
 </main>
-
-<footer class="site-footer">
-  <div class="footer-content">
-    <p class="footer-text">
-      arc^ by ali · collaborative research for planetary repair
-    </p>
-    <p class="footer-license">
-      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA</a> · 
-      <a href="https://ohwr.org/cern_ohl_s_v2.txt" target="_blank" rel="noopener noreferrer">CERN OHL-S</a> · 
-      <a href="https://www.gnu.org/licenses/agpl-3.0.en.html" target="_blank" rel="noopener noreferrer">AGPL-3.0</a>
-    </p>
-  </div>
-  <button type="button" data-motion-toggle class="button button-muted">Disable Motion</button>
-</footer>
 
 <style>
   /* TIGHTER SPACING OVERRIDES */
@@ -276,9 +285,10 @@ const withBase = (path: string) => {
     let audio = null;
     let usingSpeechSynthesis = false;
 
-    // CORRECTED: Files in public/audio/ are served from /arcup/audio/
-    const oggPath = '/arcup/audio/arcup-pronounce.ogg';
-    const mp3Path = '/arcup/audio/pronunciation.mp3';
+    // CORRECTED: Files in public/audio/ are served from base URL
+    const baseUrl = import.meta.env.BASE_URL || '/';
+    const oggPath = `${baseUrl}audio/arcup-pronounce.ogg`;
+    const mp3Path = `${baseUrl}audio/EN-AU_ck1_arc_up.mp3`;
 
     // Try MP3 first (more universal)
     const testAudio = new Audio(mp3Path);
