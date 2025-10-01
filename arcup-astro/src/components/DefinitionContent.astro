@@ -135,16 +135,16 @@ const withBase = (path: string) => {
       Explore the framework, see what we're building, or reach out to get involved.
     </p>
     <nav class="definition-cta-group" aria-label="Main navigation">
-      <a href={withBase("/why")} class="button button-primary" aria-describedby="why-desc">
-        <span>Read Why</span>
+      <a href={withBase("/how")} class="button button-primary" aria-describedby="how-desc">
+        <span>See How It Works</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
-        <span id="why-desc" class="visually-hidden">Learn about the philosophy and worldview behind arc^</span>
-      </a>
-      <a href={withBase("/how")} class="button button-secondary" aria-describedby="how-desc">
-        <span>See How It Works</span>
         <span id="how-desc" class="visually-hidden">Understand the principles and methods of RE:TECH</span>
+      </a>
+      <a href={withBase("/why")} class="button button-secondary" aria-describedby="why-desc">
+        <span>Read Why</span>
+        <span id="why-desc" class="visually-hidden">Learn about the philosophy and worldview behind arc^</span>
       </a>
       <a href={withBase("/projects")} class="button button-secondary" aria-describedby="projects-desc">
         <span>Browse Projects</span>

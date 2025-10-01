@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ArcCanvas from "../components/ArcCanvas.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import WhyContent from "../components/WhyContent.astro";
+import PageNavigation from "../components/PageNavigation.astro";
 import '../styles/why-page.css';  // ← ADD THIS LINE
 
 const description = "Arc^ invites reflection on technology, power, and the incentives behind innovation.";
@@ -25,4 +26,5 @@ const seo = {
   <ArcCanvas />
   <SiteHeader active="why" />
   <WhyContent />
+  <PageNavigation currentPage="why" />
 </BaseLayout>

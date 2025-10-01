@@ -1,11 +1,11 @@
 ---
 const withBase = (path: string) => {
-  const base = '/arcup';
-  if (path === '/') return `${base}/`;
-  return `${base}${path}`;
+  const base = import.meta.env.BASE_URL || '/';
+  if (path === '/') return base;
+  return `${base}${path.replace(/^\//, '')}`;
 };
 
-const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSeaIq1c0a9zu0R5Z0_GHP73HxKKjDr2vcjgjoiV2L3PxSv-ww/viewform?usp=dialog";
+const formURL = "https://docs.google.com/forms/d/e/1FAIpQLScyVWKDifYxaVWOhdW-SPEXXDVEjBmVezv7W668lizvRCQuaQ/viewform?usp=header";
 ---
 
 <main id="main-content" class="page-shell page-how" aria-labelledby="how-title">
@@ -13,11 +13,13 @@ const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSeaIq1c0a9zu0R5Z0_GHP7
   <!-- HERO SECTION -->
   <header class="how-hero" aria-labelledby="how-title">
     <p class="hero-eyebrow">Our Framework</p>
-    <h1 id="how-title">How Arc^ Works</h1>
-    <p class="hero-lede">
+    <h1 id="how-title">ow Arc^ Works</h1>
+    <div class="hero-subtitle">
+    <p class="hero-subtitle">
       Most research happens behind closed doors. Results appear fully formed, polished, ready to monetize. 
       <strong>We do the opposite:</strong> document from day zero, share everything, invite scrutiny. Here's how.
     </p>
+  </div>
   </header>
 
   <!-- EARTH AS LIVING SYSTEM -->
