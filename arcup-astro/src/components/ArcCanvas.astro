@@ -1,6 +1,10 @@
 ---
 ---
 <canvas data-arc-canvas aria-hidden="true"></canvas>
+<noscript>
+  <div aria-hidden="true" style="position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(140% 140% at 15% 20%, rgba(94, 234, 212, 0.12), transparent 50%), radial-gradient(120% 120% at 80% 0%, rgba(45, 212, 191, 0.14), transparent 55%), linear-gradient(180deg, #04050a 0%, #020308 70%, #010208 100%)"></div>
+  <span class="visually-hidden">Animated background disabled because JavaScript is off.</span>
+ </noscript>
 <script is:inline>
   (() => {
     const canvas = document.querySelector('[data-arc-canvas]');

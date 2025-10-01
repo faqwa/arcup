@@ -25,7 +25,7 @@ const og = {
   title: openGraph.title ?? title,
   description: openGraph.description ?? description,
   url: openGraph.url ?? canonical,
-  image: openGraph.image ?? "/social-card.jpg",
+  image: openGraph.image ?? `${import.meta.env.BASE_URL}favicon.svg`,
   type: openGraph.type ?? "website",
 };
 
@@ -109,6 +109,6 @@ const bodyClasses = ["site-body", bodyClass].filter(Boolean).join(" ");
     <ScrollToTop />
     
     <!-- Error handling script -->
-    <script src={`${import.meta.env.BASE_URL}src/scripts/error-handler.js`}></script>
+    <script type="module">import "../scripts/error-handler.js";</script>
   </body>
 </html>
