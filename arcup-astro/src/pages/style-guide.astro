@@ -1,0 +1,199 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import Button from "../components/Button.astro";
+import Card from "../components/Card.astro";
+
+const title = "Style Guide — arc^";
+const description = "Design tokens, components, and patterns for arc^";
+---
+<!--
+Style Guide
+Usage:
+- Tokens live in `src/styles/global.css`. Use CSS variables for colors, spacing, and type.
+- Prefer primitives (`.page-shell`, `.surface-panel`, `.button`, `.card-grid`, `.styled-list`).
+- Gradual migration: keep page CSS as-is; replace classes with tokens/primitives incrementally.
+  Example: swap old `.button-outline` to new `button button--outline`.
+-->
+
+<BaseLayout title={title} description={description} bodyClass="page-shell">
+  <SiteHeader active="style-guide" />
+
+  <!-- Hero Section -->
+  <section class="surface-panel" aria-labelledby="sg-hero">
+    <p class="hero-eyebrow">design system</p>
+    <h1 id="sg-hero">arc^ style guide</h1>
+    <p class="lead">Unified tokens and components for a consistent, extendable UI.</p>
+    <div class="cta-group">
+      <Button href="#tokens">View tokens</Button>
+      <Button href="#components" variant="outline">Browse components</Button>
+      <Button href="#patterns" variant="muted">Patterns</Button>
+    </div>
+  </section>
+
+  <!-- Tokens: Colors, Typography, Spacing -->
+  <div class="section-divider"><span class="divider-label" id="tokens">tokens</span></div>
+  <section class="surface-panel" aria-labelledby="tokens">
+    <div class="section-header">
+      <h2>Design Tokens</h2>
+      <p class="lead">Use CSS variables from `global.css` for color, type, and spacing.</p>
+    </div>
+    <!-- Colors -->
+    <h3>Colors</h3>
+    <div class="card-grid card-grid-3">
+      <Card feature>
+        <h4>Primary</h4>
+        <div style="height:56px;border-radius:8px;background:var(--color-primary);"></div>
+        <code>var(--color-primary)</code>
+      </Card>
+      <Card feature>
+        <h4>Primary Bright</h4>
+        <div style="height:56px;border-radius:8px;background:var(--color-primary-bright);"></div>
+        <code>var(--color-primary-bright)</code>
+      </Card>
+      <Card feature>
+        <h4>Surface</h4>
+        <div style="height:56px;border-radius:8px;background:var(--color-surface);"></div>
+        <code>var(--color-surface)</code>
+      </Card>
+    </div>
+    <!-- Typography scale -->
+    <h3 style="margin-top:1.5rem;">Typography</h3>
+    <ul class="styled-list">
+      <li><strong>Font:</strong> <code>var(--font-sans)</code></li>
+      <li><strong>Scale:</strong> <code>--text-lg</code>, <code>--text-2xl</code>, <code>--text-4xl</code></li>
+      <li><strong>Weights:</strong> 400/500/600/700</li>
+    </ul>
+    <!-- Spacing -->
+    <h3 style="margin-top:1.5rem;">Spacing</h3>
+    <div class="card-grid">
+      <Card><strong>--space-s</strong><div style="height:var(--space-s);"></div></Card>
+      <Card><strong>--space-m</strong><div style="height:var(--space-m);"></div></Card>
+      <Card><strong>--space-l</strong><div style="height:var(--space-l);"></div></Card>
+      <Card><strong>--space-xl</strong><div style="height:var(--space-xl);"></div></Card>
+    </div>
+  </section>
+
+  <!-- Type hierarchy -->
+  <div class="section-divider"><span class="divider-label">typography</span></div>
+  <section class="surface-panel" aria-labelledby="typography">
+    <!-- Heading Hierarchy -->
+    <h2 id="typography">Headings</h2>
+    <div class="styled-list" style="margin-top:var(--space-m);">
+      <li><h1>Heading H1</h1></li>
+      <li><h2>Heading H2</h2></li>
+      <li><h3>Heading H3</h3></li>
+      <li><h4>Heading H4</h4></li>
+    </div>
+    <!-- Paragraphs -->
+    <h3 style="margin-top:var(--space-l);">Paragraphs</h3>
+    <p class="lead">This is a lead paragraph for intros.</p>
+    <p>Standard paragraph text using the base body size.</p>
+  </section>
+
+  <!-- Buttons -->
+  <div class="section-divider"><span class="divider-label">buttons</span></div>
+  <section class="surface-panel" aria-labelledby="buttons">
+    <!-- Buttons (primary, outline, muted, link) -->
+    <h2 id="buttons">Buttons</h2>
+    <div class="cta-group">
+      <Button>Primary Button</Button>
+      <Button variant="outline">Outline Button</Button>
+      <Button variant="muted">Muted Button</Button>
+      <Button variant="link">Link Button</Button>
+    </div>
+  </section>
+
+  <!-- Cards -->
+  <div class="section-divider"><span class="divider-label">cards</span></div>
+  <section class="surface-panel" aria-labelledby="cards">
+    <h2 id="cards">Cards</h2>
+    <div class="card-grid card-grid-3">
+      <Card>
+        <h3>Basic Card</h3>
+        <p class="lead">Use `.surface-panel` for simple panels.</p>
+      </Card>
+      <Card numbered number={2}>
+        <h3>Numbered Card</h3>
+        <p>Use `numbered` for step layouts.</p>
+      </Card>
+      <Card feature>
+        <h3>Feature Card</h3>
+        <p>Use `feature` for emphasis panels.</p>
+      </Card>
+    </div>
+  </section>
+
+  <!-- Lists -->
+  <div class="section-divider"><span class="divider-label">lists</span></div>
+  <section class="surface-panel" aria-labelledby="lists">
+    <h2 id="lists">Lists</h2>
+    <ul class="styled-list">
+      <li><strong>Item One</strong> — description text</li>
+      <li><strong>Item Two</strong> — description text</li>
+      <li><strong>Item Three</strong> — description text</li>
+    </ul>
+    <ol style="margin-top:var(--space-m);">
+      <li>Ordered item</li>
+      <li>Ordered item</li>
+      <li>Ordered item</li>
+    </ol>
+  </section>
+
+  <!-- Tables -->
+  <div class="section-divider"><span class="divider-label">tables</span></div>
+  <section class="surface-panel" aria-labelledby="tables">
+    <h2 id="tables">Tables</h2>
+    <div style="overflow:auto;">
+      <table style="width:100%;border-collapse:separate;border-spacing:0;">
+        <thead>
+          <tr>
+            <th style="text-align:left;padding:0.75rem;border-bottom:1px solid var(--color-border);">Token</th>
+            <th style="text-align:left;padding:0.75rem;border-bottom:1px solid var(--color-border);">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:0.75rem;border-bottom:1px solid var(--color-border);">--radius-lg</td>
+            <td style="padding:0.75rem;border-bottom:1px solid var(--color-border);">1.35rem</td>
+          </tr>
+          <tr>
+            <td style="padding:0.75rem;border-bottom:1px solid var(--color-border);">--shadow-soft</td>
+            <td style="padding:0.75rem;border-bottom:1px solid var(--color-border);">ambient soft</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Accordion -->
+  <div class="section-divider"><span class="divider-label">accordion</span></div>
+  <section class="surface-panel" aria-labelledby="accordion">
+    <h2 id="accordion">Accordion</h2>
+    <details class="surface-panel">
+      <summary>What is arc^?</summary>
+      <p style="margin-top:var(--space-s);">Open plasma research for ecological restoration.</p>
+    </details>
+  </section>
+
+  <!-- Quotes / Stat -->
+  <div class="section-divider"><span class="divider-label">quotes</span></div>
+  <section class="surface-panel" aria-labelledby="quotes">
+    <h2 id="quotes">Quote / Stat</h2>
+    <blockquote style="margin:0;font-size:var(--text-xl);color:var(--color-text);font-weight:600;">
+      "Build open, regenerative futures."
+    </blockquote>
+    <p class="lead" style="margin-top:var(--space-s);">— arc^</p>
+  </section>
+
+  <!-- Footer note -->
+  <div class="section-divider"><span class="divider-label">footer</span></div>
+  <section class="surface-panel">
+    <h2>Footer</h2>
+    <p class="lead">Global footer is provided by `UniversalFooter.astro` and styled via tokens.</p>
+  </section>
+
+  <!-- End -->
+</BaseLayout>
+
+

@@ -1,0 +1,17 @@
+---
+const { variant = "primary", href, label, attrs = {} } = Astro.props;
+const isLink = Boolean(href);
+const classes = [
+  'button',
+  variant === 'outline' ? 'button--outline' : '',
+  variant === 'muted' ? 'button--muted' : '',
+  variant === 'link' ? 'button--link' : ''
+].filter(Boolean).join(' ');
+---
+{isLink ? (
+  <a class={classes} href={href} {...attrs}>{Astro.slots.default ? <slot /> : label}</a>
+) : (
+  <button class={classes} type="button" {...attrs}>{Astro.slots.default ? <slot /> : label}</button>
+)}
+
+

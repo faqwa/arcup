@@ -1,0 +1,22 @@
+---
+const { numbered = false, number = 1, feature = false } = Astro.props;
+const classes = ['surface-panel', feature ? 'card--feature' : ''].filter(Boolean).join(' ');
+---
+<article class={classes}>
+  {numbered && (
+    <div class="step-badge" aria-hidden="true">{number}</div>
+  )}
+  <div class="card-content">
+    <slot />
+  </div>
+</article>
+
+<style>
+.card--feature {
+  background: linear-gradient(135deg, rgba(93, 225, 228, 0.06), rgba(93, 225, 228, 0.02));
+  border-color: rgba(93, 225, 228, 0.25);
+}
+.card-content :where(h3,h4) { margin: 0 0 0.75rem 0; }
+</style>
+
+
